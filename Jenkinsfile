@@ -6,5 +6,10 @@ pipeline {
                 checkout scm
             }
         }
+        stage ('Flutter doctor') {
+            steps {
+                sh "flutter doctor -v"
+            }
+        }
     }
 }
