@@ -6,9 +6,12 @@ pipeline {
                 checkout scm
             }
         }
-        stage ('Flutter doctor') {
+        stage ('Flutter init') {
             steps {
-                sh "flutter doctor -v"
+                echo "Running flutter clean"
+                sh "flutter clean"
+                echo "Running flutter doctor"
+                sh "flutter doctor"
             }
         }
     }
