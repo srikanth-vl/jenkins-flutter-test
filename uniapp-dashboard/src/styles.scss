@@ -1,0 +1,317 @@
+.header
+{
+    width: 100%;
+}
+.card-header-bg1 {
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#7296f8+8,7296f8+8,31c4d6+100 */
+    background: #7296f8;
+    /* Old browsers */
+    background: -moz-linear-gradient(left, #7296f8 8%, #7296f8 8%, #31c4d6 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(left, #7296f8 8%, #7296f8 8%, #31c4d6 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, #7296f8 8%, #7296f8 8%, #31c4d6 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#7296f8', endColorstr='#31c4d6', GradientType=1);
+    /* IE6-9 */
+
+    border: 0px;
+    position: relative;
+  }
+
+  .card-header h2 {
+    position: relative;
+    // font-size: 26px;
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+  .count-number {
+    // font-size: 30px;
+    font-size: 2rem;
+    color: #FFF;
+    font-weight: 600;
+  }
+
+  .card-header-bg1::after {
+    content: '';
+    position: absolute;
+    left: 5%;
+    top: 100%;
+    width: 0;
+    height: 0;
+    border-left: 14px solid transparent;
+    border-right: 14px solid transparent;
+    border-top: 14px solid #7594F9;
+    clear: both;
+  }
+
+  .card-header-bg2::after {
+    content: '';
+    position: absolute;
+    left: 5%;
+    top: 100%;
+    width: 0;
+    height: 0;
+    border-left: 14px solid transparent;
+    border-right: 14px solid transparent;
+    border-top: 14px solid #f36c6a;
+    clear: both;
+  }
+
+  .border-primary {
+    border-color: #0CAABE !important;
+  }
+
+  .sub-dark {
+    // font-size: 24px;
+    font-size: 1.5rem;
+    color: #04344A;
+    font-weight: 600;
+  }
+
+  .sub-dark small {
+    // font-size: 16px;
+    font-size: 1rem;
+  }
+
+  .border-danger {
+    border-color: #DC413D !important;
+  }
+
+  .card-header-bg2 {
+    position: relative;
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#f36c6a+12,d4322d+100 */
+    background: #f36c6a;
+    /* Old browsers */
+    background: -moz-linear-gradient(left, #f36c6a 12%, #d4322d 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(left, #f36c6a 12%, #d4322d 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, #f36c6a 12%, #d4322d 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f36c6a', endColorstr='#d4322d', GradientType=1);
+    /* IE6-9 */
+
+  }
+  .navbar-dark{background-color: #04344A;padding: 10px;}
+  table{border:1px solid #D1D1D1!important}
+  table thead tr th{background-color: #727272;border-left:1px solid #D1D1D1!important; border-bottom:1px solid #D1D1D1!important}
+  table tr td{ background-color: #E6E6E6; color: #333; border-left:1px solid #D1D1D1!important; border-bottom:1px solid #D1D1D1!important}
+  table tr td:last-child{border-left: none}
+  table tr:nth-child(2n+1) td{ background-color: #ffffff;}
+
+  .login_popup .icon_sp {
+    margin: -76px auto 0;
+    width: 120px;
+    height: 120px;
+    border: 1px solid #ccc;
+    border-radius: 100%;
+    text-align: center;
+    line-height: 120px;
+    vertical-align: middle;
+    background: #fff;
+    border-bottom-color: #fff;
+    border-right-color: #fff;
+    border-left-color: #fff;
+}
+.login_popup .modal-dialog{ padding: 10% 0;}
+
+.login_popup .form-control {
+  display: block;
+  width: 100%;
+  height: calc(4.25rem + 2px);
+  padding: .375rem 2rem;
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: .25rem;
+  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.login_popup .modal-content{border-radius: 1.5rem; padding: 0px 20px 0px 20px}
+.login_popup .btn {
+  background: #36c1d8;
+  color: #fff;
+  // font-size: 24px;
+  font-size: 1.5rem;
+  border-radius: 30px;
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+  border: none;
+  box-shadow: 0 0 4px 0px #14606d;
+  height: 59px;
+}
+
+.thumbnail-image {
+  width: 64px !important;
+  height: 64px !important;
+}
+
+.rounded-image {
+  border-radius: 50%;
+}
+
+.yScrollBar {
+  height: 50vh;
+  overflow-y: scroll;
+}
+.yScrollBar:hover::-webkit-scrollbar{
+  display: block;
+  transition: all ease 3s;
+}
+/* width */
+::-webkit-scrollbar {
+  width: 2px;
+  display: none;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
+.yScrollBar2 {
+  height: 40rem;
+  overflow-y: scroll;
+}
+
+.example-h2 {
+  // margin: 10px;
+  margin: 0.625rem;
+}
+
+.example-section {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  height: 3.75rem;
+  // height: 60px;
+}
+
+.example-margin {
+  margin: 0.625rem;
+  // margin: 10px;
+}
+.clickable_cell{
+  color: rgb(7, 80, 109);
+  cursor: pointer;
+}
+
+.sub_app .card-body{
+  padding:0.50rem 1.25rem; background: #04344a; border-radius: 5px; color: #fff;
+}
+.sub_app .card-body h5{
+  font-size: 85%;
+  overflow-wrap: normal;
+}
+.sub_app .card-body .list-group-item{
+  font-size: 90%;
+  background: transparent;
+}
+.sup_app_logo{
+  width: 60px;
+  height: 60px;
+  overflow: hidden;
+  display: inline-block;
+  border: 1px solid #fff;
+  border-radius: 100%;
+  padding: 10px;
+  margin: 0;
+  box-shadow: 2px 2px 2px 2px #545454;
+}
+
+.sub_app_logo{
+  width: 60px;
+  height: 60px;
+  overflow: hidden;
+  display: inline-block;
+  border: 1px solid #fff;
+  border-radius: 100%;
+  padding: 10px;
+  margin: 10px 0;
+}
+.sup_app_logo img, .sub_app_logo img{
+  width:100%;
+}
+
+.sub_app_titl{
+  border-right: 1px solid #0c3e54;
+  box-shadow: 1px 0px 0 0px #0a2d3e;
+}
+
+.login-box{ border: 1px solid #ccc; border-radius:10px; padding: 25px; background: #fff; }
+
+.login-box .icon_sp {
+  margin: -76px auto 0;
+  width: 120px;
+  height: 120px;
+  border: 1px solid #ccc;
+  border-radius: 100%;
+  text-align: center;
+  line-height: 120px;
+  vertical-align: middle;
+  background: #fff;
+  border-bottom-color: #fff;
+  border-right-color: #fff;
+  border-left-color: #fff;
+}
+.login-box .modal-dialog{ padding: 10% 0;}
+
+.login-box .form-control {
+display: block;
+width: 100%;
+height: calc(4.25rem + 2px);
+padding: .375rem 2rem;
+font-size: 1.2rem;
+font-weight: 400;
+line-height: 1.5;
+color: #495057;
+background-color: #fff;
+background-clip: padding-box;
+border: 1px solid #ced4da;
+border-radius: .25rem;
+transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.login-box .modal-content{border-radius: 1.5rem; padding: 0px 20px 0px 20px}
+.login-box .btn {
+background: #36c1d8;
+color: #fff;
+// font-size: 24px;
+font-size: 1.5rem;
+border-radius: 30px;
+display: block;
+width: 100%;
+margin: 0 auto;
+border: none;
+height: 59px;
+}
+
+.login-wrap{
+  height: 91vh;
+  background:rgba(4, 52, 74, 0.68);
+  padding: 12% 0;
+}
+
+.ellipses {
+  white-space: pre-wrap; 
+  overflow: hidden;
+}
+
+.card.active .card-body{
+  background: #156e97;
+}

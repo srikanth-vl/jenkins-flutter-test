@@ -1,0 +1,198 @@
+{
+  "forms": {
+    "update": {
+      "initial_form_id": "eduapp_000",
+      "form": [
+        {
+          "formid": "eduapp_000",
+          "name": "Education App",
+          "title": "Event Details",
+          "subtitle": "No Bag Day",
+          "header": [
+            {
+              "key": "school_name",
+              "label": "School Name",
+              "icon": null,
+              "display": true
+            },
+            {
+              "key": "event_name",
+              "label": "Event Name",
+              "icon": null,
+              "display": true
+            }
+          ],
+          "fields": [
+            {
+              "key": "geotagpic_1",
+              "label": "Picture with Geotag",
+              "uitype": "geotagimage",
+              "datatype": "geotagimage",
+              "editable": false,
+              "display": false,
+              "max": 1,
+              "expandable": {
+                "type": null,
+                "icon_url": "http://192.168.0.31:8000/home/ubuntu/appImages/geotagged_picture.png",
+                "text": null,
+                "subform": null
+              }
+            },
+            {
+              "key": "geotagpic_2",
+              "label": "Picture with Geotag",
+              "uitype": "geotagimage",
+              "datatype": "geotagimage",
+              "editable": false,
+              "display": false,
+              "max": 1,
+              "expandable": {
+                "type": null,
+                "icon_url": "http://192.168.0.31:8000/home/ubuntu/appImages/geotagged_picture.png",
+                "text": null,
+                "subform": null
+              }
+            },
+            {
+              "key": "geotagpic_3",
+              "label": "Picture with Geotag",
+              "uitype": "geotagimage",
+              "datatype": "geotagimage",
+              "editable": false,
+              "display": false,
+              "max": 1,
+              "expandable": {
+                "type": null,
+                "icon_url": "http://192.168.0.31:8000/home/ubuntu/appImages/geotagged_picture.png",
+                "text": null,
+                "subform": null
+              }
+            }
+          ],
+          "buttons": [
+            {
+              "key": "cancel_btn",
+              "label": "Cancel",
+              "expandable": {
+                "type": 10,
+                "icon_url": null,
+                "subform": null,
+                "text": null
+              },
+              "api": null
+            },
+            {
+              "key": "preview_btn",
+              "label": "Preview",
+              "expandable": {
+                "type": 12,
+                "icon_url": null,
+                "subform": "eduapp_001",
+                "text": null
+              },
+              "api": null
+            }
+          ]
+        },
+        {
+          "formid": "eduapp_001",
+          "name": "Preview Form",
+          "title": "Event Details",
+          "subtitle": "No Bag Day",
+          "header": [
+            {
+              "key": "school_name",
+              "label": "School Name",
+              "icon": null,
+              "display": true
+            },
+            {
+              "key": "event_name",
+              "label": "Event Name",
+              "icon": null,
+              "display": true
+            },
+            {
+              "key": "entity_id",
+              "label": "Entity Id",
+              "icon": null,
+              "display": false
+            },
+            {
+              "key": "school_id",
+              "label": "School Id",
+              "icon": null,
+              "display": false
+            },
+            {
+              "key": "event_id",
+              "label": "Event Id",
+              "icon": null,
+              "display": false
+            },
+            {
+              "key": "ulb_id",
+              "label": "ULB Id",
+              "icon": null,
+              "display": false
+            },
+            {
+              "key": "distric_id",
+              "label": "District Id",
+              "icon": null,
+              "display": false
+            },
+            {
+              "key": "academic_year",
+              "label": "Academic Year",
+              "icon": null,
+              "display": false
+            },
+            {
+              "key": "geotagpic_1",
+              "label": "First Geotag Picture",
+              "icon": null,
+              "display": true
+            },
+            {
+              "key": "geotagpic_2",
+              "label": "Second Geotagged Picture",
+              "icon": null,
+              "display": true
+            },
+            {
+              "key": "geotagpic_3",
+              "label": "Third Geotagged Picture",
+              "icon": null,
+              "display": true
+            }
+          ],
+          "buttons": [
+            {
+              "key": "cancel_btn",
+              "label": "Cancel",
+              "expandable": {
+                "type": 10,
+                "icon_url": null,
+                "subform": null,
+                "text": null
+              },
+              "api": null
+            },
+            {
+              "key": "submit_btn",
+              "label": "Submit",
+              "expandable": {
+                "type": 13,
+                "icon_url": null,
+                "subform": null,
+                "text": null
+              },
+              "api": "DMA Submit Url"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

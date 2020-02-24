@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+<PreferenceCategory
+    android:title="@string/setting_cat_personal">
+
+    <ListPreference
+        android:key="pref_language"
+        android:title="@string/setting_lang_pref"
+        android:summary="@string/setting_lang_pref_summary"
+        android:defaultValue="@string/setting_lang_pref_def_values"/>
+
+</PreferenceCategory>
+    </PreferenceScreen>

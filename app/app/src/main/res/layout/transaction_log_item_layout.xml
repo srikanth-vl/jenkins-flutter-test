@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/shape_rectangular_color_primary_dark_transparent_edges"
+    android:elevation="@dimen/elevation"
+    android:orientation="vertical"
+    android:layout_marginBottom="@dimen/half_margin">
+
+    <TextView
+        android:id="@+id/transaction_log_project_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:textColor="@android:color/white"
+        android:textStyle="bold"
+        android:background="@android:color/transparent"
+        android:layout_marginLeft="@dimen/half_margin"
+        android:textAlignment="center"
+        android:layout_marginTop="@dimen/margin"/>
+
+    <TextView
+        android:id="@+id/transaction_log_project_submission_ts"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:textColor="@android:color/white"
+        android:background="@android:color/transparent"
+        android:layout_marginLeft="@dimen/half_margin"
+        android:textAlignment="center"
+        android:layout_marginTop="@dimen/half_margin"/>
+
+    <Button
+        android:id="@+id/transaction_log_show_text_values"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_35"
+        android:text="@string/show_text_data"
+        android:textColor="@android:color/white"
+        android:textSize="14sp"
+        android:elevation="@dimen/elevation"
+        android:background="@drawable/shape_rectangular_button"
+        android:layout_margin="@dimen/half_margin"/>
+
+    <RelativeLayout
+        android:id="@+id/transaction_log_media_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/transparent"
+        android:layout_marginBottom="@dimen/half_margin">
+
+        <TextView
+            android:id="@+id/transaction_log_media_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/transparent"
+            android:text="@string/media"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="@dimen/half_margin"
+            android:layout_marginRight="@dimen/half_margin" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/transparent"
+            android:layout_alignParentRight="true"
+            android:layout_toRightOf="@+id/transaction_log_media_textview"
+            android:layout_marginRight="@dimen/half_margin">
+
+            <LinearLayout
+                android:id="@+id/transaction_log_media_scrollview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent"
+                android:orientation="horizontal"/>
+
+        </ScrollView>
+
+    </RelativeLayout>
+
+</LinearLayout>

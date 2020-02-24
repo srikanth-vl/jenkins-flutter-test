@@ -1,0 +1,220 @@
+{
+  "currenttime": 1544092556137,
+  "user_id": "7702274847",
+  "projecttype": "891997e8-6938-3d75-9693-ac62959be1ed",
+  "content": {
+    "00000000-0000-0000-0000-000000000000": {
+      "UPDATE": {
+        "formversion": 1,
+        "is_active": 0,
+        "forminstanceid": "d0bb80aa-bb86-39b6-a351-13f02e72752b##891997e8-6938-3d75-9693-ac62959be1ed##00000000-0000-0000-0000-000000000000##1##1",
+        "mdinstanceid": "d0bb80aa-bb86-39b6-a351-13f02e72752b##891997e8-6938-3d75-9693-ac62959be1ed##00000000-0000-0000-0000-000000000000##1##1",
+        "forms": {
+          "initial_form_id": "eduapp_000",
+          "form": [{
+            "formid": "prrd_001",
+            "name": "PR RD Proposed Structure",
+            "title": "PR & RD",
+            "subtitle": "Proposed Structure",
+            "header": [{
+              "key": "structure_type",
+              "label": "Structure Type",
+              "icon": null,
+              "display": true,
+              "submittable": false
+            }],
+            "fields": [{
+              "key": "keyedittext",
+              "label": "SAMPLE EDIT TEXT",
+              "uitype": "edittext",
+              "datatype": "double",
+              "default": null,
+              "uom": "feet",
+              "editable": true,
+              "display": true,
+              "validations": {
+                "mandatory": true,
+                "expr": [],
+                "api": []
+              }
+            }, {
+              "key": "keycheckbox",
+              "label": "SAMPLE CHECKBOX",
+              "uitype": "checkbox",
+              "datatype": "string",
+              "editable": true,
+              "display": true,
+              "default": "-",
+              "uom": null,
+              "multiplevalues": [{
+                "value": "-"
+              }, {
+                "value": "PT"
+              }, {
+                "value": "LBS"
+              }, {
+                "value": "RFD"
+              }, {
+                "value": "GABION"
+              }, {
+                "value": "MINI PT"
+              }, {
+                "value": "FARMPOND"
+              }, {
+                "value": "CHECKWALL"
+              }, {
+                "value": "PT STORAGE"
+              }, {
+                "value": "PERCOLATION STORAGE"
+              }, {
+                "value": "CHECKDAM-STORAGE"
+              }, {
+                "value": "CHECKDAM-PERCOLATION"
+              }],
+              "validations": {
+                "mandatory": false,
+                "expr": [{
+                  "expr": "#structure_type != null",
+                  "error_msg": "Structure Type not selected. Please select a sstructure type."
+                }, {
+                  "expr": "!#structure_type.isEmpty() and !#structure_type.equals(''-'')",
+                  "error_msg": "Structure Type cannot be empty"
+                }, {
+                  "expr": "#structure_type.equalsIgnoreCase(''RFD'') or #structure_type.equalsIgnoreCase(''GABION'') or #structure_type.equalsIgnoreCase(''CHECKWALL'') or #structure_type.equalsIgnoreCase(''PERCOLATION STORAGE'') or #structure_type.equalsIgnoreCase(''CHECKDAM-STORAGE'')",
+                  "error_msg": "Invalid Structure Type( Please select either CheckWall, Gabion, RFD, Percolation Storage or Checkdam Storage"
+                }],
+                "api": []
+              }
+            }, {
+              "key": "keydropdown",
+              "label": "SAMPLE DROPDOWN",
+              "uitype": "dropdown",
+              "datatype": "string",
+              "editable": true,
+              "display": true,
+              "default": "-",
+              "uom": null,
+              "multiplevalues": [{
+                "value": "-"
+              }, {
+                "value": "PT"
+              }, {
+                "value": "LBS"
+              }, {
+                "value": "RFD"
+              }, {
+                "value": "GABION"
+              }, {
+                "value": "MINI PT"
+              }, {
+                "value": "FARMPOND"
+              }, {
+                "value": "CHECKWALL"
+              }, {
+                "value": "PT STORAGE"
+              }, {
+                "value": "PERCOLATION STORAGE"
+              }, {
+                "value": "CHECKDAM-STORAGE"
+              }, {
+                "value": "CHECKDAM-PERCOLATION"
+              }],
+              "validations": {
+                "mandatory": false,
+                "expr": [{
+                  "expr": "#structure_type != null",
+                  "error_msg": "Structure Type not selected. Please select a sstructure type."
+                }, {
+                  "expr": "!#structure_type.isEmpty() and !#structure_type.equals(''-'')",
+                  "error_msg": "Structure Type cannot be empty"
+                }, {
+                  "expr": "#structure_type.equalsIgnoreCase(''RFD'') or #structure_type.equalsIgnoreCase(''GABION'') or #structure_type.equalsIgnoreCase(''CHECKWALL'') or #structure_type.equalsIgnoreCase(''PERCOLATION STORAGE'') or #structure_type.equalsIgnoreCase(''CHECKDAM-STORAGE'')",
+                  "error_msg": "Invalid Structure Type( Please select either CheckWall, Gabion, RFD, Percolation Storage or Checkdam Storage"
+                }],
+                "api": []
+              }
+            }, {
+              "key": "keytextbox",
+              "label": "SAMPLE TEXT BOX",
+              "uitype": "textbox",
+              "max_chars": 400,
+              "datatype": "string",
+              "editable": true,
+              "display": true,
+              "default": null,
+              "uom": null,
+              "validations": {
+                "mandatory": false,
+                "expr": [{
+                  "expr": "#comment_box != null and !#comment_box.isEmpty()",
+                  "error_msg": "Comments should not be null or empty."
+                }, {
+                  "expr": "#comment_box.length() <= 400",
+                  "error_msg": "Word limit exceeded- Please enter text upto 400 words"
+                }],
+                "api": []
+              }
+            }, 
+            {
+              "key": "keyradiobutton",
+              "label": "SAMPLE RADIO BUTTON",
+              "uitype": "radio",
+              "datatype": "string",
+              "display": true,
+              "editable": true,
+              "validations": {
+                "mandatory": true,
+                "expr": [{
+                  "expr": "#structure_possible.equals(''Yes'') || #structure_possible.equals(''No'')",
+                  "error_msg": "Please select either Yes/No"
+                }],
+                "api": []
+              },
+              "multiplevalues": [{
+                "value": "Yes",
+                "expandable": {
+                  "type": 1,
+                  "icon_url": null,
+                  "subform": "prrd_002",
+                  "text": null
+                }
+              }, {
+                "value": "No",
+                "expandable": {
+                  "type": 1,
+                  "icon_url": null,
+                  "subform": "prrd_003",
+                  "text": null
+                }
+              }],
+              "default": "Yes",
+              "uom": null
+            }],
+            "buttons": [{
+              "key": "cancel_btn",
+              "label": "Cancel",
+              "expandable": {
+                "type": 10,
+                "icon_url": null,
+                "subform": null,
+                "text": null
+              },
+              "api": null
+            }, {
+              "key": "preview_btn",
+              "label": "Preview",
+              "expandable": {
+                "type": 12,
+                "icon_url": null,
+                "subform": "prrd_004",
+                "text": null
+              },
+              "api": null
+            }]
+          }]
+        }
+      }
+    }
+  },
+  "deptname": "d0bb80aa-bb86-39b6-a351-13f02e72752b"
+}

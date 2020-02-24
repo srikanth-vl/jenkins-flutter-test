@@ -1,0 +1,158 @@
+<resources>
+    <!--<string name="app_name">APWRD</string>-->
+    <!--<string name="app_name">No Bag Day</string>-->
+    <!--<string name="app_name">PR&amp;RD</string>-->
+<!--    <string name="app_name">APIIATP</string>-->
+    <!--<string name="app_name">APAIMS</string>-->
+    <!--<string name="app_name">INDIA WRIS</string>-->
+    <string name="app_name">Haryana Agriculture Information and Management System (HAIMS)</string>
+    <!--<string name="app_name">Attendance Monitoring</string>-->
+    <string name="sign_in">SIGN IN</string>
+    <string name="submit">SUBMIT</string>
+    <string name="login">LOGIN</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="click_here">Click here</string>
+    <string name="action_change_password">Change Password</string>
+    <string name="sign_out">Log Out</string>
+    <string name="refresh">Refresh</string>
+    <string name="preview">PREVIEW</string>
+    <string name="cancel">CANCEL</string>
+    <string name="no_camera">Device does not have a camera</string>
+    <string name="capture">Capture</string>
+    <string name="accept">ACCEPT</string>
+    <string name="help_description">Description :</string>
+    <string name="help_phone">Phone :</string>
+    <string name="help_email">Email :</string>
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="foundation_course">Foundation Course</string>
+    <string name="preview_not_available">Preview not available</string>
+    <string name="project_list_non_clickable_tag">NON_CLICKABLE</string>
+    <string name="sync">Sync Data</string>
+    <string name="close">CLOSE</string>
+    <string name="edu_dept">Department of Municipal Administration</string>
+    <string name="edu_state">Andhra Pradesh</string>
+    <string name="edu_login_details">HM/ULB Coordinator Login</string>
+    <string name="edu_form_separator">------------------- Upload Event Photos -------------------</string>
+    <string name="record">Record</string>
+    <string name="camera_error">Camera Error</string>
+    <string name="stop">Stop</string>
+    <string name="new_password">Enter New Password</string>
+    <string name="get_otp">Get OTP</string>
+    <string name="enter_username">Enter Username</string>
+    <string name="enter_otp">Enter OTP</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="resend_otp">Resend OTP</string>
+    <string name="filter_not_available">Filtering not available for this Application</string>
+    <string name="filter">Filter</string>
+    <string name="search">SEARCH</string>
+    <string name="SIM_SELECTION">Choose a Phone Number : </string>
+    <string name="EDIT">EDIT</string>
+    <string name="view_on_map">View On Map</string>
+    <string name="get_direction">Get Directions</string>
+    <string name="max_character">Maximum characters</string>
+
+    <string name="mapbox_access_token">pk.eyJ1IjoiYXJqdW5pc3NhciIsImEiOiJjanNjdWtldHYwMGg4NDNyeGdob2VvM3RpIn0.wMWK6vZQ3_1zdFi2uXMptg</string>
+    <string name="mapview">Map View</string>
+    <string name="request_permission">This sample needs camera permission.</string>
+    <string name="title_activity_project_grouping">ProjectGroupingActivity</string>
+    <string name="view_by">View By</string>
+
+    <string name="one_marker_only">Can only drop one marker!</string>
+    <string name="play_store_base_url">https://play.google.com/store/apps/details?id=</string>
+    <string name="play_store_endpoint_lang"><![CDATA[&hl=en]]></string>
+    <string name="play_store_user_agent">Mozilla/5.0 (Windows; U; WindowsNT 5.1; en-US; rv1.8.1.6) Gecko/20070725 Firefox/2.0.0.6</string>
+    <string name="play_store_referred_url">http://www.google.com</string>
+    <string name="play_store_current_version">Current Version</string>
+    <string name="update">Update</string>
+    <string name="new_update_is_available">New Update is available</string>
+    <string name="market_details_url">market://details?id=</string>
+    <string name="show_text_data">Show Last Entered Values</string>
+    <string name="media">Media</string>
+    <string name="text_submission_data">Submitted Values</string>
+    <string name="text_submission_title">Last Entered Value</string>
+    <string name="download_map">Download Map</string>
+    <string name="help">Help</string>
+    <string name="user_profile">User Profile</string>
+    <string name="language">Language</string>
+    <string name="settings">Settings</string>
+
+    <string name="setting_lang_pref">Language</string>
+    <string name="setting_lang_pref_summary">Choose your language</string>
+    <string-array name="setting_lang_pref_titles">
+        <item>English</item>
+        <item>हिंदी</item>
+    </string-array>
+    <string-array name="setting_lang_pref_values">
+        <item>en</item>
+        <item>hi</item>
+    </string-array>
+    <string name="setting_lang_pref_def_values">en</string>
+    <string name="setting_cat_personal">Personal</string>
+    <string name="setting_please_restart_your_application">Please restart your application</string>
+    <string name="ok">Ok</string>
+    <string name="unsynced_media">Unsynced Media</string>
+    <string name="unsynced_projects">Unsynced Projects</string>
+    <string name="UNSYNCED_RECORDS">Unsynced Records</string>
+
+
+<!--    Error Messages-->
+
+    <string name="SOMETHING_WENT_WRONG">Something went wrong!</string>
+    <string name="DATA_INITIALIZATION_FAILED">Data initialization failed!</string>
+    <string name="NO_APPLICATIONS_FOR_USER">No application data for this user!</string>
+    <string name="COULD_NOT_LOAD_FORM">Could not load form. Login again and try!</string>
+    <string name="DATABASE_ERROR">Cannot fetch information at the moment!</string>
+    <string name="NO_OFFLINE_USER_DATA">Cannot login without network for this user</string>
+    <string name="NETWORK_ERROR">Couldn\'t connect to the server!</string>
+    <string name="MISSING_CREDENTIALS">Username or Password cannot be empty!</string>
+    <string name="MISSING_PASSWORD">Please enter the password!</string>
+    <string name="MISSING_USERNAME">Please enter the username!</string>
+    <string name="INCORRECT_CREDENTIALS">Username or Password do not match!</string>
+    <string name="NO_OFFLINE_LOGOUT">Cannot logout without network connection!</string>
+    <string name="CANNOT_USE_WITHOUT_PERMISSION">Cannot use the application without granting permission</string>
+    <string name="NO_PROJECTS_TO_SUBMIT">No projects to submit!</string>
+    <string name="NO_IMAGES_TAKEN">No Images taken!</string>
+    <string name="NO_VIDEO_TAKEN">No Video taken!</string>
+    <string name="GEOTAG_WASNT_SET">Geotag not set!</string>
+    <string name="NO_MAP_DATA_AVAILABLE">Map data not available for this application!</string>
+    <string name="MAX_IMAGES_REACHED">Cannot take any more images for this form field!</string>
+    <string name="TAKE_THREE_IMAGES">Please take all three images before previewing!</string>
+    <string name="NO_CAMERA_SUPPORTED">Phone does not support camera feature!</string>
+    <string name="PROJECT_SUBMITTED_OFFLINE">Project submitted offline!</string>
+    <string name="PROJECT_SUBMITTED">Project submitted!</string>
+    <string name="INCONSISTENT_DATA">Something went wrong! Please logout and login again.</string>
+    <string name="APP_SESSION_EXPIRED">Cannot submit any more data in offline mode. Connect to network and try again!</string>
+    <string name="SUBMISSION_DATE_CROSSED">Data for this project cannot be updated any longer!</string>
+    <string name="SUBMISSION_UNAVAILABLE">Data for this project cannot be updated right now!</string>
+    <string name="PROJECT_ACCESS_INVOKED">This project is not available for you!</string>
+    <string name="CHECK_INTERNET_CONNECTION">Please check your internet connection!</string>
+    <string name="ERROR_BUT_SAVED_PROJECT_OFFLINE">Something went wrong, but project submitted offline!</string>
+    <string name="BACKGROUND_SYNC_ALREADY_IN_PROGRESS">Background sync is already in progress!</string>
+    <string name="SYNC_FAILED">Sync Failed!</string>
+    <string name="VALIDATION_INITIALIZATION_FAILED">Cannot find validating fields. Please refill the form fields!</string>
+    <string name="MANDATORY_FIELD_NOT_ENTERED">Please enter all mandatory fields!</string>
+    <string name="MAX_VIDEO_LENGTH_REACHED">Maximum recording length reached!!</string>
+    <string name="PASSWORDS_DONT_MATCH">The passwords do not match!</string>
+    <string name="PASSWORD_CHANGED_SUCCESSFULLY">Your password has been changed. Please login!</string>
+    <string name="GEOTAG_IMAGE_VALIDATION_FAILED">Not a valid image according to location!</string>
+    <string name="TRY_AGAIN_LATER">Initializing, try again later!</string>
+    <string name="NO_FILTERING_PARAMETERS">No filters selected!</string>
+    <string name="NO_FILTERING_RESULTS">No results for this filter</string>
+    <string name="DOWNLOAD_MAP">First download the map!</string>
+    <string name="NO_DATA_FOR_SUBMISSION">No data available for submission!</string>
+    <string name="gps_accuracy">Accuracy :</string>
+    <string name="FIELD_NOT_ENTERED">Please enter all fields!</string>
+    <string name="MANDATORY_FIELD"> is a mandatory field.</string>
+    <string name="NO_PROJECTS_AVAILABLE">No Projects Available</string>
+    <string name="NO_PROJECTS_FOUND">No results found. Please select appropriate filters.</string>
+    <string name="NO_DATA_AVAILABLE">No data available!</string>
+    <string name="SUBMISSION_ERROR">An error occured while submission, please try again</string>
+    <string name="NO_CURRENT_LOCATION">No current location found, please try again.</string>
+    <string name="VALIDATION_VALUES_NOT_FOUND">Values for validation not found.</string>
+    <string name="SELECT_VALID_LOCATION">Please select a valid location</string>
+</resources>

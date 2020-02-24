@@ -1,0 +1,356 @@
+{
+  "forms": {
+    "initial_form_id": "prrd_exist_000",
+    "form": [
+      {
+        "formid": "prrd_exist_000",
+        "name": "PR & RD Existing Structures",
+        "title": "PR & RD",
+        "subtitle": "Existing Structures",
+        "header": [
+          {
+            "key": "structure_type",
+            "label": "Structure Type",
+            "icon": null,
+            "display": true
+          },
+          {
+            "key": "district",
+            "label": "District",
+            "icon": null,
+            "display": true
+          },
+          {
+            "key": "mandal",
+            "label": "Mandal",
+            "icon": null,
+            "display": true
+          },
+          {
+            "key": "panchayat",
+            "label": "panchayat",
+            "icon": null,
+            "display": true
+          },
+          {
+            "key": "sub_basin",
+            "label": "Sub Basin",
+            "icon": null,
+            "display": true
+          },
+          {
+            "key": "micro_basin",
+            "label": "Micro Basin",
+            "icon": null,
+            "display": true
+          },
+          {
+            "key": "watershed",
+            "label": "Watershed",
+            "icon": null,
+            "display": true
+          }
+        ],
+        "fields": [
+          {
+            "key": "gps_location",
+            "label": "Map",
+            "uitype": "geotag",
+            "datatype": "geotag",
+            "default": "76.7,12.6#84.8,19.2",
+            "editable": false,
+            "display": false,
+            "uom": null,
+            "expandable": {
+              "type": 1,
+              "icon_url": null,
+              "subform": null,
+              "text": null
+            },
+            "validation": {
+              "mandatory": false,
+              "expr": [],
+              "api": []
+            }
+          }
+        ],
+        "buttons": [
+          {
+            "key": "cancel_btn",
+            "label": "Cancel",
+            "expandable": {
+              "type": 10,
+              "icon_url": null,
+              "subform": null,
+              "text": null
+            }
+          },
+          {
+            "key": "edit_btn",
+            "label": "Edit",
+            "expandable": {
+              "type": 11,
+              "icon_url": null,
+              "subform": "prrd_exist_001",
+              "text": null
+            }
+          }
+        ]
+      },
+      {
+        "formid": "prrd_exist_001",
+        "name": "PR & RD Existing Structures",
+        "title": "PR & RD",
+        "subtitle": "Existing Structures",
+        "header": [
+          {
+            "key": "structure_type",
+            "label": "Structure Type",
+            "icon": null,
+            "display": false
+          },
+          {
+            "key": "district",
+            "label": "District",
+            "icon": null,
+            "display": false
+          },
+          {
+            "key": "mandal",
+            "label": "Mandal",
+            "icon": null,
+            "display": false
+          },
+          {
+            "key": "panchayat",
+            "label": "panchayat",
+            "icon": null,
+            "display": false
+          },
+          {
+            "key": "gps_location",
+            "label": "GPS location",
+            "icon": null,
+            "display": false
+          },
+          {
+            "key": "sub_basin",
+            "label": "Sub Basin",
+            "icon": null,
+            "display": false
+          },
+          {
+            "key": "micro_basin",
+            "label": "Micro Basin",
+            "icon": null,
+            "display": false
+          },
+          {
+            "key": "watershed",
+            "label": "Watershed",
+            "icon": null,
+            "display": false
+          }
+        ],
+        "fields": [
+          {
+            "key": "prrd_restoration",
+            "label": "Restoration Needed",
+            "uitype": "radio",
+            "datatype": "string",
+            "uom": null,
+            "editable": false,
+            "display": false,
+            "multiplevalues": [
+              {
+                "value": "Yes",
+                "expandable": {
+                  "type": 1,
+                  "icon_url": null,
+                  "subform": "prrd_exist_002",
+                  "text": null
+                }
+              },
+              {
+                "value": "No",
+                "expandable": {
+                  "type": 1,
+                  "icon_url": null,
+                  "subform": "prrd_exist_003",
+                  "text": null
+                }
+              }
+            ],
+            "default": "Yes",
+            "validation": {
+              "mandatory": true,
+              "expr": [
+                {
+                  "expr": "#prrd_restoration.equals(''Yes'') || #prrd_restoration.equals(''No'')",
+                  "error_msg": "Please select either Yes/No ( other values are unacceptable)"
+                }
+              ],
+              "api": []
+            }
+          }
+        ],
+        "buttons": [
+          {
+            "key": "cancel_btn",
+            "label": "Cancel",
+            "expandable": {
+              "type": 10,
+              "icon_url": null,
+              "subform": null,
+              "text": null
+            },
+            "api": null
+          },
+          {
+            "key": "preview_btn",
+            "label": "Preview",
+            "expandable": {
+              "type": 12,
+              "icon_url": null,
+              "subform": "prrd_exist_004",
+              "text": null
+            },
+            "api": null
+          }
+        ]
+      },
+      {
+        "formid": "prrd_exist_002",
+        "name": "PR & RD Existing Structures",
+        "title": "PR & RD",
+        "subtitle": "Existing Structures",
+        "header": [],
+        "fields": [
+          {
+            "key": "pr_rest_reason",
+            "label": "Reason for Restoration",
+            "uitype": "textbox",
+            "datatype": "string",
+            "editable": false,
+            "display": false,
+            "characters": 400,
+            "default": null,
+            "uom": null,
+            "validation": {
+              "mandatory": false,
+              "expr": [
+                {
+                  "expr": "#pr_rest_reason.length() <= 400",
+                  "error_msg": "Word limit exceeded- Please enter text upto 400 words"
+                }
+              ],
+              "api": []
+            }
+          },
+          {
+            "key": "geotagpic",
+            "label": "Picture with Geotag",
+            "uitype": "geotagimage",
+            "datatype": "geotagimage",
+            "editable": false,
+            "display": false,
+            "max": 3,
+            "validation": {
+              "mandatory": false,
+              "expr": [
+                {
+                  "expr": "#geotagpic.size() <= 3",
+                  "error_msg": "Maximum 3 geotagged- images are allowed"
+                }
+              ],
+              "api": []
+            },
+            "expandable": {
+              "type": null,
+              "icon_url": "http://192.168.0.27:8000/home/ubuntu/appImages/geotagged_picture.png",
+              "text": null,
+              "subform": null
+            },
+            "uom": null
+          }
+        ],
+        "buttons": []
+      },
+      {
+        "formid": "prrd_exist_003",
+        "name": "PR & RD Existing Structures",
+        "title": "PR & RD",
+        "subtitle": "Existing Structures",
+        "fields": [
+          {
+            "key": "geotagpic",
+            "label": "Picture with Geotag",
+            "uitype": "geotagimage",
+            "datatype": "geotagimage",
+            "editable": false,
+            "max": 3,
+            "display": false,
+            "validation": {
+              "mandatory": true,
+              "expr": [
+                {
+                  "expr": "#geotagpic.size() <= 3",
+                  "error_msg": "Maximum 3 geotagged- images are allowed"
+                }
+              ],
+              "api": []
+            },
+            "expandable": {
+              "type": null,
+              "icon_url": "http://192.168.0.27:8000/home/ubuntu/appImages/geotagged_picture.png",
+              "text": null,
+              "subform": null
+            },
+            "uom": null
+          }
+        ],
+        "buttons": []
+      },
+      {
+        "formid": "prrd_exist_004",
+        "name": "PR & RD Existing Structures",
+        "title": "PR & RD",
+        "subtitle": "Existing Structures",
+        "header": [
+          {
+            "key": "structure_type",
+            "label": "Structure Type",
+            "icon": null,
+            "display": true
+          },
+          {
+            "key": "geotagpic",
+            "label": "Picture with Geotag",
+            "icon": null,
+            "display": true
+          },
+          {
+            "key": "gps_location",
+            "label": "GPS location",
+            "icon": null,
+            "display": true
+          }
+        ],
+        "fields": [],
+        "buttons": [
+          {
+            "key": "Submit_btn",
+            "label": "Submit",
+            "expandable": {
+              "type": 13,
+              "icon_url": null,
+              "subform": null,
+              "text": null
+            },
+            "api": "/api/uniapp/submit"
+          }
+        ]
+      }
+    ]
+  }
+}

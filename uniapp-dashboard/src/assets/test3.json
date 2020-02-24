@@ -1,0 +1,104 @@
+[
+    {
+        "super_app_name": "s_app_1",
+        "super_app_id": "1111-1111",
+        "image_url": "url",
+        "installations": 100,
+        "registered_users": 40,
+        "users_logged_in": 13,
+        "users_never_logged_in": 27,
+        "apps": [
+          {
+            "app_name": "app_1",
+            "app_id": "111-111",
+            "parent_id": "1111-1111",
+            "total_projects": 200,
+            "assigned_projects": 100,
+            "total_submissions": 40
+          },
+          {
+            "app_name": "app_2",
+            "app_id": "111-112",
+            "parent_id": "1111-1111",
+            "total_projects": 250,
+            "assigned_projects": 190,
+            "total_submissions": 90
+          },
+          {
+            "app_name": "app_3",
+            "app_id": "111-113",
+            "parent_id": "1111-1111",
+            "total_projects": 0,
+            "assigned_projects": 0,
+            "total_submissions": 0
+          },
+          {
+            "app_name": "subapp_1",
+            "app_id": "113-111",
+            "parent_id": "111-113",
+            "total_projects": 220,
+            "assigned_projects": 110,
+            "total_submissions": 140
+          },
+          {
+            "app_name": "subapp_2",
+            "app_id": "113-112",
+            "parent_id": "111-113",
+            "total_projects": 120,
+            "assigned_projects": 101,
+            "total_submissions": 49
+          }
+        ]
+    },
+    { 
+        "super_app_name": "s_app_2",
+        "super_app_id": "1111-1112",
+        "image_url": "url",
+        "installations": 200,
+        "registered_users": 50,
+        "users_logged_in": 21,
+        "users_never_logged_in": 29,
+        "apps": [
+          {
+            "app_name": "app_21",
+            "app_id": "222-111",
+            "parent_id": "1111-1112",
+            "no_of_projects": 201,
+            "projects_assigned": 109,
+            "project_submissions": 41
+          },
+          {
+            "app_name": "app_22",
+            "app_id": "222-112",
+            "parent_id": "1111-1112",
+            "total_projects": 251,
+            "assigned_projects": 191,
+            "total_submissions": 91
+          },
+          {
+            "app_name": "app_23",
+            "app_id": "222-113",
+            "parent_id": "1111-1112",
+            "total_projects": 0,
+            "assigned_projects": 0,
+            "total_submissions": 0
+          },
+          {
+            "app_name": "sub_app_21",
+            "app_id": "23-111",
+            "parent_id": "222-113",
+            "total_projects": 221,
+            "assigned_projects": 111,
+            "total_submissions": 141
+          },
+          {
+            "app_name": "sub_app_21",
+            "app_id": "23-112",
+            "parent_id": "222-113",
+            "total_projects": 121,
+            "assigned_projects": 108,
+            "total_submissions": 51
+          }
+        ]
+    }      
+]

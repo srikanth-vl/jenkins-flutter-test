@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    tools:context="com.vassar.unifiedapp.newcamera.CameraActivity">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/camera_preview">
+    </FrameLayout>
+
+    <HorizontalScrollView
+        android:id="@+id/horizontalScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:fillViewport="true"
+        android:scrollbars="horizontal"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="70dp"
+        android:visibility="visible">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:id="@+id/relative">
+
+        </LinearLayout>
+
+    </HorizontalScrollView>
+
+    <TextView
+        android:layout_width="@dimen/dimen_130"
+        android:layout_height="@dimen/dimen_20"
+        android:layout_alignParentTop="true"
+        android:background="@color/white"
+        android:text="accuracy"
+        android:layout_alignParentRight="true"
+        android:gravity="left"
+        android:textColor="@color/colorPrimaryDark"
+        android:id="@+id/accuracy"
+        />
+
+    <TextView
+        android:layout_width="@dimen/dimen_130"
+        android:layout_height="@dimen/dimen_20"
+        android:background="@color/white"
+        android:text="bearing"
+        android:layout_below="@+id/accuracy"
+        android:layout_alignParentRight="true"
+        android:gravity="left"
+        android:textColor="@color/colorPrimaryDark"
+        android:id="@+id/bearing"
+        />
+
+    <Button
+        android:layout_width="@dimen/dimen_60dp"
+        android:layout_height="@dimen/dimen_60dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/round_button"
+        android:id="@+id/capture"
+        />
+
+    <Button
+        android:id="@+id/submit"
+        android:text=">"
+        android:textColor="@android:color/black"
+        android:textSize="28sp"
+        android:textAlignment="center"
+        android:layout_width="@dimen/icon_dimension"
+        android:layout_height="@dimen/icon_dimension"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="10dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="@dimen/double_margin"
+        android:layout_centerVertical="true"
+        android:background="@drawable/shape_circular_white_button"/>
+
+    <ImageButton
+        android:id="@+id/lower_camera_gallery"
+        android:layout_width="@dimen/icon_dimension"
+        android:layout_height="@dimen/icon_dimension"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="10dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="@dimen/double_margin"
+        android:visibility="gone"
+        android:layout_centerVertical="true"
+        android:src="@drawable/gallery_icon"/>
+
+</RelativeLayout>

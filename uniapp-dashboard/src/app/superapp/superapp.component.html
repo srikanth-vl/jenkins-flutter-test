@@ -1,0 +1,48 @@
+<div class="card border-primary w-100">
+  <div class="card-header card-header-bg1">
+    <div class="d-flex align-items-center justify-content-between">
+      <span class="sup_app_logo"><img src="{{superApp.image_url}}"></span>
+      <div class="text-center">
+        <h2 (click)="displaySuperapp()" class="text-white m-0 clickable_cell ellipses">{{superApp.super_app_name}}</h2>
+      </div>
+      <div class="text-center">
+        <small class="text-white m-0">APPS</small>
+        <h3 class="count-number">
+          <div *ngIf="superApp.app_analytics" (click)="scroll(target)" class="text-white clickable_cell">
+            {{ superApp.apps.length }}
+          </div>
+        </h3>
+      </div>
+    </div>
+  </div>
+  <div class="card-body p-0 mt-3">
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item d-flex align-items-center justify-content-between">
+        <span>No of Estimated Installations </span>
+        <span>{{superApp.installations}}</span>
+      </li>
+      <li class="list-group-item d-flex align-items-center justify-content-between bg-light">
+        <span>No of Registered users</span>
+        <span>{{superApp.registered_users}}</span>
+      </li>
+      <li class="list-group-item d-flex align-items-center justify-content-between ">
+        <span>No of users logged in </span>
+        <span>{{superApp.users_logged_in}}</span>
+      </li>
+      <li class="list-group-item d-flex align-items-center justify-content-between bg-light">
+        <span>No of users never logged in </span>
+        <span>{{superApp.users_never_logged_in}}</span>
+      </li>
+
+    </ul>
+  </div>
+
+  <div class="card-body">
+    <app-chart [superApp]="superApp">
+    </app-chart>
+    <div class="yScrollBar" #target>
+      <app-subapp *ngFor="let app of superApp.apps" [child]="app">
+      </app-subapp>
+    </div>
+  </div>
+</div>

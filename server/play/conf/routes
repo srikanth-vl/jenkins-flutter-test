@@ -1,0 +1,139 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+
+GET     /                          @controllers.com.vassarlabs.play.controllers.TestCtrl.index(any = "none")
+
+OPTIONS         /*all              @controllers.com.vassarlabs.play.controllers.TestCtrl.preflight(all)
+
+
+#GET /api/dashboard/staticconfigjson 			 @controllers.com.vassarlabs.play.controllers.UniAppController.getStaticConfigurationJSON()
+
+# app meta data json
+POST /api/uniapp/appmetaconfigjson 			 @controllers.com.vassarlabs.play.controllers.UniAppController.getAppMetaConfigJSON()
+
+# validate user
+POST /api/uniapp/authenticate 			 @controllers.com.vassarlabs.play.controllers.UniAppController.authenticateUser()
+
+# root config data json
+POST /api/uniapp/rootconfigdata 			 @controllers.com.vassarlabs.play.controllers.UniAppController.getRootConfigJSON()
+
+# logout route
+POST /api/uniapp/logout 		            	 @controllers.com.vassarlabs.play.controllers.UniAppController.logout()
+
+# App Form generation
+POST /api/uniapp/projecttype                    @controllers.com.vassarlabs.play.controllers.UniAppController.getProjectTypeJSON()
+
+#Proj List with server TS
+POST /api/uniapp/projectlistwithts                    @controllers.com.vassarlabs.play.controllers.UniAppController.getProjectIdToLastSyncTs()
+
+# Project List generation
+POST /api/uniapp/projectlist                    @controllers.com.vassarlabs.play.controllers.UniAppController.getProjectListJSON()
+
+# Form Data submission route
+POST /api/uniapp/submit                    @controllers.com.vassarlabs.play.controllers.DataReceiverServiceController.receiveAndSubmitData()
+
+#Image Data submission route
+POST /api/uniapp/submitimage                    @controllers.com.vassarlabs.play.controllers.MediaReceiverServiceController.receiveAndSubmitData()
+
+#Image Download
+POST /api/uniapp/downloadmedia                    @controllers.com.vassarlabs.play.controllers.MediaReceiverServiceController.downloadMedia()
+
+#Download Form Submit Data in Csv
+POST /api/uniapp/downloadsubmitdata               @controllers.com.vassarlabs.play.controllers.DashboardController.getFormSubmittedDataList()
+
+#SuperApp Insert from Json
+POST /api/uniapp/superappinsert                @controllers.com.vassarlabs.play.controllers.UniAppController.insertSuperAppFromJson()
+
+#AppData Insert from Json
+POST /api/uniapp/appsinsert                @controllers.com.vassarlabs.play.controllers.UniAppController.insertAppMetaDataJson()
+
+#FieldMetaData Insert from Json
+POST /api/uniapp/fieldinsert				@controllers.com.vassarlabs.play.controllers.UniAppController.insertFieldMetaDataJson()
+
+#App Form Insert from Json
+POST /api/uniapp/forminsert                 @controllers.com.vassarlabs.play.controllers.UniAppController.insertFormJson()
+
+#Transaction log
+POST /api/uniapp/transactionlog				@controllers.com.vassarlabs.play.controllers.DashboardController.getTransactionLog()
+
+#Latest Projectdata Api
+POST /api/uniapp/latestprojdata            @controllers.com.vassarlabs.play.controllers.UniAppController.fetchLatestDataOfProjectWithUsers()
+
+#Generate OTP for password reset
+POST /api/uniapp/generatepasswordresetotp				@controllers.com.vassarlabs.play.controllers.CommonController.generatePasswordResetOtp()
+
+#reset password 
+POST /api/uniapp/resetpassword			@controllers.com.vassarlabs.play.controllers.CommonController.resetPassword()
+
+#external API for text data
+POST /api/uniapp/processtextdata			@controllers.com.vassarlabs.play.controllers.RESTServiceRecieverController.processTextData()
+
+#external API for media data
+POST /api/uniapp/processmediadata			@controllers.com.vassarlabs.play.controllers.RESTServiceRecieverController.processMediaData()
+
+POST /api/uniapp/imagedata                  @controllers.com.vassarlabs.play.controllers.DashboardController.getImageSubmittedAndReceivedData()
+ 
+POST /api/uniapp/projectdetail              @controllers.com.vassarlabs.play.controllers.DashboardController.getFormSubmittedData()
+
+# Get Json of Super app App Hierarchy for dashboard
+POST /api/uniapp/dashboard/displayroot             @controllers.com.vassarlabs.play.controllers.DashboardController.getRootHierarchyJson()
+
+# Authenticate Dashboard User
+POST /api/uniapp/dashbaord/authenticate            @controllers.com.vassarlabs.play.controllers.DashboardController.authenticateUser()
+
+# Token Expiry for Dashboard User
+POST /api/uniapp/dashboard/tokenexpiry         @controllers.com.vassarlabs.play.controllers.DashboardController.tokenExpiry()
+
+# Computed Json for Business Analytics
+POST /api/uniapp/dashboard/businessdata         @controllers.com.vassarlabs.play.controllers.DashboardController.getComputedJson()
+
+# Upload Master data
+POST /api/uniapp/userdata          @controllers.com.vassarlabs.play.controllers.UniappDataUpdationController.uploadUserMetaData()
+
+# Upload Master data
+POST /api/uniapp/masterdata          @controllers.com.vassarlabs.play.controllers.UniappDataUpdationController.uploadMasterData()
+
+# Upload user project mapping data
+POST /api/uniapp/usermapping           @controllers.com.vassarlabs.play.controllers.UniappDataUpdationController.uploadUserProjectMappingData()
+
+# Delete User metadata data
+DELETE /api/uniapp/userdata          @controllers.com.vassarlabs.play.controllers.UniappDataUpdationController.deleteUserMetaData()
+
+# Delete Master data
+DELETE /api/uniapp/masterdata          @controllers.com.vassarlabs.play.controllers.UniappDataUpdationController.deleteProjects()
+
+# Delete user project mapping data
+DELETE /api/uniapp/usermapping           @controllers.com.vassarlabs.play.controllers.UniappDataUpdationController.deleteUserProjectMappingData()
+
+# Get transaction log for key
+POST /api/uniapp/transactionlogforkey              @controllers.com.vassarlabs.play.controllers.UniAppController.getTransactionLogForKey()
+
+# Get project submission analytics data log for key
+POST /api/uniapp/projectsubmissionanalytics              @controllers.com.vassarlabs.play.controllers.DashboardController.getProjectSubmissionAnaltyicsData()
+
+# Get projectSubmission data
+POST /api/uniapp/projectsubmissiondata             @controllers.com.vassarlabs.play.controllers.DashboardController.getFormSubmittedDataForProjectIds()
+
+# root config data json
+POST /api/uniapp/localizationconfigdata 			 @controllers.com.vassarlabs.play.controllers.UniAppController.getLocalizationConfigJSON()
+
+# root config data json
+POST /api/uniapp/mapconfigdata 			 @controllers.com.vassarlabs.play.controllers.UniAppController.getMapConfigJSON()
+
+
+# root config data json
+POST /api/uniapp/createmapbbox			 @controllers.com.vassarlabs.play.controllers.UniAppController.downloadMapFiles()
+
+
+POST /api/uniapp/insertlocalizationconfig			 @controllers.com.vassarlabs.play.controllers.UniAppController.insertLocalizationConfigJSON()
+
+
+POST /api/uniapp/entitymetadataconfig			 @controllers.com.vassarlabs.play.controllers.UniAppController.getEntityMetaConfig()
+
+POST /api/uniapp/entitymetadataconfiginsert		 @controllers.com.vassarlabs.play.controllers.UniAppController.insertEntityMetaConfigJSON()
+
+#reset password 
+POST /api/uniapp/resetpasswordRequest		@controllers.com.vassarlabs.play.controllers.CommonController.resetPasswordFromBackend()
+

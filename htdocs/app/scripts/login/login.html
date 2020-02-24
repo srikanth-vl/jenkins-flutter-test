@@ -1,0 +1,68 @@
+<div class="login-page">
+
+    <div class="login-top-bar">
+        <div class="container-fluid">
+            <div class="login-page-logo">
+                <img src="images/ap-logo.png" alt="Uniapp"> Uniapp
+            </div>
+        </div>
+    </div>
+
+    <!-- Page Content -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 text-center">
+                <div class="login-form-container">
+                    <div class="login-form text-left">
+                    <div class="load-body" ng-hide="!vm.loginThrobber">
+                      <svg class="load-spinner" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
+                        <circle class="load-path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle>
+                      </svg>
+                    </div>
+                      <br>
+                      <br>
+                      <br>
+                        <div class="login-title">
+                            <h4>
+                                Login
+                            </h4>
+                        </div>
+                        <form name="loginForm" ng-submit="vm.login(vm.credentials)" novalidate>
+                            <div class="form-group" ng-class="{'form-error': vm.error}">
+                                <span class="input-group-addon">
+                                    <!-- <img src="images/user.svg" alt="user"> -->
+                                    <i class="fas fa-user"></i>
+                                    <span>User</span>
+                                </span>
+                                <input id="email" type="text" class="form-control" ng-model="vm.credentials.username" name="email" placeholder="Email/Phone No." ng-required="true">
+                            </div>
+                            <div class="form-group" ng-class="{'form-error': vm.error}">
+                                <span class="input-group-addon">
+                                    <!-- <img src="images/lock.svg" alt="Password"> -->
+                                    <i class="fas fa-key"></i>
+                                    <span>Password</span>
+                                </span>
+                                <input id="password" type="password" class="form-control" name="password" placeholder="Password" ng-model="vm.credentials.password" restrict-Special-Characters-Directive ng-required="true">
+                            </div>
+                            <button class="btn btn-primary" type="submit" ng-disabled="loginForm.$invalid">Sign In</button>
+                            <!--<button class="btn btn-clear btn-forgot-password pointer">Forgot your password?</button>-->
+                            <p ng-show="vm.error" class="alert alert-danger">The password or email you entered is incorrect!</p>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- /.row -->
+
+    </div>
+    <!-- /.container -->
+</div>
+<footer class="login-footer">
+    <div class="container-fluid">
+        <div class="row">
+            <!-- <div class="col-sm-6 text-left"><p>©2017, Vassarlabs. All Rights Reserved.</p></div> -->
+            <!-- <div class="col-sm-6 text-right"> powered by <a href="http://www.vassarlabs.com/" target="_blank"><img src="images/vassarlabs-logo.png" alt=""></a> </div> -->
+        </div>
+    </div>
+</footer>

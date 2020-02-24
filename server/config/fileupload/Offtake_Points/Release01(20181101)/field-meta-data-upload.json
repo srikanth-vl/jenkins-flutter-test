@@ -1,0 +1,219 @@
+{
+  "superAppId": "a7cf09ac-43c1-3ba1-aa2d-6a68f786cc44",
+  "appId": "26967d78-8532-37f7-9c23-513997d737d7",
+  "updateMdVersion": false,
+  "formType": "update",
+  "formJsonPath": "/home/nidhi/test_launch/uniapp_launch/reservoir/config/form-json-upload.json",
+  "columnConfig": {
+    "projectId": "proj_id",
+    "key": "key",
+    "attributes": "external_key",
+    "keyType": "type",
+    "defaultKeyType": "",
+    "labelName": "display_name_in_app",
+    "dataType": "datatype",
+    "defaultValue": "default_value_in_case_null",
+    "uom": "unit_of_measure",
+    "isMandatory": "mandatory",
+    "displayNames": "p_m_display_format_expression",
+    "validations": {
+      "expr": [
+        {
+          "expr": "field_validation_expression",
+          "error_msg": "validation_error_message"
+        },
+        {
+          "expr": "field_validation_expression_2",
+          "error_msg": "validation_error_message_2"
+        }
+      ],
+      "api": []
+    }
+  },
+  "requiredKeys": [
+     {
+      "key": "ext_proj_id",
+      "keyType": "1",
+      "labelName": "Reservoir Name",
+      "dataType": "string",
+      "defaultValue": "",
+      "attributes": "",
+      "uom": "",
+      "isMandatory": "true",
+      "displayNames": "",
+      "validations": {
+        "expr": [
+          {
+            "expr": "",
+            "error_msg": ""
+          },
+          {
+            "expr": "",
+            "error_msg": ""
+          }
+        ],
+        "api": []
+      }
+    },
+    {
+      "key": "realtime$date",
+      "keyType": "2",
+      "labelName": "Date for the data",
+      "dataType": "date",
+      "defaultValue": "",
+      "attributes": "",
+      "uom": "",
+      "isMandatory": "false",
+      "displayNames": "",
+      "validations": {
+        "expr": [
+          {
+            "expr": "",
+            "error_msg": ""
+          },
+          {
+            "expr": "",
+            "error_msg": ""
+          }
+        ],
+        "api": []
+      }
+    },
+    {
+      "key": "realtime$timestamp",
+      "keyType": "2",
+      "labelName": "Time",
+      "dataType": "timestamp",
+      "defaultValue": "",
+      "uom": "",
+      "attributes": "",
+      "isMandatory": "false",
+      "displayNames": "",
+      "validations": {
+        "expr": [
+          {
+            "expr": "",
+            "error_msg": ""
+          },
+          {
+            "expr": "",
+            "error_msg": ""
+          }
+        ],
+        "api": []
+      }
+    },
+    {
+      "key": "dailyavgdata$date",
+      "keyType": "2",
+      "labelName": "Date for the data",
+      "dataType": "data",
+      "defaultValue": "",
+      "attributes": "",
+      "uom": "",
+      "isMandatory": "false",
+      "displayNames": "",
+      "validations": {
+        "expr": [
+          {
+            "expr": "",
+            "error_msg": ""
+          },
+          {
+            "expr": "",
+            "error_msg": ""
+          }
+        ],
+        "api": []
+      }
+    },
+     {
+      "key": "formtype_dailyavgdata",
+      "keyType": "2",
+      "labelName": "",
+      "dataType": "string",
+      "defaultValue": "",
+      "attributes": "",
+      "uom": "",
+      "isMandatory": "false",
+      "displayNames": "",
+      "validations": {
+        "expr": [
+          {
+            "expr": "",
+            "error_msg": ""
+          },
+          {
+            "expr": "",
+            "error_msg": ""
+          }
+        ],
+        "api": []
+      }
+    },
+     {
+      "key": "formtype_realtime",
+      "keyType": "2",
+      "labelName": "",
+      "dataType": "string",
+      "defaultValue": "",
+      "attributes": "",
+      "uom": "",
+      "isMandatory": "false",
+      "displayNames": "",
+      "validations": {
+        "expr": [
+          {
+            "expr": "",
+            "error_msg": ""
+          },
+          {
+            "expr": "",
+            "error_msg": ""
+          }
+        ],
+        "api": []
+      }
+    },
+    {
+      "key": "dailyavgdata$average_level",
+      "keyType": "2",
+      "labelName": "Average Level",
+      "dataType": "double",
+      "defaultValue": "",
+      "attributes": "",
+      "uom": "",
+      "isMandatory": "false",
+      "displayNames": "'P :' +  #date$$time$$dailyavgdata$average_level+ ',M :' + #date$$time$$frl",
+      "validations": {
+        "expr": [
+          {
+            "expr": "#dailyavgdata$average_level <= #frl",
+            "error_msg": "Average Level should be less than the frl of the reservoir"
+          }
+        ],
+        "api": []
+      }
+    },
+    {
+      "key": "dailyavgdata$average_storage",
+      "keyType": "2",
+      "labelName": "Average Storage",
+      "dataType": "double",
+      "attributes": "",
+      "defaultValue": "",
+      "uom": "",
+      "isMandatory": "false",
+      "displayNames": "'P :' +  #date$$time$$dailyavgdata$average_storage + ',M :' + #date$$time$$capacity",
+      "validations": {
+        "expr": [
+          {
+            "expr": "#dailyavgdata$average_storage <= #capacity",
+            "error_msg": "Average storage should be less than the capacity of the reservoir"
+          }
+        ],
+        "api": []
+      }
+    }
+  ]
+}

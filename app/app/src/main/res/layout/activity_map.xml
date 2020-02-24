@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.MapActivity">
+
+    <ProgressBar
+        android:id="@+id/map_activity_progress_bar"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="invisible"/>
+
+    <Button
+        android:id="@+id/map_activity_button"
+        style="@style/Button"
+        android:elevation="@dimen/elevation"
+        android:layout_alignParentBottom="true" />
+
+    <org.osmdroid.views.MapView
+        android:id="@+id/mapView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_above="@id/map_activity_button"/>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/map_activity_fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:src="@drawable/legend_icon"
+        android:layout_margin="16dp"
+        android:layout_above="@+id/map_activity_button"
+        android:background="@color/white"
+        android:visibility="visible"/>
+
+    <ScrollView
+        android:id="@+id/legend_scroll_view"
+        android:layout_width="wrap_content"
+        android:layout_gravity="end|top"
+        android:background="@drawable/shape_rectangular_color_primary_dark_transparent_edges"
+        android:layout_height="200dp"
+        android:elevation="@dimen/dimen_2dp"
+        android:layout_alignRight="@id/map_activity_fab"
+        android:layout_above="@id/map_activity_fab"
+        android:alpha="0.75">
+
+        <LinearLayout
+            android:id="@+id/legend_scroll_view_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:paddingBottom="@dimen/half_margin" />
+
+    </ScrollView>
+
+</RelativeLayout>

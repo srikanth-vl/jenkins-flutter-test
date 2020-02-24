@@ -1,0 +1,567 @@
+{
+  "forms": {
+    "update": {
+      "initial_form_id": "irr_000",
+      "form": [
+        {
+          "formid": "irr_000",
+          "name": "Irrigation",
+          "title": "Water Recources Department",
+          "subtitle": "Irrigation",
+          "header": [
+            {
+              "key": "project",
+              "label": "Project"
+            },
+            {
+              "key": "package",
+              "label": "Package"
+            },
+            {
+              "key": "expected_completion_date",
+              "label": "Expected Completion Date"
+            }
+          ],
+          "fields": [
+            {
+              "label": "Select Date",
+              "key": "irr_sd",
+              "uitype": "date",
+              "datatype": "date",
+              "selectablewindow": {
+                "past": "5",
+                "future": "0",
+                "select": "-1"
+              },
+              "validations": {
+                "mandatory": false,
+                "expr": [
+                  {
+                    "expr": "#irr_sd > #current.minusDays(5)",
+                    "erro_msg": "Only previous five days date expected"
+                  },
+                  {
+                    "expr": "#irr_sd < #current.plusDays(1)",
+                    "error_msg": "Future date selected"
+                  }
+                ],
+                "api": ""
+              },
+              "uom": "",
+              "display": [
+                "P"
+              ]
+            },
+            {
+              "label": "Earth Work",
+              "key": "irr_ew",
+              "uitype": "edittext",
+              "datatype": "double",
+              "default": "",
+              "validations": {
+                "mandatory": false,
+                "min": "0.0",
+                "max": "",
+                "expr": [
+                  {
+                    "expr": "#irr_ew < #irr_ew_m",
+                    "error_msg": "Invalid Earth work : Should be less than target"
+                  },
+                  {
+                    "expr": "#irr_ew > 0",
+                    "error_msg": "Invalid Earth work : Should be greater than 0"
+                  }
+                ],
+                "api": ""
+              },
+              "uom": ""
+            },
+            {
+              "label": "Concrete",
+              "key": "irr_cc",
+              "uitype": "edittext",
+              "datatype": "double",
+              "default": "",
+              "validations": {
+                "mandatory": false,
+                "min": "0.0",
+                "max": "",
+                "expr": [
+                  {
+                    "expr": "#irr_cc < #irr_cc_m",
+                    "error_msg": "Invalid Concrete : Should be less than target"
+                  },
+                  {
+                    "expr": "#irr_cc > 0",
+                    "error_msg": "Invalid Concrete : Should be greater than 0"
+                  }
+                ],
+                "api": ""
+              }
+            },
+            {
+              "label": "Expenditure",
+              "key": "irr_ex",
+              "uitype": "edittext",
+              "datatype": "double",
+              "default": "",
+              "validations": {
+                "mandatory": false,
+                "min": "0.0",
+                "max": "",
+                "expr": [
+                  {
+                    "expr": "#irr_ex < #irr_ex_m",
+                    "error_msg": "Invalid Expenditure : Should be less than target"
+                  },
+                  {
+                    "expr": "#irr_ex > 0",
+                    "error_msg": "Invalid Expenditure : Should be greater than 0"
+                  }
+                ],
+                "api": ""
+              },
+              "uom": ""
+            },
+            {
+              "label": "Issues",
+              "key": "irr_issue",
+              "uitype": "group",
+              "datatype": "group",
+              "formid": "irr_001",
+              "expandable": "2"
+            }
+          ]
+        },
+        {
+          "formid": "irr_001",
+          "name": "Issues",
+          "title": "Irrigation",
+          "subtitle": "Issues",
+          "fields": [
+            {
+              "key": "irr_row",
+              "label": "Right Of Way",
+              "uitype": "subform",
+              "datatype": "subform",
+              "formid": "irr_001#01"
+            },
+            {
+              "key": "irr_nhrbc",
+              "label": "NH and R&B Clearances",
+              "uitype": "subform",
+              "datatype": "subform",
+              "formid": "irr_001#02"
+            },
+            {
+              "key": "irr_rcc",
+              "label": "Railway Crossing Clearances",
+              "uitype": "subform",
+              "datatype": "subform",
+              "formid": "irr_001#03"
+            },
+            {
+              "key": "irr_fc",
+              "label": "Forest Clearances",
+              "uitype": "subform",
+              "datatype": "subform",
+              "formid": "irr_001#04"
+            },
+            {
+              "key": "irr_oc",
+              "label": "Other Clearances",
+              "uitype": "subform",
+              "datatype": "subform",
+              "formid": "irr_001#05"
+            },
+            {
+              "key": "irr_rr",
+              "label": "Rehabiliation and Resettlement",
+              "uitype": "subform",
+              "datatype": "subform",
+              "formid": "irr_001#06"
+            },
+            {
+              "key": "irr_sc",
+              "label": "Site Condition",
+              "uitype": "subform",
+              "datatype": "subform",
+              "formid": "irr_001#07"
+            },
+            {
+              "key": "irr_ec",
+              "label": "Encroachments",
+              "uitype": "subform",
+              "datatype": "subform",
+              "formid": "irr_001#08"
+            },
+            {
+              "key": "irr_rtc",
+              "label": "Retendering",
+              "uitype": "subform",
+              "datatype": "subform",
+              "formid": "irr_001#09"
+            },
+            {
+              "key": "irr_tm",
+              "label": "Termination",
+              "uitype": "subform",
+              "datatype": "subform",
+              "formid": "irr_001#10"
+            },
+            {
+              "key": "irr_eci",
+              "label": "EOT & Contractual Issues",
+              "uitype": "subform",
+              "datatype": "subform",
+              "formid": "irr_001#11"
+            },
+            {
+              "key": "irr_oi",
+              "label": "Other issues",
+              "uitype": "subform",
+              "datatype": "subform",
+              "formid": "irr_001#12"
+            }
+          ]
+        },
+        {
+          "formid": "irr_001#01",
+          "name": "Right Of Way",
+          "title": "Issue",
+          "subtitle": "Right Of Way",
+          "fields": [
+            {
+              "label": "Right Of Way Description",
+              "key": "irr_issue_row",
+              "uitype": "edittext",
+              "datatype": "string",
+              "default": "",
+              "validations": {
+                "mandatory": true,
+                "min": "0",
+                "max": "255",
+                "expr": [
+                  {
+                    "expr": "#irr_issue_row != null",
+                    "error_msg": "Should not be null"
+                  }
+                ],
+                "api": ""
+              },
+              "uom": ""
+            }
+          ]
+        },
+        {
+          "formid": "irr_001#02",
+          "name": "NH and R&B Clearances",
+          "title": "Issue",
+          "subtitle": "NH and R&B Clearances",
+          "fields": [
+            {
+              "label": "NH and R&B Clearances Description",
+              "key": "irr_issue_nhrbc",
+              "uitype": "edittext",
+              "datatype": "string",
+              "default": "",
+              "validations": {
+                "mandatory": true,
+                "min": "0",
+                "max": "255",
+                "expr": [
+                  {
+                    "expr": "#irr_issue_nhrbc != null",
+                    "error_msg": "Should not be null"
+                  }
+                ],
+                "api": ""
+              },
+              "uom": ""
+            }
+          ]
+        },
+        {
+          "formid": "irr_001#03",
+          "name": "Railway Crossing Clearances",
+          "title": "Issue",
+          "subtitle": "Railway Crossing Clearances",
+          "fields": [
+            {
+              "label": "Railway Crossing Clearances Description",
+              "key": "irr_issue_rcc",
+              "uitype": "edittext",
+              "datatype": "string",
+              "default": "",
+              "validations": {
+                "mandatory": true,
+                "min": "0",
+                "max": "255",
+                "expr": [
+                  {
+                    "expr": "#irr_issue_rcc != null",
+                    "error_msg": "Should not be null"
+                  }
+                ],
+                "api": ""
+              },
+              "uom": ""
+            }
+          ]
+        },
+        {
+          "formid": "irr_001#04",
+          "name": "Forest Clearances",
+          "title": "Issue",
+          "subtitle": "Forest Clearances",
+          "fields": [
+            {
+              "label": "Forest Clearances Description",
+              "key": "irr_issue_fc",
+              "uitype": "edittext",
+              "datatype": "string",
+              "default": "",
+              "validations": {
+                "mandatory": true,
+                "min": "0",
+                "max": "255",
+                "expr": [
+                  {
+                    "expr": "#irr_issue_fc != null",
+                    "error_msg": "Should not be null"
+                  }
+                ],
+                "api": ""
+              },
+              "uom": ""
+            }
+          ]
+        },
+        {
+          "formid": "irr_001#05",
+          "name": "Other Clearances",
+          "title": "Issue",
+          "subtitle": "Other Clearances",
+          "fields": [
+            {
+              "label": "Other Clearances",
+              "key": "irr_issue_oc",
+              "uitype": "edittext",
+              "datatype": "string",
+              "default": "",
+              "validations": {
+                "mandatory": true,
+                "min": "0",
+                "max": "255",
+                "expr": [
+                  {
+                    "expr": "#irr_issue_oc != null",
+                    "error_msg": "Should not be null"
+                  }
+                ],
+                "api": ""
+              },
+              "uom": ""
+            }
+          ]
+        },
+        {
+          "formid": "irr_001#06",
+          "name": "Rehabiliation and Resettlement",
+          "title": "Issue",
+          "subtitle": "Rehabiliation and Resettlement",
+          "fields": [
+            {
+              "label": "Rehabiliation and Resettlement Description",
+              "key": "irr_issue_rr",
+              "uitype": "edittext",
+              "datatype": "string",
+              "default": "",
+              "validations": {
+                "mandatory": true,
+                "min": "0",
+                "max": "255",
+                "expr": [
+                  {
+                    "expr": "#irr_issue_rr != null",
+                    "error_msg": "Should not be null"
+                  }
+                ],
+                "api": ""
+              },
+              "uom": ""
+            }
+          ]
+        },
+        {
+          "formid": "irr_001#07",
+          "name": "Site Conditions",
+          "title": "Issue",
+          "subtitle": "Site Condition",
+          "fields": [
+            {
+              "label": "Site Condition Description",
+              "key": "irr_issue_sc",
+              "uitype": "edittext",
+              "datatype": "string",
+              "default": "",
+              "validations": {
+                "mandatory": true,
+                "min": "0",
+                "max": "255",
+                "expr": [
+                  {
+                    "expr": "#irr_issue_sc != null",
+                    "error_msg": "Should not be null"
+                  }
+                ],
+                "api": ""
+              },
+              "uom": ""
+            }
+          ]
+        },
+        {
+          "formid": "irr_001#08",
+          "name": "Encroachments",
+          "title": "Issue",
+          "subtitle": "Encroachments",
+          "fields": [
+            {
+              "label": "Encroachments Description",
+              "key": "irr_issue_ec",
+              "uitype": "edittext",
+              "datatype": "string",
+              "default": "",
+              "validations": {
+                "mandatory": true,
+                "min": "0",
+                "max": "255",
+                "expr": [
+                  {
+                    "expr": "#irr_issue_ec != null",
+                    "error_msg": "Should not be null"
+                  }
+                ],
+                "api": ""
+              },
+              "uom": ""
+            }
+          ]
+        },
+        {
+          "formid": "irr_001#09",
+          "name": "Retendering",
+          "title": "Issue",
+          "subtitle": "Retendering",
+          "fields": [
+            {
+              "label": "Retendering Description",
+              "key": "irr_issue_rtc",
+              "uitype": "edittext",
+              "datatype": "string",
+              "default": "",
+              "validations": {
+                "mandatory": true,
+                "min": "0",
+                "max": "255",
+                "expr": [
+                  {
+                    "expr": "#irr_issue_rtc != null",
+                    "error_msg": "Should not be null"
+                  }
+                ],
+                "api": ""
+              },
+              "uom": ""
+            }
+          ]
+        },
+        {
+          "formid": "irr_001#10",
+          "name": "Termination",
+          "title": "Issue",
+          "subtitle": "Termination",
+          "fields": [
+            {
+              "label": "Termination Description",
+              "key": "irr_issue_tm",
+              "uitype": "edittext",
+              "datatype": "string",
+              "default": "",
+              "validations": {
+                "mandatory": true,
+                "min": "0",
+                "max": "255",
+                "expr": [
+                  {
+                    "expr": "#irr_issue_tm != null",
+                    "error_msg": "Should not be null"
+                  }
+                ],
+                "api": ""
+              },
+              "uom": ""
+            }
+          ]
+        },
+        {
+          "formid": "irr_001#11",
+          "name": "EOT & Contractual Issues",
+          "title": "Issue",
+          "subtitle": "EOT & Contractual Issues",
+          "fields": [
+            {
+              "label": "EOT & Contractual Issues Description",
+              "key": "irr_issue_eci",
+              "uitype": "edittext",
+              "datatype": "string",
+              "default": "",
+              "validations": {
+                "mandatory": true,
+                "min": "0",
+                "max": "255",
+                "expr": [
+                  {
+                    "expr": "#irr_issue_eci != null",
+                    "error_msg": "Should not be null"
+                  }
+                ],
+                "api": ""
+              },
+              "uom": ""
+            }
+          ]
+        },
+        {
+          "formid": "irr_001#12",
+          "name": "Other issues",
+          "title": "Issue",
+          "subtitle": "Other issues",
+          "fields": [
+            {
+              "label": "Other issues Description",
+              "key": "irr_issue_oi",
+              "uitype": "edittext",
+              "datatype": "string",
+              "default": "",
+              "validations": {
+                "mandatory": true,
+                "min": "0",
+                "max": "255",
+                "expr": [
+                  {
+                    "expr": "#irr_issue_oi != null",
+                    "error_msg": "Should not be null"
+                  }
+                ],
+                "api": ""
+              },
+              "uom": ""
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/margin"
+    android:layout_marginBottom="@dimen/margin"
+    android:background="@android:color/transparent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:orientation="vertical"
+        android:layout_marginBottom="@dimen/margin"
+        android:layout_marginLeft="@dimen/double_margin"
+        android:layout_marginRight="@dimen/double_margin">
+
+        <TextView
+            android:id="@+id/generic_preview_element_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/form_field_label_textsize"
+            android:background="@android:color/transparent"
+            android:gravity="center_vertical" />
+
+        <TextView
+            android:id="@+id/generic_preview_element_value"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/lightGrey"
+            android:textSize="@dimen/form_field_textsize"
+            android:gravity="center_vertical"
+            android:layout_marginTop="@dimen/margin"
+            android:layout_marginBottom="@dimen/margin" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/elevation"
+        android:background="@color/darkGrey" />
+
+</LinearLayout>

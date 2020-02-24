@@ -1,0 +1,1 @@
+include ':app', ':osmbonuspack_6.6.0', ':offline_maps_proj_v27'

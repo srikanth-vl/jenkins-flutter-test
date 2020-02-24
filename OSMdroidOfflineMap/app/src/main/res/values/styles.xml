@@ -1,0 +1,25 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+    <!--        progress dialog style           -->
+    <style name="MyAlertDialogStyle" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:textColor">@color/fbutton_color_midnight_blue</item>
+        <!--<item name="android:background">@color/white_trans_45</item>-->
+        <item name="colorAccent">@color/colorPrimaryDark</item>
+    </style>
+    <style name="AlertDialogLight" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:windowAnimationStyle">@style/My.Animation.AlertDialog</item>
+    </style>
+
+    <style name="My.Animation.AlertDialog" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/my_slide_in_bottom</item>
+        <item name="android:windowExitAnimation">@anim/my_slide_out_bottom</item>
+
+    </style>
+</resources>

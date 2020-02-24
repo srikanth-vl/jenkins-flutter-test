@@ -1,0 +1,8 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-6 col-lg-4 mt-3 mb-3" *ngFor="let superapp of superapps">
+            <app-superapp [superApp]="superapp" isHome="true">
+            </app-superapp>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#175973</color>
+    <color name="colorPrimaryDark">#04344a</color>
+    <color name="colorPrimaryDarker">#0b435c</color>
+    <color name="colorAccent">#0eb7cc</color>
+    <color name="lightGrey">#D3D3D3</color>
+    <color name="darkGrey">#A9A9A9</color>
+    <color name="blue">#0000FF</color>
+    <color name="white">#FFFFFF</color>
+    <color name="colorButton">#F9680F</color>
+    <color name="table_heading_text_color">#EDAD39</color>
+    <color name="form_background">#007CA2</color>
+    <color name="form_screen_background">#00435A</color>
+    <color name="form_view_border_color">#005D83</color>
+    <color name="holo_blue_grey">#DAE1E4</color>
+
+</resources>

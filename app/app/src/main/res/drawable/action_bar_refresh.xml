@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:bottom="@dimen/dimen_5dp"
+        android:left="@dimen/dimen_5dp"
+        android:right="@dimen/dimen_5dp"
+        android:top="@dimen/dimen_5dp">
+
+        <bitmap android:src="@drawable/refresh_white"/>
+
+    </item>
+</layer-list>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/app/app-app.iml" filepath="$PROJECT_DIR$/app/app-app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/offline_maps_proj_v27/offline_maps_proj_v27.iml" filepath="$PROJECT_DIR$/offline_maps_proj_v27/offline_maps_proj_v27.iml" />
+      <module fileurl="file://$PROJECT_DIR$/osmbonuspack_6.6.0/osmbonuspack_6.6.0.iml" filepath="$PROJECT_DIR$/osmbonuspack_6.6.0/osmbonuspack_6.6.0.iml" />
+      <module fileurl="file://$PROJECT_DIR$/uniapp-app.iml" filepath="$PROJECT_DIR$/uniapp-app.iml" />
+    </modules>
+  </component>
+</project>

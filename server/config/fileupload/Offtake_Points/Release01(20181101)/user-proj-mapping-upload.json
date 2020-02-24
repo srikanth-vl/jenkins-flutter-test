@@ -1,0 +1,12 @@
+{
+    "upload_type": "delete_insert",
+    "superAppId": "a7cf09ac-43c1-3ba1-aa2d-6a68f786cc44",
+    "appId": "e8f9ae18-4c57-3938-8f48-339f9495e9d2",
+    "mappings": [
+      {
+        "userId": "user_phone_number_ID",
+        "userType": "0",
+        "projectId": "iws_id"
+      }
+    ]
+  }

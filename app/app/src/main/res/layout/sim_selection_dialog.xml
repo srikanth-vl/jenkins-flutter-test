@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_gravity="bottom"
+    android:layout_centerHorizontal="true"
+    android:background="@drawable/shape_rectangular_color_primary_transparent_edges"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/dimen_20dp"
+    android:paddingLeft="@dimen/dimen_20dp"
+    android:paddingRight="@dimen/dimen_20dp"
+    android:paddingTop="@dimen/dimen_20dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/SIM_SELECTION"
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        android:layout_marginBottom="@dimen/dimen_20dp"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/sim_selection_radio_group"
+            android:paddingBottom="@dimen/dimen_20dp"
+            android:orientation="vertical">
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:id="@+id/sim1Button" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:id="@+id/sim2Button" />
+
+        </RadioGroup>
+
+   </RelativeLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:id="@+id/submit_number"
+        android:text="@string/submit"
+        android:background="@color/colorButton"
+        />
+
+</LinearLayout>

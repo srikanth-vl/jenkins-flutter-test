@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="true">103.210.75.132</domain>
+        <domain includeSubdomains="true">103.210.75.130</domain>
+        <domain includeSubdomains="true">36.255.252.196</domain>
+        <domain includeSubdomains="true">138.68.30.58</domain>
+        <domain includeSubdomains="true">192.168.3.195</domain>
+        <domain includeSubdomains="true">192.168.0.32</domain>
+        <domain includeSubdomains="true">uniapp.vassarlabs.com</domain>
+        <domain includeSubdomains="true">haimsbucket.s3-us-west-2.amazonaws.com</domain>
+        <domain includeSubdomains="true">dc9e1b26.ngrok.io</domain>
+    </domain-config>
+</network-security-config>

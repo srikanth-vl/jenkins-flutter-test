@@ -1,0 +1,2 @@
+configurations.maybeCreate("default")
+artifacts.add("default", file('offline_maps_proj_v27.aar'))

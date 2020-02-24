@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/table_form_addendum_field_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:layout_marginBottom="@dimen/margin"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/white"
+        android:layout_marginRight="@dimen/margin"
+        android:layout_marginLeft="@dimen/margin"
+        android:layout_marginBottom="@dimen/margin"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/addendum_header_parent_linear_layout"
+        android:background="@android:color/transparent">
+
+        <!--<TextView-->
+            <!--android:id="@+id/addendum_header_text_button"-->
+            <!--android:layout_width="@dimen/icon_dimension"-->
+            <!--android:layout_height="@dimen/icon_dimension"-->
+            <!--android:background="@drawable/round_button"-->
+            <!--android:text="+"-->
+            <!--android:textSize="26sp"-->
+            <!--android:textColor="@color/white"-->
+            <!--android:textAlignment="center"-->
+            <!--android:layout_alignParentRight="true"-->
+            <!--android:layout_alignParentTop="true"-->
+            <!--android:layout_alignParentBottom="true"-->
+            <!--android:layout_marginRight="@dimen/margin"-->
+            <!--android:layout_marginLeft="@dimen/margin"-->
+            <!--android:layout_marginBottom="@dimen/margin"/>-->
+
+        <LinearLayout
+            android:id="@+id/addendum_header_horizontal_linear_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:orientation="horizontal"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/margin"/>
+
+    </LinearLayout>
+
+    <!--<android.support.v7.widget.RecyclerView-->
+        <!--android:id="@+id/addendum_row_recycler_view"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:background="@android:color/transparent" />-->
+
+    <LinearLayout
+        android:id="@+id/addendum_row_vertical_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@android:color/transparent" />
+
+</LinearLayout>

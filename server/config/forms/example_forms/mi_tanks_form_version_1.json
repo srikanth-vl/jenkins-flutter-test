@@ -1,0 +1,166 @@
+{
+  "forms": {
+    "update": {
+      "initial_form_id": "mit_000",
+      "form": [
+        {
+          "formid": "mit_000",
+          "name": "Mi tanks",
+          "title": "Water resource Dept.",
+          "subtitle": "Mi tanks",
+          "header": [
+            {
+              "key": "mit_project",
+              "label": "Project"
+            },
+            {
+              "key": "mit_panchayat",
+              "label": "Panchayat"
+            },
+            {
+              "key": "mit_mandal",
+              "label": "Mandal"
+            },
+            {
+              "key": "mit_district",
+              "label": "District"
+            },
+            {
+              "key": "mit_id",
+              "label": "MI Tank ID"
+            }
+          ],
+          "fields": [
+            {
+              "key": "mit_sd",
+              "label": "Select Date",
+              "uitype": "date",
+              "datatype": "date",
+              "uom":"",
+              "selectablewindow": {
+                "past": "5",
+                "future": "0",
+                "select": "-1"
+              },
+              "validation": {
+                "mandatory": false
+              },
+              "display" : ["P"]
+            },
+            {
+              "key": "mit_cb",
+              "label": "Sample Check Box",
+              "uitype": "checkbox",
+              "datatype": "list",
+              "uom":"",
+              "multiplevalues": [
+                {
+                  "value": "Option 1"
+                },
+                {
+                  "value": "Option 2"
+                },
+                {
+                  "value": "Option 3"
+                }
+              ],
+              "default": "Option 2",
+              "validation": {
+                "mandatory": false,
+                "max": ""
+              }
+            },
+            {
+              "key": "mit_dropdown",
+              "label": "sample Dropdown",
+              "uitype": "dropdown",
+              "datatype": "list",
+              "multiplevalues": [
+                {
+                  "value": "Option 1"
+                },
+                {
+                  "value": "Option 2"
+                },
+                {
+                  "value": "Option 3"
+                }
+              ],
+              "default": "Option 1",
+              "validation": {
+                "mandatory": false,
+                "max": ""
+              }
+            },
+            {
+              "key": "mit_radios",
+              "label": "sample radios",
+              "uitype": "radios",
+              "datatype": "list",
+              "uom":"",
+              "multiplevalues": [
+                {
+                  "value": "Option 1"
+                },
+                {
+                  "value": "Option 2"
+                }
+              ],
+              "default": "Option 1",
+              "validation": {
+                "mandatory": false
+              }
+            },
+            {
+              "key": "mit_cs",
+              "label": "Current Storage (%)",
+              "uitype": "edittext",
+              "datatype": "double",
+              "default": "",
+              "uom":"",
+              "validation": {
+                "mandatory": true,
+                "min": "0.0",
+                "max": "100.0"
+              }
+            },
+            {
+              "key": "mit_ta",
+              "label": "Transplanted Area (Acres)",
+              "uitype": "edittext",
+              "datatype": "double",
+              "default": "",
+              "uom":"",
+              "validation": {
+                "mandatory": true,
+                "min": "0.0",
+                "max": ""
+              }
+            },
+            {
+              "key": "mit_geotag",
+              "label": "Geo-Tag",
+              "uitype": "geotag",
+              "datatype": "geotag",
+              "uom":"",
+              "validation": {
+                "mandatory": false
+              }
+            },
+            {
+              "key": "mit_tp",
+              "label": "Take Picture",
+              "uitype": "image",
+              "datatype": "image",
+              "uom":"",
+              "validation": {
+                "mandatory": true,
+                "max": "3"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

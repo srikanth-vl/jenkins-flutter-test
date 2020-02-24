@@ -1,0 +1,38 @@
+{
+  "name": "s_app_1",
+  "installations": 100,
+  "registered_users": 40,
+  "users_logged_in": 13,
+  "users_never_logged_in": 27,
+  "apps": [
+    {
+      "name": "app_1",
+      "no_of_projects": 200,
+      "projects_assigned": 100,
+      "project_submissions": 40
+    },
+    { 
+      "name": "app_2",
+      "no_of_projects": 250,
+      "projects_assigned": 190,
+      "project_submissions": 90
+    },
+    {
+      "name": "app_3",
+      "apps": [
+        {
+          "name": "subapp_1",
+          "no_of_projects": 220,
+          "projects_assigned": 110,
+          "project_submissions": 140
+        },
+        {
+          "name": "subapp_2",
+          "no_of_projects": 120,
+          "projects_assigned": 101,
+          "project_submissions": 49
+        }
+      ]
+    }
+  ]
+}

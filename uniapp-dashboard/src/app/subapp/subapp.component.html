@@ -1,0 +1,75 @@
+<div class="card w-100 mb-3 sub_app" *ngIf="child['child'].length <=0" [class.active]="child.app_id==appid">
+  <div class="card-body ">
+    <div class="row">
+      <div class="col-lg-4">
+        <div class="align-items-left justify-content-between sub_app_titl">
+          <div class="text-center">
+            <span class="sub_app_logo"><img class="" src="{{child.image_url}}"></span>
+          </div>
+          <div class="text-center mt-2">
+            <h5 class="m-0 ellipses">{{child.app_name}}<small></small></h5>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-8">
+        <ul class="list-group border-0">
+          <li class="list-group-item d-flex align-items-center justify-content-between  border-0">
+            <span>No of Projects </span>
+            <span>{{child.total_projects}}</span>
+          </li>
+          <li class="list-group-item d-flex align-items-center justify-content-between  border-0">
+            <span>Projects Assigned </span>
+            <span>{{child.assigned_projects}}</span>
+          </li>
+          <!-- <li class="list-group-item d-flex align-items-center justify-content-between  border-0">
+                  <span>Total Submissions </span>
+                  <span>{{child.total_submissions}}</span>
+           </li> -->
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card w-100" *ngIf="child['child'].length >0">
+
+  <div class="card-header bg-white">
+    <div class="d-flex align-items-center ">
+      <img style="height: 80px; width: 80px; background-color: grey;" src="{{child.image_url}}">
+      <div class="text-center ml-3">
+        <h6 class="m-0" (click)="collapsable()">{{child.app_name}}</h6>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="!collapse">
+    <div class="card-body bg-light" *ngFor="let child of child['child']">
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="align-items-left justify-content-between bg-light">
+            <div class="text-center"><img src="{{child.image_url}}"></div>
+            <div class="text-center mt-2">
+              <h6 class="m-0">{{child.app_name}} <small></small></h6>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-8">
+          <ul class="list-group border-0">
+            <li class="list-group-item d-flex align-items-center justify-content-between bg-light border-0">
+              <span>No of Projects </span>
+              <span>{{child.total_projects}}</span>
+            </li>
+            <li class="list-group-item d-flex align-items-center justify-content-between bg-light border-0">
+              <span>Projects Assigned </span>
+              <span>{{child.assigned_projects}}</span>
+            </li>
+            <!-- <li class="list-group-item d-flex align-items-center justify-content-between bg-light border-0">
+                         <span>Total Submissions </span>
+                         <span>{{child.total_submissions}}</span>
+                     </li> -->
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

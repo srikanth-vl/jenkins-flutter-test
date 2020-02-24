@@ -1,0 +1,10 @@
+<div class="col-md-12">
+  
+  <div vassar-table-directive data="vm.tableData" throb="vm.table1Throbber" th-color="true" bread-cum="vm.breadcum" table-id= "primaryTable" >
+  </div>
+  <div class="text-right">
+
+    <!-- pager -->
+    <ul class="pagination pagination-sm float-right" uib-pagination direction-links="true" boundary-links="true" total-items="vm.totalItems" ng-model="vm.currentPage" ng-change = "vm.pageChanged()"></ul>
+
+  </div>

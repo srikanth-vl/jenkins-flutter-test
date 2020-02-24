@@ -1,0 +1,89 @@
+.max-table-heightvh {
+    overflow: auto;
+    max-height: 80vh;
+}
+
+.table thead th {
+    background: #f3f3f3;
+}
+.table thead th.col-width-s {
+    min-width: 100px;
+}
+.table thead th.col-width-m {
+    min-width: 120px;
+}
+.table thead th.col-width-l {
+    min-width: 160px;
+}
+.table-bordered>thead>tr>th{
+    text-transform: uppercase;
+    font-weight: 700;
+    border-width: 1px
+}
+.table-bordered>thead>tr>th.fixed-col:before{
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 5%;
+    left: 0;
+    bottom: 0;
+    box-shadow: 1px 1px 0px #ddd;
+}
+.table-bordered>thead>tr>th.fixed-col:after{
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 5%;
+    left: 0;
+    top: 0;
+    box-shadow: -1px -1px 0px #ddd;
+}
+
+.table-bordered>tbody>tr>td.fixed-col:after{
+    position: absolute;
+    content: '';
+    width: 5%;
+    height: 100%;
+    right: 0;
+    top: 0;
+    box-shadow: 1px 0px 0px #ddd;
+}
+.table-bordered>tbody>tr>td.fixed-col:before{
+    position: absolute;
+    content: '';
+    width: 5%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    box-shadow: -1px 0px 0px #ddd;
+}
+.table-bordered>thead>tr>th.fixed-col,
+.table-bordered>tbody>tr>td.fixed-col {
+    background: #f1f1f1;
+}
+.table-bordered>thead>tr>th.fixed-col span,
+.table-bordered>tbody>tr>td.fixed-col span{
+    display: block
+}
+
+
+.table-bordered>tbody>tr>td:not(.fixed-col){
+    text-align: center;
+}
+.table-bordered>tfoot>tr>th:not(:first-child){
+    text-align:center;
+}
+
+/* .character-limit .table th{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%
+} */
+
+.table th, .table td {
+    padding: 0.65rem;
+    vertical-align: top;
+    font-size: 12px;
+    border-top: 1px solid #dee2e6;
+}

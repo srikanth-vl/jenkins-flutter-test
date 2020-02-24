@@ -1,0 +1,79 @@
+html {
+    height: 100%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    padding-top: 4.2rem;
+    position: relative;
+    padding-bottom: 6rem;
+    min-height: 100%;
+    padding-top: 54px;
+    background: #FBFCFE;
+    color: #020202;
+    font-size: 14px;
+}
+
+@media (min-width: 992px) {
+    body {
+        padding-top: 56px;
+    }
+    .card.card-custom .card-content
+    {
+        min-height: 150px;
+    }
+
+}
+
+#mapid {
+  height: 500px;
+}
+
+/* Navbar Style */
+
+.navbar.navbar-custom {
+    background: #3F51B5 !important;
+    -webkit-box-shadow:0 0 15px 1px #d4d4d4;
+    box-shadow:0 0 15px 1px #d4d4d4;
+    padding:5px 0;
+
+}
+.navbar>.container, .navbar>.container-fluid {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;}
+    .topnav-profile-img {
+        height: 34px;
+        margin: 0 10px;
+        border-radius: 50%;
+    }
+    .header-brand, .navbar-brand {
+    font-size: 1.4rem;
+    color: #fff;
+    font-weight: 500;
+}
+
+    @media (min-width: 992px){
+    .navbar-expand-lg .navbar-collapse {
+        max-width: 230px;
+    }}
+
+.navbar-brand {
+    color: #fff;
+    font-weight: 600;
+}
+
+.navbar.navbar-custom .navbar-nav .nav-link{
+  color: #fff;
+}
+
+.page-title {
+    margin: 10px 0 15px;
+}
+
+.page-title h1 {
+    font-size: 1.6rem;
+    color: #434D59;
+}

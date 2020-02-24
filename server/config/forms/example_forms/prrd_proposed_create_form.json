@@ -1,0 +1,276 @@
+{
+  "forms": {
+    "initial_form_id": "prrd_create_000",
+    "form": [
+      {
+        "formid": "prrd_create_000",
+        "name": "PR & RD",
+        "title": "Create Structure",
+        "subtitle": "Create Structure",
+        "fields": [
+          {
+            "key": "structure_type",
+            "label": "Structure Type",
+            "editable": true,
+            "uitype": "dropdown",
+            "datatype": "list",
+            "display": false,
+            "multiplevalues": [
+              {
+                "value": "Checkdam-Recharge"
+              },
+              {
+                "value": "Checkdam-Storage"
+              },
+              {
+                "value": "Percolation Tank-Recharge"
+              },
+              {
+                "value": "Percolation Tank-Storage"
+              },
+              {
+                "value": "Others",
+                "expandable": {
+                  "type": 1,
+                  "icon_url": null,
+                  "subform": "prrd_create_001",
+                  "text": null
+                }
+              }
+            ],
+            "default": "Checkdam-Recharge",
+            "validations": {
+              "mandatory": true,
+              "expr": [
+                {
+                  "expr": "#structure_type != null",
+                  "error_msg": "Structure Type not selected. Please select a structure type."
+                },
+                {
+                  "expr": "!#structure_type.isEmpty()",
+                  "error_msg": "Structure Type cannot be empty"
+                },
+                {
+                  "expr": "#structure_type.equalsIgnoreCase(''Checkdam'') or #structure_type.equalsIgnoreCase(''Watershed'') or #structure_type.equalsIgnoreCase(''Others'')",
+                  "error_msg": "Invalid Structure Type( Please select either Checkdam, Watershed or Others"
+                }
+              ],
+              "api": []
+            },
+            "uom": null
+          },
+          {
+            "key": "gps_location",
+            "label": "Location",
+            "editable": true,
+            "uitype": "geotag",
+            "datatype": "variable",
+            "display": false,
+            "icon": null,
+            "expandable": {
+              "type": 1,
+              "icon_url": null,
+              "subform": null,
+              "text": null
+            },
+            "validations": {
+              "mandatory": true,
+              "expr": [],
+              "api": [
+                {
+                  "route": "http://geoserver.vassarlabs.com:9000/api/locationmap",
+                  "type": "post",
+                  "params": "{latlng: #gps_location, district: #district, mandal: #mandal,panchayat: #panchayat}"
+                }
+              ]
+            }
+          },
+          {
+            "key": "geotagpic",
+            "label": "Geo-Tagged Picture",
+            "uitype": "geotagimage",
+            "datatype": "geotagimage",
+            "display": false,
+            "icon": null,
+            "max": 3,
+            "validations": {
+              "mandatory": true,
+              "expr": [
+                {
+                  "expr": "#geotagpic.size() <= 3",
+                  "error_msg": "Maximum 3 geotagged- images are allowed"
+                }
+              ],
+              "api": []
+            },
+            "expandable": {
+              "type": null,
+              "icon_url": "http://192.168.0.27:8000/home/ubuntu/appImages/calender.jpeg",
+              "text": null,
+              "subform": null
+            },
+            "uom": null
+          }
+        ]
+      },
+      {
+        "formid": "prrd_create_001",
+        "name": "PR RD",
+        "title": "Select Other",
+        "subtitle": "Other",
+        "fields": [
+          {
+            "key": "structure_type",
+            "label": "Other Structures",
+            "uitype": "dropdown",
+            "datatype": "string",
+            "default": "Checkwall",
+            "display": false,
+            "uom": null,
+            "validations": {
+              "mandatory": false,
+              "expr": [
+                {
+                  "expr": "#structure_type != null",
+                  "error_msg": "Structure Type not selected. Please select a structure type."
+                },
+                {
+                  "expr": "!#structure_type.isEmpty()",
+                  "error_msg": "Structure Type cannot be empty"
+                },
+                {
+                  "expr": "#structure_type.equalsIgnoreCase(''Checkwall'') or #structure_type.equalsIgnoreCase(''Gabion'') or #structure_type.equalsIgnoreCase(''RFD'')",
+                  "error_msg": "Invalid Structure Type( Please select either Checkwall, Gabion or RFD"
+                }
+              ],
+              "api": []
+            },
+            "multiplevalues": [
+              {
+                "value": "Checkwall"
+              },
+              {
+                "value": "Gabion"
+              },
+              {
+                "value": "RFD"
+              }
+            ]
+          }
+        ],
+        "buttons": [
+          {
+            "key": "cancel_btn",
+            "label": "Cancel",
+            "expandable": {
+              "type": 10,
+              "icon_url": null,
+              "subform": null,
+              "text": null
+            },
+            "api": null
+          },
+          {
+            "key": "preview_btn",
+            "label": "Preview",
+            "expandable": {
+              "type": 12,
+              "icon_url": null,
+              "subform": "prrd_create_002",
+              "text": null
+            },
+            "api": null
+          }
+        ]
+      },
+      {
+        "formid": "prrd_create_002",
+        "name": "PR & RD",
+        "title": "Create Structure",
+        "subtitle": "Create Structure",
+        "header": [
+          {
+            "key": "structure_type",
+            "label": "Structure Type",
+            "icon": null,
+            "display": true
+          },
+          {
+            "key": "district",
+            "label": "District",
+            "icon": null,
+            "display": true
+          },
+          {
+            "key": "mandal",
+            "label": "Mandal",
+            "icon": null,
+            "display": true
+          },
+          {
+            "key": "panchayat",
+            "label": "panchayat",
+            "icon": null,
+            "display": true
+          },
+          {
+            "key": "sub_basin",
+            "label": "Sub Basin",
+            "icon": null,
+            "display": true
+          },
+          {
+            "key": "micro_basin",
+            "label": "Micro Basin",
+            "icon": null,
+            "display": true
+          },
+          {
+            "key": "watershed",
+            "label": "Watershed",
+            "icon": null,
+            "display": true
+          },
+          {
+            "key": "prrd_restoration",
+            "label": "Restoration Needed",
+            "icon": null,
+            "display": true
+          },
+          {
+            "key": "pr_rest_reason",
+            "label": "Reason for Restoration",
+            "icon": null,
+            "display": false
+          },
+          {
+            "key": "geotagpic",
+            "label": "Picture with Geotag",
+            "icon": null,
+            "display": false
+          },
+          {
+            "key": "gps_location",
+            "label": "GPS location",
+            "icon": null,
+            "display": true
+          }
+        ],
+        "fields": [],
+        "buttons": [
+          {
+            "key": "Submit_btn",
+            "label": "Submit",
+            "expandable": {
+              "type": 13,
+              "icon_url": null,
+              "subform": null,
+              "text": null
+            },
+            "api": "/api/uniapp/submit"
+          }
+        ]
+      }
+    ]
+  }
+}

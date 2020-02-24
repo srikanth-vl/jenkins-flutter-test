@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/app_list_item_height"
+    android:background="@drawable/shape_rectangular_color_primary_transparent_edges"
+    android:layout_marginBottom="@dimen/margin"
+    android:elevation="@dimen/elevation">
+
+    <RelativeLayout
+        android:id="@+id/map_download_status_image_layout"
+        android:layout_width="@dimen/app_list_item_height"
+        android:layout_height="@dimen/app_list_item_height"
+        android:layout_alignParentRight="true"
+        android:background="@android:color/transparent">
+
+        <ImageView
+            android:id="@+id/map_download_status_image"
+            android:layout_width="@dimen/icon_dimension"
+            android:layout_height="@dimen/icon_dimension"
+            android:layout_centerInParent="true"
+            android:background="@android:color/transparent"
+            android:adjustViewBounds="true" />
+
+        <ProgressBar
+            android:id="@+id/map_download_progress"
+            android:indeterminateTint="@color/white"
+            android:background="@android:color/transparent"
+            android:indeterminate="true"
+            android:layout_centerInParent="true"
+            android:visibility="invisible"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/app_list_item_height"
+        android:background="@android:color/transparent"
+        android:layout_alignParentLeft="true"
+        android:layout_toLeftOf="@id/map_download_status_image_layout"
+        android:layout_marginRight="@dimen/margin">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="@dimen/double_margin"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/map_download_item_file_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"
+                android:background="@android:color/transparent"/>
+
+            <TextView
+                android:id="@+id/map_download_item_text_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textColor="@android:color/white"
+                android:background="@android:color/transparent"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

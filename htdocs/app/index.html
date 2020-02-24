@@ -1,0 +1,159 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <base href="/">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width">
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+  <!-- build:css(.) styles/vendor.css -->
+  <!-- bower:css -->
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+  <link rel="stylesheet" href="bower_components/angular-multiple-date-picker/dist/multipleDatePicker.css" />
+  <!-- endbower -->
+  <!-- endbuild -->
+  <!-- build:css(.tmp) styles/main.css -->
+  <link rel="stylesheet" href="styles/loading.css">
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/table.css">
+  <link rel="stylesheet" href="styles/dev.css">
+
+  <!-- endbuild -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
+   integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+   crossorigin=""/>
+
+</head>
+<body ng-app="uniApp">
+  <!-- Navigation -->
+  <nav class="navbar navbar-custom navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="">
+        <img src="../images/aplogo.png" alt="Star Rating of Wards in ULB's of Andhra Pradesh">
+      </a>
+
+      <div class="header-brand" style="display:inline-block">
+        <span class="hidden-mobile">Andhra Pradesh</span>
+      </div>
+      <!-- <a  ui-sref="uniapp.logout" ng-if="currentUser">
+        <i class="fa fa-sign-in" aria-hidden="true"></i>
+        Logout
+      </a> -->
+    </div>
+  </nav>
+  <div>
+    <div ui-view></div>
+  </div>
+
+  <footer class="footer">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-6 text-right">
+          <!-- <p>©2018, Vassarlabs. All Rights Reserved.</p> -->
+        </div>
+        <div class="col-md-6 text-right" style="color: white;"> powered by
+          <!-- <a href="http://www.vassarlabs.com/" target="_blank"> -->
+            <!-- <img src="images/vassarlabs-logo.png" alt=""> -->
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- build:js(.) scripts/vendor.js -->
+  <!-- bower:js -->
+  <script src="bower_components/jquery/dist/jquery.js"></script>
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+  <script src="bower_components/angular-animate/angular-animate.js"></script>
+  <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+  <script src="bower_components/angular-resource/angular-resource.js"></script>
+  <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+  <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+  <script src="bower_components/angular-touch/angular-touch.js"></script>
+  <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+  <script src="bower_components/moment/moment.js"></script>
+  <script src="bower_components/angular-multiple-date-picker/dist/multipleDatePicker.js"></script>
+  <script data-require="angular.js@1.4.x" src="https://code.angularjs.org/1.4.9/angular.js" data-semver="1.4.9"></script>
+  <script data-require="ui-bootstrap@*" data-semver="1.3.2" src="https://cdn.rawgit.com/angular-ui/bootstrap/gh-pages/ui-bootstrap-tpls-1.3.2.js"></script>
+  
+  <!-- endbower -->
+  <!-- endbuild -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angular_material/0.8.3/angular-material.min.js"></script>
+  <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
+   integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
+   crossorigin=""></script>
+
+  <!-- Bootstrap core JavaScript -->
+  <!--  <script src="scripts/js/jquery.min.js"></script>
+  <script src="scripts/js/bootstrap.bundle.min.js"></script> -->
+  <!-- build:js({.tmp,app}) scripts/scripts.js -->
+  <script src="scripts/app.js"></script>
+  <script src="scripts/utils/url.js"></script>
+  <script src="scripts/utils/constants/prodconstants.js"></script>
+  <script src="scripts/utils/constants/projconstants.js"></script>
+  <!-- <script src="scripts/lib/dirPagination.js"></script> -->
+
+  <script src="scripts/lib/tablefixerdirective/jquery.scrollbar.js"></script>
+  <script src="scripts/lib/tablefixerdirective/tableHeadFixer.js"></script>
+  <script src="scripts/lib/tablefixerdirective/vassar_table_headerfix.js"></script>
+
+  <script src="scripts/lib/table_directive/table.directive.js"></script>
+  <script src="scripts/lib/table_directive/table.controller.js"></script>
+  <script src="scripts/lib/table_directive/table.service.js"></script>
+  <script src="scripts/lib/table_directive/angular-export-excel.js"></script>
+  <script src="scripts/lib/cookieservice.js"></script>
+
+  <script src="scripts/lib/formdirective/form.directive.js"></script>
+  <script src="scripts/lib/formdirective/form.controller.js"></script>
+  <script src="scripts/lib/formdirective/form.service.js"></script>
+  <script src="scripts/lib/formdirective/form.constants.js"></script>
+  <script src="scripts/lib/formdirective/validation.service.js"></script>
+
+  <script src ="scripts/uniapp/uniapp.module.js"></script>
+  <script src="scripts/uniapp/uniapp.ctrl.js"></script>
+  <script src="scripts/uniapp/uniapp.service.js"></script>
+  <!--<script src = "scripts/mi_tanks/mitanks.cnst.js"></script>-->
+  <script src="scripts/translogdashboard/translogdashboard.module.js"></script>
+  <script src="scripts/translogdashboard/translogdashboard.ctrl.js"></script>
+  <script src="scripts/translogdashboard/translogdashboard.service.js"></script>
+  <script src="scripts/translogdashboard/translogdashboard.cnst.js"></script>
+
+  <script src="scripts/imagecount/imagecount.module.js"></script>
+  <script src="scripts/imagecount/imagecount.ctrl.js"></script>
+  <script src="scripts/imagecount/imagecount.service.js"></script>
+  <script src="scripts/imagecount/imagecount.cnst.js"></script>
+
+  <script src="scripts/applist/applist.module.js"></script>
+  <script src="scripts/applist/applist.ctrl.js"></script>
+  <script src="scripts/applist/applist.service.js"></script>
+
+  <script src="scripts/superapplist/superapplist.module.js"></script>
+  <script src="scripts/superapplist/superapplist.ctrl.js"></script>
+  <script src="scripts/superapplist/superapplist.service.js"></script>
+
+  <script src="scripts/appprojectlist/projectlist.module.js"></script>
+  <script src="scripts/appprojectlist/projectlist.ctrl.js"></script>
+  <script src="scripts/appprojectlist/projectlist.service.js"></script>
+
+  <script src="scripts/appprojectdetails/appprojectdetails.module.js"></script>
+  <script src="scripts/appprojectdetails/appprojectdetails.ctrl.js"></script>
+  <script src="scripts/appprojectdetails/appprojectdetails.service.js"></script>
+  <script src="scripts/appprojectdetails/appprojectdetails.cnst.js"></script>
+
+
+  <!-- <script data-require="angular.js@1.3.15" data-semver="1.3.15" src="https://code.angularjs.org/1.3.15/angular.js"></script> -->
+  <!-- <script data-require="ui-bootstrap@*" data-semver="0.13.0" src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.13.0.min.js"></script> -->
+  <script type="text/javascript" src="bower_components/angular-multiple-date-picker/dist/multipleDatePicker.min.js"></script>
+
+
+  <!-- endbuild -->
+    <!-- login  -->
+  <script src="scripts/login/login.module.js"></script>
+  <script src="scripts/login/login.ctrl.js"></script>
+  <script src="scripts/login/login.service.js"></script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<div class="container-fluid yScrollBar2">
+    <div class="modal-header">
+        <h4 class="modal-title" id="myModalLabel">Data Submissions by User</h4>
+        <button type="button" mat-button mat-dialog-close data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+        
+      </div>
+  <!-- <button mat-button mat-dialog-close>X</button> -->
+  <div class="row">
+    <div class="col-sm-12 col-lg-12 mt-3 mb-3">
+      <table class="table table-dark table-hover">
+        <thead>
+          <tr>
+            <th>S.No.</th>
+            <th>Project</th>
+            <th>Date</th>
+            <th>Time Submitted</th>
+            <th>User Id</th>
+            <th>Data</th>
+            <th>Media Data</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let row of data; let i =index">
+            <td>{{i+1}}</td>
+            <td> {{row['project_name']}}</td>
+            <td>{{row['date']}}</td>
+            <td>{{row['user_id']}}</td>
+            <td>{{row['time']}}</td>
+            <td>{{row['submitted_data']}}</td>
+            <td>---</td>
+          </tr>
+
+        </tbody>
+      </table>
+      </div>
+  </div>
+</div>

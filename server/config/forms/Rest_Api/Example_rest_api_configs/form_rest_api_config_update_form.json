@@ -1,0 +1,251 @@
+{
+  "forms": {
+    "initial_form_id": "iwm_000",
+    "form": [
+      {
+        "formid": "iwm_000",
+        "name": "APWRIMS",
+        "title": "APWRIMS",
+        "subtitle": "Canal Structures",
+        "header": [
+          {
+            "key": "offtake_point",
+            "label": "Offtake Point Name",
+            "icon": null,
+            "display": true,
+            "submittable": false
+          },
+          {
+            "key": "distribution_system_name",
+            "label": "Distribution System Name",
+            "icon": null,
+            "display": true,
+            "submittable": false
+          },
+          {
+            "key": "chainage_number",
+            "label": "Chainage Number",
+            "icon": null,
+            "display": true,
+            "submittable": false
+          }
+        ],
+        "fields": [
+          {
+            "key": "current_date",
+            "uitype": "date",
+            "editable": false,
+            "display": true,
+            "selectablewindow": {
+              "past": "0",
+              "future": "0",
+              "select": "0"
+            },
+            "expandable": {
+              "type": null,
+              "icon_url": "http://192.168.0.55:8000/home/ubuntu/appImages/calender.jpeg",
+              "text": null,
+              "subform": null
+            }
+          },
+          {
+            "key": "localized_ayacut",
+            "uitype": "edittext",
+            "editable": true,
+            "display": true
+          },
+          {
+            "key": "designed_discharge",
+            "uitype": "edittext",
+            "editable": true,
+            "display": true
+          },
+          {
+            "key": "current_discharge",
+            "label": "Current Discharge",
+            "uitype": "edittext",
+            "editable": true,
+            "display": true
+          },
+          {
+            "key": "irrigated_ayacut",
+            "label": "Irrigated ayacut",
+            "uitype": "edittext",
+            "datatype": "double",
+            "default": null,
+            "uom": "Hectares",
+            "editable": true,
+            "display": true
+          },
+          {
+            "key": "seasonal_allocation",
+            "label": "Seasonal Allocation",
+            "uitype": "edittext",
+            "datatype": "double",
+            "default": null,
+            "uom": "MCFT",
+            "editable": true,
+            "display": true
+          },
+          {
+            "key": "cumulative_discharge",
+            "label": "Cumulative Discharge",
+            "uitype": "edittext",
+            "datatype": "double",
+            "default": null,
+            "uom": "MCFT",
+            "editable": true,
+            "display": true
+          },
+          {
+            "key": "geotagpic",
+            "label": "Geotagged Picture",
+            "uitype": "geotagimage",
+            "datatype": "geotagimagefused",
+            "editable": false,
+            "max": 1,
+            "expandable": {
+              "type": 0,
+              "icon_url": "http://192.168.0.55:8000/geotagged_picture.png",
+              "text": null,
+              "subform": null
+            }
+          }
+        ],
+        "buttons": [
+          {
+            "key": "cancel_btn",
+            "label": "Cancel",
+            "expandable": {
+              "type": 10,
+              "icon_url": null,
+              "subform": null,
+              "text": null
+            },
+            "api": null
+          },
+          {
+            "key": "preview_btn",
+            "label": "Preview",
+            "expandable": {
+              "type": 12,
+              "icon_url": null,
+              "subform": "iwm_001",
+              "text": null
+            },
+            "api": null
+          }
+        ]
+      },
+      {
+        "formid": "iwm_001",
+        "name": "Preview Form",
+        "title": "APWRIMS",
+        "subtitle": "Canal Structures",
+        "header": [
+          {
+            "key": "offtake_point",
+            "label": "Offtake Point Name",
+            "icon": null,
+            "display": true,
+            "submittable": false
+          },
+          {
+            "key": "distribution_system_name",
+            "label": "Distribution System Name",
+            "icon": null,
+            "display": true,
+            "submittable": false
+          },
+          {
+            "key": "chainage_number",
+            "label": "Chainage Number",
+            "icon": null,
+            "display": true,
+            "submittable": false
+          },
+          {
+            "key": "current_date",
+            "label": "Current Date",
+            "icon": null,
+            "display": true,
+            "submittable": true
+          },
+          {
+            "key": "localized_ayacut",
+            "label": "Localised ayacut",
+            "icon": null,
+            "display": true,
+            "submittable": true
+          },
+          {
+            "key": "designed_discharge",
+            "label": "Design Discharge",
+            "icon": null,
+            "display": true,
+            "submittable": true
+          },
+          {
+            "key": "current_discharge",
+            "label": "Current Discharge",
+            "icon": null,
+            "display": true,
+            "submittable": true
+          },
+          {
+            "key": "irrigated_ayacut",
+            "label": "Irrigated ayacut",
+            "icon": null,
+            "display": true,
+            "submittable": true
+          },
+          {
+            "key": "seasonal_allocation",
+            "label": "Seasonal Allocation",
+            "icon": null,
+            "display": true,
+            "submittable": true
+          },
+          {
+            "key": "cumulative_discharge",
+            "label": "Cumulative Discharge",
+            "icon": null,
+            "display": true,
+            "submittable": true
+          },
+          {
+            "key": "geotagpic",
+            "label": "Geotagged Picture",
+            "icon": null,
+            "display": true,
+            "submittable": true
+          }
+        ],
+        "buttons": [
+          {
+            "key": "cancel_btn",
+            "label": "Cancel",
+            "expandable": {
+              "type": 10,
+              "icon_url": null,
+              "subform": null,
+              "text": null
+            },
+            "api": null
+          },
+          {
+            "key": "submit_btn",
+            "label": "Submit",
+            "expandable": {
+              "type": 13,
+              "icon_url": null,
+              "subform": null,
+              "text": null
+            },
+            "api": "submit"
+          }
+        ]
+      }
+    ]
+  }
+}

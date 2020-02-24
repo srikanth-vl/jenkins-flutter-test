@@ -1,0 +1,54 @@
+<div class="row">
+    <div>
+        <ol *ngIf="app" class="breadcrumb">
+            <li (click)="navigate()" class="breadcrumb-item"
+                [class.active]="!location_herierchy || location_herierchy.size <=0">{{app.app_name}}</li>
+            <ng-container *ngFor="let element of app.attribute_heirarchy;let  i = index">
+                <i class="material-icons" *ngIf="location_herierchy[element]">keyboard_arrow_right</i>
+                <li *ngIf="location_herierchy[element]" class="breadcrumb-item" (click)="navigateTo(element)"
+                    [class.active]="location_herierchy && (!location_herierchy[app.attribute_heirarchy[i+1]] || location_herierchy[app.attribute_heirarchy[i+1]]=='')">
+                    {{location_herierchy[element]}}</li>
+            </ng-container>
+        </ol>
+    </div>
+    <div class="col-sm-12 col-lg-12 mt-3 mb-3">
+        <div><h5> Fields Marked as * are Optional </h5></div>
+        <table class="table table-dark table-hover" *ngIf="submissionCount && submissionCount.length > 0 && fetched">
+            <thead>
+                <tr>
+                    <th rowspan="3">S.No.</th>
+                    <th rowspan="3">{{attributeName | replace:'_':' ' | titleCase}}</th>
+                    <th *ngFor="let field of submissionCount[0]['fields']">
+                        {{submissionCount[0]['labels'][field]}} ({{submissionCount[0]['computation_type'][field]}})
+                        <ng-container *ngIf="submissionCount[0]['uom'][field]"> ({{submissionCount[0]['uom'][field]}})
+                        </ng-container>
+                    </th>
+                </tr>
+
+            </thead>
+            <tbody>
+                <tr *ngFor="let row of submissionCount;let i=index;">
+                    <ng-container *ngIf="i >= 1">
+                        <td>{{i}}</td>
+                    </ng-container>
+                    <ng-container *ngIf="clickable">
+                        <td class="clickable_cell" (click)="fetchDataForEnity(row['entity'], row)">{{row['entity']}}
+                        </td>
+                    </ng-container>
+                    <ng-container *ngIf="!clickable">
+                        <td (click)="fetchDataForEnity(row['entity'], row)">{{row['entity']}}</td>
+                    </ng-container>
+                    <td *ngFor="let field of submissionCount[0]['fields']">
+                        <ng-container *ngIf="submissionCount[i]['computed_values']">
+                            {{submissionCount[i]['computed_values'][field]}}</ng-container>
+
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div *ngIf="!(submissionCount && submissionCount.length > 0) && fetched">No data available!</div>
+        <div *ngIf="!(submissionCount && submissionCount.length > 0) && !fetched">
+            <mat-spinner></mat-spinner>data Loading
+        </div>
+    </div>
+</div>
