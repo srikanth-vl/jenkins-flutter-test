@@ -8,10 +8,10 @@ pipeline {
         }
         stage ('Flutter init') {
             steps {
-                echo "Running flutter clean"
-                sh "flutter clean"
                 echo "Running flutter doctor"
                 sh "flutter doctor"
+                // echo "Running flutter clean"
+                // sh "flutter clean"
             }
         }
     }
