@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/video"
+        android:layout_gravity="bottom"
+        android:background="@drawable/shape_rectangular_orange_buttons"
+        android:textSize="@dimen/button_text"
+        android:textColor="@color/white"
+        android:text="@string/record"
+        android:layout_alignParentBottom="true"/>
+
+    <TextureView
+        android:id="@+id/texture"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_above="@id/video"/>
+
+    <Chronometer
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/record_timer"
+        android:gravity="bottom"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@+id/video"/>
+
+</RelativeLayout>

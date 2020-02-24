@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wSEventTypeList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
+  <wSEventType>
+    <eventName>GROUNDWATER</eventName>
+    <eventHandlerClass>com.vassarlabs.play.websocket.event.impl.GroundWaterWSEvent</eventHandlerClass>
+  </wSEventType>
+  <wSEventType>
+    <eventName>RAINFALL</eventName>
+    <eventHandlerClass>com.vassarlabs.play.websocket.event.impl.RainfallWSEvent</eventHandlerClass>
+  </wSEventType>
+  <wSEventType>
+    <eventName>RESERVOIR</eventName>
+    <eventHandlerClass>com.vassarlabs.play.websocket.event.impl.ReservoirWSEvent</eventHandlerClass>
+  </wSEventType>
+  <wSEventType>
+    <eventName>CANAL</eventName>
+    <eventHandlerClass>com.vassarlabs.play.websocket.event.impl.CanalWSEvent</eventHandlerClass>
+  </wSEventType>
+  <wSEventType>
+    <eventName>MANDAL</eventName>
+    <eventHandlerClass>com.vassarlabs.play.websocket.event.impl.CanalWSEvent</eventHandlerClass>
+  </wSEventType>
+  <wSEventType>
+    <eventName>JUNCTION</eventName>
+    <eventHandlerClass>com.vassarlabs.play.websocket.event.impl.ReservoirWSEvent</eventHandlerClass>
+  </wSEventType>
+   <wSEventType>
+    <eventName>INFLOW_TO_STATE</eventName>
+    <eventHandlerClass>com.vassarlabs.play.websocket.event.impl.ReservoirWSEvent</eventHandlerClass>
+  </wSEventType>
+   <wSEventType>
+    <eventName>SURPLUS_TO_SEA</eventName>
+    <eventHandlerClass>com.vassarlabs.play.websocket.event.impl.ReservoirWSEvent</eventHandlerClass>
+  </wSEventType>
+</wSEventTypeList>

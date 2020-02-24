@@ -1,0 +1,79 @@
+<div class="container-fluid" *ngIf="superapp">
+  <div class="row">
+    <div class="col-sm-12 col-lg-12 mt-3 mb-3">
+      <div class="card border-primary w-100">
+        <div class="card-header card-header-bg1">
+          <div class="d-flex align-items-center justify-content-between">
+            <img style="height: 80px; width: 80px;" src="{{superapp.image_url}}">
+            <div class="text-center mr-auto">
+              <h2 class="text-white m-0">{{superapp.super_app_name}}</h2>
+            </div>
+            <div class="text-center ml-auto">
+              <!-- <a  href="" class="alert alert-primary float-left" style="margin-right: 20px">
+                          <i class="fa fa-bars" aria-hidden="true"></i> &nbsp;Users
+                      </a> -->
+              <div class="text-center float-right">
+                <small class="text-white m-0">APPS</small>
+                <h3 class="count-number">{{ superapp.apps.length }}</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6 col-lg-6 mt-3 mb-3">
+            <div class="card-body">
+              <div class="card">
+                <div class="card-body p-0 mt-3">
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item d-flex align-items-center justify-content-between">
+                      <span>No of Estimated Installations </span>
+                      <span>{{superapp.installations}}</span>
+                    </li>
+                    <li class="list-group-item d-flex align-items-center justify-content-between bg-light">
+                      <span>No of Registered users</span>
+                      <span>{{superapp.registered_users}}</span>
+                    </li>
+                    <li class="list-group-item d-flex align-items-center justify-content-between ">
+                      <span>No of users logged in </span>
+                      <span>{{superapp.users_logged_in}}</span>
+                    </li>
+                    <li class="list-group-item d-flex align-items-center justify-content-between bg-light">
+                      <span>No of users never logged in </span>
+                      <span>{{superapp.users_never_logged_in}}</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div *ngIf="fetched">
+              <app-chart [superApp]="superapp">
+              </app-chart>
+            </div>
+          </div>
+          <div class="col-sm-6 col-lg-6 mt-3 mb-3 yScrollBar2">
+            <app-subapp class="clickable_cell" *ngFor="let app of superapp.apps"
+             [child]="app" (click)="clickApp(app);scroll(target)">
+            </app-subapp>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  
+  <section class="example-section" #target>
+    Usage Analytics
+    <mat-slide-toggle class="example-margin" [color]="color" [checked]="businessAnalytics" [disabled]="disabled"
+    (change)="businessAnalytics = !businessAnalytics">
+      Business Analytics
+    </mat-slide-toggle>
+  </section>
+
+
+
+
+  <app-project-submission-analytic *ngIf="!businessAnalytics" [superapp]="superapp" [superAppId]="superappid"></app-project-submission-analytic>
+  <app-business-table *ngIf="businessAnalytics" [superapp]="superapp" [superAppId]="superappid"></app-business-table>
+
+</div>

@@ -1,0 +1,14 @@
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+<vassar-table-header-fixer table-id ="primaryTable"
+             header-fix = "true">
+<div vassar-table-directive data="vm.tableData" callback="vm.submitImage(data)" throb="vm.table1Throbber" th-color="true" bread-cum="vm.breadcum" table-id= "ImageTable" >
+</div>
+
+</vassar-table-header-fixer>
+
+<uib-pagination  total-items="pagination.totalItems" ng-model= "pagination.currentPage" items-per-page = "pagination.maxSize"></uib-pagination>

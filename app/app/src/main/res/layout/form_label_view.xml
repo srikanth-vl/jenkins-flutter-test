@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="@dimen/margin"
+    android:background="@android:color/transparent"
+    android:layout_marginLeft="@dimen/double_margin"
+    android:layout_marginRight="@dimen/double_margin"
+    android:layout_marginBottom="@dimen/double_margin">
+
+    <TextView
+        android:id="@+id/form_label_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:textSize="@dimen/form_field_label_textsize"
+        android:background="@android:color/transparent"
+        android:layout_centerVertical="true" />
+
+</RelativeLayout>

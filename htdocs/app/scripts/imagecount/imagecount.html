@@ -1,0 +1,14 @@
+
+
+
+
+<form-directive  data="vm.multipart" on-submit="vm.filterSubmit(response)"></form-directive>
+
+<vassar-table-header-fixer table-id ="secondTable"
+             header-fix = "true" watch-on-element="true">
+
+<div vassar-table-directive data="vm.tableData" callback="vm.handlePopup(data)" throb="vm.table1Throbber" th-color="true" bread-cum="vm.breadcum" table-id= "secondTable" >
+</div>
+</vassar-table-header-fixer>
+
+<uib-pagination  total-items="vm.pagination.totalItems" ng-model= "vm.pagination.currentPage" items-per-page = "vm.pagination.maxSize"></uib-pagination>

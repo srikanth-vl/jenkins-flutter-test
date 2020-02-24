@@ -1,0 +1,35 @@
+{
+  "upload_type": "delete_insert",
+  "superAppId": "a7cf09ac-43c1-3ba1-aa2d-6a68f786cc44",
+  "userId": "user_phone_number_ID",
+  "userExtId" : "user_phone_number_ID",
+  "password": null,
+  "otpObject" : null,
+  "departmentName" : "user_department",
+  "mobileNumber":"user_phone_number_ID",
+  "defaultPassword" : "vassar",
+  "userDetails": [
+    {
+      "emailId": null
+    },
+    {
+      "userName": "user_name"
+    },
+    {
+      "mobileNumber": "user_phone_number_ID"
+    },
+    {
+      "designation": "user_designation"
+    },
+    {
+      "zone": null
+    }
+  ],
+  "appActions": [
+    {
+      "key": "APWRIMS",
+      "value": "e8f9ae18-4c57-3938-8f48-339f9495e9d2",
+      "default": "1"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/shape_rectangular_color_primary_transparent_edges">
+
+    <TextView
+        android:id="@+id/project_submission_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="@dimen/double_margin"
+        android:layout_marginRight="@dimen/double_margin"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/double_margin"
+        android:layout_marginBottom="@dimen/double_margin"
+        android:textColor="@color/white"
+        android:textSize="@dimen/button_text"/>
+
+    <Button
+        android:id="@+id/project_submission_close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/elevation"
+        android:paddingTop="@dimen/elevation"
+        android:paddingLeft="@dimen/elevation"
+        android:paddingRight="@dimen/elevation"
+        android:layout_marginBottom="@dimen/double_margin"
+        android:layout_below="@+id/project_submission_message"
+        android:background="@drawable/shape_rectangular_orange_buttons"
+        android:text="@string/close"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/white"
+        android:textSize="@dimen/button_text"/>
+
+</RelativeLayout>

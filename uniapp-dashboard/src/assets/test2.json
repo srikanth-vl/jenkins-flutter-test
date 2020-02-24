@@ -1,0 +1,78 @@
+[
+    {
+        "name": "s_app_1",
+        "installations": 100,
+        "registered_users": 40,
+        "users_logged_in": 13,
+        "users_never_logged_in": 27,
+        "apps": [
+          {
+            "name": "app_1",
+            "no_of_projects": 200,
+            "projects_assigned": 100,
+            "project_submissions": 40
+          },
+          { 
+            "name": "app_2",
+            "no_of_projects": 250,
+            "projects_assigned": 190,
+            "project_submissions": 90
+          },
+          {
+            "name": "app_3",
+            "apps": [
+              {
+                "name": "subapp_1",
+                "no_of_projects": 220,
+                "projects_assigned": 110,
+                "project_submissions": 140
+              },
+              {
+                "name": "subapp_2",
+                "no_of_projects": 120,
+                "projects_assigned": 101,
+                "project_submissions": 49
+              }
+            ]
+          }
+        ]
+    },
+    { 
+        "name": "s_app_2",
+        "installations": 200,
+        "registered_users": 50,
+        "users_logged_in": 21,
+        "users_never_logged_in": 29,
+        "apps": [
+          {
+            "name": "app_21",
+            "no_of_projects": 201,
+            "projects_assigned": 109,
+            "project_submissions": 41
+          },
+          {
+            "name": "app_22",
+            "no_of_projects": 251,
+            "projects_assigned": 191,
+            "project_submissions": 91
+          },
+          {
+            "name": "app_23",
+            "apps": [
+              {
+                "name": "sub_app_21",
+                "no_of_projects": 221,
+                "projects_assigned": 111,
+                "project_submissions": 141
+              },
+              { 
+                "name": "sub_app_22",
+                "no_of_projects": 121,
+                "projects_assigned": 108,
+                "project_submissions": 51
+              }
+            ]
+          }
+        ]
+    }      
+]

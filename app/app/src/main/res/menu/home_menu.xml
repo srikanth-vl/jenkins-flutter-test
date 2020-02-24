@@ -1,0 +1,49 @@
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.BaseActivity">
+
+    <item
+        android:id="@+id/user_info"
+        android:orderInCategory="98"
+        android:title="User Profile"
+        app:showAsAction="always"/>
+
+    <item
+        android:id="@+id/home_sync"
+        android:orderInCategory="99"
+        android:title="@string/sync"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/action_sign_out"
+        android:icon="@drawable/applogout"
+        android:orderInCategory="101"
+        android:title="@string/sign_out"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/action_download_map"
+        android:orderInCategory="102"
+        android:title="@string/download_map"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_help"
+        android:orderInCategory="104"
+        android:title="@string/help"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/action_settings"
+        android:orderInCategory="105"
+        android:title="@string/settings"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/action_profile"
+        android:orderInCategory="106"
+        android:title="@string/user_profile"
+        app:showAsAction="never"/>
+</menu>

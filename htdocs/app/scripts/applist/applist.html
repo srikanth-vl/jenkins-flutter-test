@@ -1,0 +1,10 @@
+<br/>
+<br/>
+<br/>
+<br/>
+<h1>App List page</h1>
+
+<div ng-repeat = 'app in appList'>
+<img ng-click ="callProjectList(app.id)" src={{app.url}} alt="">
+<span>{{app.name}}</span>
+</div>

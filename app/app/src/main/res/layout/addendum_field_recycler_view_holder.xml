@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/addendum_row_recycler_view_root"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/transparent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent">
+
+        <TextView
+            android:id="@+id/addendum_row_recycler_view_text_button"
+            android:layout_width="@dimen/icon_dimension"
+            android:layout_height="@dimen/icon_dimension"
+            android:background="@drawable/round_button"
+            android:text="-"
+            android:textSize="26sp"
+            android:textColor="@color/white"
+            android:textAlignment="center"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginRight="@dimen/margin"
+            android:layout_marginLeft="@dimen/margin"
+            android:layout_marginBottom="@dimen/margin"/>
+
+        <LinearLayout
+            android:id="@+id/addendum_recycler_view_linear_layout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/icon_dimension"
+            android:background="@android:color/transparent"
+            android:orientation="horizontal"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true"
+            android:layout_toLeftOf="@id/addendum_row_recycler_view_text_button"
+            android:layout_marginRight="@dimen/margin"
+            android:layout_marginLeft="@dimen/margin"
+            android:layout_marginBottom="@dimen/margin"/>
+
+    </RelativeLayout>
+
+</LinearLayout>

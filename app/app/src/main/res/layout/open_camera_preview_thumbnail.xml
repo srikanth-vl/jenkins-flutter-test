@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:id="@+id/root"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="70dp"
+    android:layout_height="70dp"
+    android:background="@android:color/transparent">
+
+    <ImageView
+        android:id="@+id/img_photo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="6dp"
+        android:clickable="true"
+        android:background="@android:color/transparent"
+        android:visibility="visible"/>
+
+    <ImageButton
+        android:id="@+id/btn_close"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:elevation="1dp"
+        android:layout_gravity="end"
+        android:background="@drawable/delete_button"
+        android:scaleType="fitXY"
+        android:src="@drawable/delete"/>
+
+</FrameLayout>

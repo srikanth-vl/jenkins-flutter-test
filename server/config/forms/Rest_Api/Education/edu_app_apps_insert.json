@@ -1,0 +1,14 @@
+{
+  "superapp": "1b56bf77-d06e-11e8-9563-0da2ed19fece",
+  "noofapps": 1,
+  "apps": [
+    {
+      "app": "418406ca-f3c9-40e9-a182-acf1a3d8bccb",
+      "app_name": "No Bag Day",
+      "parent": "",
+      "icon": "http://192.168.0.31:8000/home/ubuntu/appImages/edu_app_no_bag_day_logo.png",
+      "alert_interval": 2,
+      "client_expiry": 2
+    }
+  ]
+}

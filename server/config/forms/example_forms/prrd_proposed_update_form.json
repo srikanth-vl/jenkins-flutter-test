@@ -1,0 +1,776 @@
+{
+  "forms": {
+    "initial_form_id": "prrd_000",
+    "form": [
+      {
+        "formid": "prrd_000",
+        "name": "PR RD Proposed Structure",
+        "title": "PR & RD",
+        "subtitle": "Proposed Structure",
+        "header": [
+          {
+            "key": "structure_type",
+            "label": "Structure Type",
+            "icon": null,
+            "display": true
+          },
+          {
+            "key": "district",
+            "label": "District",
+            "icon": null,
+            "display": true
+          },
+          {
+            "key": "mandal",
+            "label": "Mandal",
+            "icon": null,
+            "display": true
+          },
+          {
+            "key": "panchayat",
+            "label": "Panchayat",
+            "icon": null,
+            "display": true
+          },
+          {
+            "key": "sub_basin",
+            "label": "Sub Basin",
+            "icon": null,
+            "display": true
+          },
+          {
+            "key": "micro_basin",
+            "label": "Micro Basin",
+            "icon": null,
+            "display": true
+          },
+          {
+            "key": "watershed",
+            "label": "Watershed",
+            "icon": null,
+            "display": true
+          }
+        ],
+        "fields": [
+          {
+            "key": "gps_location",
+            "label": "Map",
+            "uitype": "geotag",
+            "datatype": "fixed",
+            "uom": null,
+            "default": "76.7,12.6#84.8,19.2",
+            "display": false,
+            "expandable": {
+              "type": 1,
+              "icon_url": null,
+              "subform": null,
+              "text": null
+            },
+            "validations": {
+              "mandatory": false,
+              "expr": [],
+              "api": []
+            }
+          }
+        ],
+        "buttons": [
+          {
+            "key": "cancel_btn",
+            "label": "Cancel",
+            "expandable": {
+              "type": 10,
+              "icon_url": null,
+              "subform": null,
+              "text": null
+            },
+            "api": null
+          },
+          {
+            "key": "edit_btn",
+            "label": "Edit",
+            "expandable": {
+              "type": 11,
+              "icon_url": null,
+              "subform": "prrd_001",
+              "text": null
+            },
+            "api": null
+          }
+        ]
+      },
+      {
+        "formid": "prrd_001",
+        "name": "PR RD Proposed Structure",
+        "title": "PR & RD",
+        "subtitle": "Proposed Structure",
+        "fields": [
+          {
+            "key": "prrd_sp",
+            "label": "Structure Possible",
+            "uitype": "radio",
+            "datatype": "string",
+            "display": false,
+            "uom": null,
+            "validations": {
+              "mandatory": true,
+              "expr": [
+                {
+                  "expr": "#prrd_sp.equals(''Yes'') || #prrd_sp.equals(''No'')",
+                  "error_msg": "Please select either Yes/No"
+                }
+              ],
+              "api": []
+            },
+            "multiplevalues": [
+              {
+                "value": "Yes",
+                "expandable": {
+                  "type": 1,
+                  "icon_url": null,
+                  "subform": "prrd_002",
+                  "text": null
+                }
+              },
+              {
+                "value": "No",
+                "expandable": {
+                  "type": 1,
+                  "icon_url": null,
+                  "subform": "prrd_003",
+                  "text": null
+                }
+              }
+            ],
+            "default": "Yes"
+          },
+          {
+            "key": "geotagpic",
+            "label": "Geotagged Picture",
+            "uitype": "geotagimage",
+            "datatype": "geotagimage",
+            "display": false,
+            "max": 3,
+            "validations": {
+              "mandatory": false,
+              "expr": [
+                {
+                  "expr": "#geotagpic.size() <= 3",
+                  "error_msg": "Maximum 3 geotagged- images are allowed"
+                }
+              ],
+              "api": []
+            },
+            "expandable": {
+              "type": null,
+              "icon_url": "http://192.168.0.27:8000/home/ubuntu/appImages/calender.jpeg",
+              "text": null,
+              "subform": null
+            },
+            "uom": null
+          }
+        ],
+        "buttons": [
+          {
+            "key": "cancel_btn",
+            "label": "Cancel",
+            "expandable": {
+              "type": 10,
+              "icon_url": null,
+              "subform": null,
+              "text": null
+            },
+            "api": null
+          },
+          {
+            "key": "preview_btn",
+            "label": "Preview",
+            "expandable": {
+              "type": 12,
+              "icon_url": null,
+              "subform": "prrd_009",
+              "text": null
+            },
+            "api": null
+          }
+        ]
+      },
+      {
+        "formid": "prrd_002",
+        "fields": [
+          {
+            "key": "last_sub_date",
+            "label": "Submission Last Date",
+            "uitype": "textview",
+            "datatype": "string",
+            "display": false,
+            "uom": null,
+            "icon": "http://192.168.0.27:8000/home/ubuntu/appImages/alarm.jpg",
+            "validations": {
+              "mandatory": false,
+              "expr": [],
+              "api": []
+            },
+            "expandable": {
+              "type": 2,
+              "icon_url": null,
+              "text": "Request to extend",
+              "subform": "prrd_004"
+            }
+          },
+          {
+            "key": "structure_type",
+            "label": "Structure Type",
+            "uitype": "dropdown",
+            "datatype": "string",
+            "display": false,
+            "default": "-",
+            "uom": null,
+            "multiplevalues": [
+              {
+                "value": "-"
+              },
+              {
+                "value": "Checkdam-Recharge"
+              },
+              {
+                "value": "Checkdam-Storage"
+              },
+              {
+                "value": "Percolation Tank-Recharge"
+              },
+              {
+                "value": "Percolation Tank-Storage"
+              },
+              {
+                "value": "Others",
+                "expandable": {
+                  "type": 1,
+                  "icon_url": null,
+                  "subform": "prrd_005",
+                  "text": null
+                }
+              }
+            ],
+            "validations": {
+              "mandatory": false,
+              "expr": [
+                {
+                  "expr": "#structure_type != null",
+                  "error_msg": "Structure Type not selected. Please select a structure type."
+                },
+                {
+                  "expr": "!#structure_type.isEmpty() and !#structure_type.equals(''-'')",
+                  "error_msg": "Structure Type cannot be empty"
+                },
+                {
+                  "expr": "#structure_type.equalsIgnoreCase(''Checkdam-Recharge'') or #structure_type.equalsIgnoreCase(''Checkdam-Storage'') or #structure_type.equalsIgnoreCase(''Percolation Tank-Recharge'') or #structure_type.equalsIgnoreCase(''Checkwall'') or #structure_type.equalsIgnoreCase(''Gabion'') or #structure_type.equalsIgnoreCase(''RFD'')",
+                  "error_msg": "Invalid Structure Type( Please select either Checkdam, Percolation Tank or Others"
+                }
+              ],
+              "api": []
+            }
+          },
+          {
+            "key": "prrd_cl",
+            "label": "Location",
+            "uitype": "textview",
+            "datatype": "string",
+            "display": false,
+            "uom": null,
+            "validations": {
+              "mandatory": false,
+              "expr": [
+                {}
+              ],
+              "api": []
+            },
+            "expandable": {
+              "type": 0,
+              "icon_url": null,
+              "text": "Change",
+              "subform": "prrd_006"
+            }
+          }
+        ]
+      },
+      {
+        "formid": "prrd_003",
+        "name": "PR RD Structure Possible",
+        "title": "PR & RD",
+        "subtitle": "Proposed Structure",
+        "fields": [
+          {
+            "key": "no_str_change_reason",
+            "label": "Select Reason",
+            "uitype": "dropdown",
+            "datatype": "string",
+            "display": false,
+            "multiplevalues": [
+              {
+                "value": "Reason 1"
+              },
+              {
+                "value": "Reason 2"
+              },
+              {
+                "value": "Other Reason",
+                "expandable": {
+                  "type": 1,
+                  "icon_url": null,
+                  "subform": "prrd_008",
+                  "text": null
+                }
+              }
+            ],
+            "default": "Reason 1",
+            "validations": {
+              "mandatory": false,
+              "expr": [
+                {
+                  "expr": "#no_str_change_reason != null and !#no_str_change_reason.isEmpty()",
+                  "error_msg": "Reason provided for no structure change can''t be empty"
+                }
+              ],
+              "api": []
+            },
+            "uom": null
+          },
+          {
+            "key": "gps_location",
+            "label": "Map",
+            "uitype": "geotag",
+            "datatype": "fixed",
+            "display": false,
+            "uom": null,
+            "default": "76.7,12.6#84.8,19.2",
+            "expandable": {
+              "type": 1,
+              "icon_url": null,
+              "subform": null,
+              "text": null
+            },
+            "validations": {
+              "mandatory": false,
+              "expr": [],
+              "api": []
+            }
+          }
+        ]
+      },
+      {
+        "formid": "prrd_004",
+        "fields": [
+          {
+            "key": "last_sub_date",
+            "label": "Select Date",
+            "uitype": "date",
+            "datatype": "date",
+            "display": false,
+            "uom": null,
+            "selectablewindow": {
+              "past": "0",
+              "future": "60",
+              "select": null
+            },
+            "validations": {
+              "mandatory": false,
+              "expr": [
+                {
+                  "expr": "#last_sub_date > #current.minusDays(1) and #last_sub_date < #current.plusDays(60)",
+                  "error_msg": "Date Validation Failed - Date should be from present to next 60 days only."
+                }
+              ],
+              "api": []
+            },
+            "expandable": {
+              "type": null,
+              "icon_url": "http://192.168.0.27:8000/home/ubuntu/appImages/calender.jpeg",
+              "text": null,
+              "subform": null
+            }
+          },
+          {
+            "key": "sub_date_ext_reason",
+            "label": "Reason for extension",
+            "uitype": "textbox",
+            "max_chars": 400,
+            "datatype": "string",
+            "display": false,
+            "default": null,
+            "uom": null,
+            "validations": {
+              "mandatory": false,
+              "expr": [
+                {
+                  "expr": "#sub_date_ext_reason != null  or !#sub_date_ext_reason.isEmpty()",
+                  "error_msg": "Reason should be provided for date extension, if requested"
+                },
+                {
+                  "expr": "#sub_date_ext_reason.length() <= 400",
+                  "error_msg": "Word limit exceeded- Please enter text upto 400 words"
+                }
+              ],
+              "api": []
+            }
+          }
+        ],
+        "buttons": [
+          {
+            "key": "cancel_btn",
+            "label": "Cancel",
+            "expandable": {
+              "type": 10,
+              "icon_url": null,
+              "subform": null,
+              "text": null
+            },
+            "api": null
+          },
+          {
+            "key": "save_btn",
+            "label": "Save",
+            "expandable": {
+              "type": 14,
+              "icon_url": null,
+              "subform": null,
+              "text": null
+            },
+            "api": null
+          }
+        ]
+      },
+      {
+        "formid": "prrd_005",
+        "fields": [
+          {
+            "key": "structure_type",
+            "label": "Other Structures",
+            "uitype": "dropdown",
+            "datatype": "string",
+            "display": false,
+            "default": "-",
+            "uom": null,
+            "validations": {
+              "mandatory": false,
+              "expr": [
+                {
+                  "expr": "#structure_type != null",
+                  "error_msg": "Structure Type not selected. Please select a structure type."
+                },
+                {
+                  "expr": "!#structure_type.isEmpty() and !#structure_type.equals(''-'')",
+                  "error_msg": "Structure Type cannot be empty"
+                },
+                {
+                  "expr": "#structure_type.equalsIgnoreCase(''Checkwall'') or #structure_type.equalsIgnoreCase(''Gabion'') or #structure_type.equalsIgnoreCase(''RFD'')",
+                  "error_msg": "Invalid Structure Type( Please select either Checkwall, Gabion or RFD"
+                }
+              ],
+              "api": []
+            },
+            "multiplevalues": [
+              {
+                "value": "-"
+              },
+              {
+                "value": "Checkwall"
+              },
+              {
+                "value": "Gabion"
+              },
+              {
+                "value": "RFD"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "formid": "prrd_006",
+        "fields": [
+          {
+            "key": "gps_location",
+            "label": "Change Location",
+            "uitype": "geotag",
+            "default": "76.7,12.6#84.8,19.2",
+            "datatype": "variable",
+            "display": false,
+            "expandable": {
+              "type": 1,
+              "icon_url": null,
+              "subform": null,
+              "text": null
+            },
+            "validations": {
+              "mandatory": false,
+              "expr": [],
+              "api": [
+                {
+                  "route": "http://geoserver.vassarlabs.com:9000/api/locationmap",
+                  "type": "post",
+                  "params": "{latlng: #gps_location, district: #district, mandal: #mandal,panchayat: #panchayat}"
+                }
+              ]
+            },
+            "uom": null
+          },
+          {
+            "key": "loc_change_reason",
+            "label": "Select Reason",
+            "uitype": "dropdown",
+            "datatype": "list",
+            "display": false,
+            "multiplevalues": [
+              {
+                "value": "Reason 1"
+              },
+              {
+                "value": "Reason 2"
+              },
+              {
+                "value": "Other Reason",
+                "expandable": {
+                  "type": 1,
+                  "icon_url": null,
+                  "subform": "prrd_007",
+                  "text": null
+                }
+              }
+            ],
+            "default": "Reason 1",
+            "validations": {
+              "mandatory": false,
+              "expr": [
+                {
+                  "expr": "#loc_change_reason != null and !#loc_change_reason.isEmpty()",
+                  "error_msg": "It is mandatory to provide a reason for location change"
+                }
+              ],
+              "api": []
+            },
+            "uom": null
+          },
+          {
+            "key": "old_geotagpic",
+            "label": "Original Location With Geotag",
+            "uitype": "geotagimage",
+            "datatype": "geotagimage",
+            "display": false,
+            "max": 3,
+            "validations": {
+              "mandatory": false,
+              "expr": [
+                {
+                  "expr": "#old_geotagpic.size() <= 3",
+                  "error_msg": "Maximum 3 geotagged- images are allowed"
+                }
+              ],
+              "api": []
+            },
+            "expandable": {
+              "type": null,
+              "icon_url": "http://192.168.0.27:8000/home/ubuntu/appImages/calender.jpeg",
+              "text": null,
+              "subform": null
+            },
+            "uom": null
+          },
+          {
+            "key": "geotagpic",
+            "label": "New Location with Geotag",
+            "uitype": "geotagimage",
+            "datatype": "geotagimage",
+            "display": false,
+            "max": 3,
+            "validations": {
+              "mandatory": false,
+              "expr": [
+                {
+                  "expr": "#geotagpic.size() <= 3",
+                  "error_msg": "Maximum 3 geotagged- images are allowed"
+                }
+              ],
+              "api": []
+            },
+            "expandable": {
+              "type": null,
+              "icon_url": "http://192.168.0.27:8000/home/ubuntu/appImages/calender.jpeg",
+              "text": null,
+              "subform": null
+            },
+            "uom": null
+          }
+        ],
+        "buttons": [
+          {
+            "key": "cancel_btn",
+            "label": "Cancel",
+            "expandable": {
+              "type": 10,
+              "icon_url": null,
+              "subform": null,
+              "text": null
+            },
+            "api": null
+          },
+          {
+            "key": "save_btn",
+            "label": "Save",
+            "expandable": {
+              "type": 14,
+              "icon_url": null,
+              "subform": null,
+              "text": null
+            },
+            "api": null
+          }
+        ]
+      },
+      {
+        "formid": "prrd_007",
+        "fields": [
+          {
+            "key": "loc_change_reason",
+            "label": "Specify reason for location change",
+            "uitype": "textbox",
+            "max_chars": 400,
+            "datatype": "string",
+            "display": false,
+            "default": null,
+            "uom": null,
+            "validations": {
+              "mandatory": false,
+              "expr": [
+                {
+                  "expr": "#loc_change_reason != null and !#loc_change_reason.isEmpty()",
+                  "error_msg": "Reason for location change should not be null or empty."
+                },
+                {
+                  "expr": "#loc_change_reason.length() <= 400",
+                  "error_msg": "Word limit exceeded- Please enter text upto 400 words"
+                }
+              ],
+              "api": []
+            }
+          }
+        ]
+      },
+      {
+        "formid": "prrd_008",
+        "fields": [
+          {
+            "key": "no_str_change_reason",
+            "label": "Specify reason for structure not being possible",
+            "uitype": "textbox",
+            "max_chars": 400,
+            "datatype": "string",
+            "display": false,
+            "default": null,
+            "uom": null,
+            "validations": {
+              "mandatory": false,
+              "expr": [
+                {
+                  "expr": "#no_str_change_reason != null and !#no_str_change_reason.isEmpty()",
+                  "error_msg": "Reason for location change should not be null or empty."
+                },
+                {
+                  "expr": "#no_str_change_reason.length() <= 400",
+                  "error_msg": "Word limit exceeded- Please enter text upto 400 words"
+                }
+              ],
+              "api": []
+            }
+          }
+        ]
+      },
+      {
+        "formid": "prrd_009",
+        "name": "Preview Form",
+        "title": "PR & RD",
+        "subtitle": "Proposed Structure",
+        "header": [
+          {
+            "key": "prrd_sp",
+            "label": "Structure Possible",
+            "icon": null,
+            "display": true
+          },
+          {
+            "key": "last_sub_date",
+            "label": "Select Date",
+            "icon": null,
+            "display": true
+          },
+          {
+            "key": "sub_date_ext_reason",
+            "label": "Reason for extension",
+            "uitype": "textbox",
+            "icon": null,
+            "display": true
+          },
+          {
+            "key": "structure_type",
+            "label": "Structure Type",
+            "icon": null,
+            "display": true
+          },
+          {
+            "key": "loc_change_reason",
+            "label": "Reason for location change",
+            "icon": null,
+            "display": true
+          },
+          {
+            "key": "old_geotagpic",
+            "label": "Original Location With Geotag",
+            "icon": null,
+            "display": true
+          },
+          {
+            "key": "no_str_change_reason",
+            "label": "No structure change Reason",
+            "icon": null,
+            "display": true
+          },
+          {
+            "key": "geotagpic",
+            "label": "Geotagged Picture",
+            "icon": null,
+            "display": true
+          },
+          {
+            "key": "gps_location",
+            "label": "GPS Location",
+            "icon": null,
+            "display": true
+          }
+        ],
+        "buttons": [
+          {
+            "key": "cancel_btn",
+            "label": "Cancel",
+            "expandable": {
+              "type": 10,
+              "icon_url": null,
+              "subform": null,
+              "text": null
+            },
+            "api": null
+          },
+          {
+            "key": "submit_btn",
+            "label": "Submit",
+            "expandable": {
+              "type": 13,
+              "icon_url": null,
+              "subform": null,
+              "text": null
+            },
+            "api": "/api/uniapp/submit"
+          }
+        ]
+      }
+    ]
+  }
+}

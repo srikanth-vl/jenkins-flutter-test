@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/form_toggle_root"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="@dimen/margin"
+    android:background="@android:color/transparent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:layout_marginLeft="@dimen/double_margin"
+        android:layout_marginRight="@dimen/double_margin">
+
+        <TextView
+            android:id="@+id/form_toggle_label"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="@color/white"
+            android:textSize="@dimen/form_field_label_textsize"
+            android:background="@android:color/transparent"
+            android:layout_marginBottom="@dimen/margin"
+            android:layout_centerVertical="true" />
+
+        <RelativeLayout
+            android:id="@+id/form_toggle_view_layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:background="@android:color/transparent"
+            android:layout_marginLeft="@dimen/double_margin"
+            android:layout_marginRight="@dimen/double_margin">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:weightSum="3"
+                android:layout_centerVertical="true"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/form_toggle_disabled_text"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/form_field_label_textsize"
+                    android:background="@android:color/transparent"
+                    android:layout_marginRight="@dimen/margin"
+                    android:textAlignment="textEnd"/>
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent">
+
+                    <Switch
+                        android:id="@+id/form_toggle_view"
+                        android:layout_width="56dp"
+                        android:layout_height="56dp"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/form_field_label_textsize"
+                        android:showText="false"
+                        android:layout_centerInParent="true"
+                        android:theme="@style/SwitchTheme" />
+
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/form_toggle_enabled_text"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/form_field_label_textsize"
+                    android:background="@android:color/transparent"
+                    android:layout_marginLeft="@dimen/margin"
+                    android:textAlignment="textEnd"/>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/double_margin"
+        android:background="@android:color/transparent"
+        android:layout_marginTop="@dimen/half_margin"/>
+
+</LinearLayout>

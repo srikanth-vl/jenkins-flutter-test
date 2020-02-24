@@ -1,0 +1,79 @@
+{
+  "upload_type": "delete_insert",
+  "superAppId": "a7cf09ac-43c1-3ba1-aa2d-6a68f786cc44",
+  "appId": "e8f9ae18-4c57-3938-8f48-339f9495e9d2",
+  "keys": [
+    {
+      "key": "iws_id",
+      "default": "",
+      "masterDataName" : "ext_proj_id"
+    },
+    {
+      "key": "distribution_system_name",
+      "default": "",
+      "masterDataName" : "distribution_system_name"
+    },
+    {
+      "key": "main_canal_name",
+      "default": "",
+      "masterDataName" : "main_canal_name"
+    },
+    {
+      "key": "offtake_point_name",
+      "default": "",
+      "masterDataName" : "offtake_point_name"
+    },
+     {
+      "key": "offtake_point_name_DISPLAY",
+      "default": "",
+      "masterDataName" : "proj_name"
+    },
+    {
+      "key": "chainage_number",
+      "default": "-",
+      "masterDataName" : "chainage_number"
+    },
+    {
+      "key": "design_discharge",
+      "default": "38",
+      "masterDataName" : "designed_discharge"
+    },
+    {
+      "key": "localized_ayacut",
+      "default": "",
+      "masterDataName" : "localized_ayacut"
+    },
+    {
+      "key": "khariff_start_date",
+      "default": "",
+       "masterDataName" : "khariff_start_date"
+    },
+    {
+      "key": "khariff_end_date",
+      "default": "",
+      "masterDataName" : "khariff_end_date"
+    },
+    {
+      "key": "rabi_start_date",
+      "default": "",
+      "masterDataName" : "rabi_start_date"
+    },
+    {
+      "key": "rabi_end_date",
+      "default": "",
+      "masterDataName" : "rabi_end_date"
+    },
+    {
+      "key": "lat",
+      "default": "",
+      "masterDataName" : "geotag"
+    },
+    {
+      "key": "long",
+      "default": "",
+      "masterDataName" : "geotag"
+    }
+   
+  ],
+  "userMapping": null
+}

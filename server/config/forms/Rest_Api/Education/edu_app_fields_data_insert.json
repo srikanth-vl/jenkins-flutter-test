@@ -1,0 +1,260 @@
+{
+  "superapp": "ff5df950-ce2c-11e8-a8d5-f2801f1b9fd1",
+  "appid": "7dd4de38-ce2e-11e8-a8d5-f2801f1b9fd1",
+  "projectid": null,
+  "form_type": "insert",
+  "default": [],
+  "master": [
+    {
+      "key": "entity_id",
+      "label": "Entity Id",
+      "datatype": "string",
+      "default": null,
+      "uom": null,
+      "target_key": "",
+      "mandatory": false,
+      "display_labels": [
+        0
+      ],
+      "validations": {
+        "expr": [],
+        "api": []
+      },
+      "computation_type": null,
+      "dimension": null
+    },
+    {
+      "key": "school_id",
+      "label": "School Id",
+      "datatype": "string",
+      "default": null,
+      "uom": null,
+      "target_key": "",
+      "mandatory": false,
+      "display_labels": [
+        0
+      ],
+      "validations": {
+        "expr": [],
+        "api": []
+      },
+      "computation_type": null,
+      "dimension": null
+    },
+    {
+      "key": "event_id",
+      "label": "Event Id",
+      "datatype": "string",
+      "default": null,
+      "uom": null,
+      "target_key": "",
+      "mandatory": false,
+      "display_labels": [
+        0
+      ],
+      "validations": {
+        "expr": [],
+        "api": []
+      },
+      "computation_type": null,
+      "dimension": null
+    },
+    {
+      "key": "ext_proj_id",
+      "label": "External Id",
+      "datatype": "string",
+      "default": null,
+      "uom": null,
+      "target_key": "",
+      "mandatory": false,
+      "display_labels": [
+        0
+      ],
+      "validations": {
+        "expr": [],
+        "api": []
+      },
+      "computation_type": null,
+      "dimension": null
+    },
+    {
+      "key": "school_name",
+      "label": "School Name",
+      "datatype": "string",
+      "default": null,
+      "uom": null,
+      "target_key": "",
+      "mandatory": false,
+      "display_labels": [
+        0
+      ],
+      "validations": {
+        "expr": [],
+        "api": []
+      },
+      "computation_type": null,
+      "dimension": null
+    },
+    {
+      "key": "event_name",
+      "label": "Event Name",
+      "datatype": "string",
+      "default": null,
+      "uom": null,
+      "target_key": "",
+      "mandatory": false,
+      "display_labels": [
+        0
+      ],
+      "validations": {
+        "expr": [],
+        "api": []
+      },
+      "computation_type": null,
+      "dimension": null
+    },
+    {
+      "key": "district_id",
+      "label": "District",
+      "datatype": "string",
+      "default": null,
+      "uom": null,
+      "target_key": "",
+      "mandatory": false,
+      "display_labels": [
+        0
+      ],
+      "validations": {
+        "expr": [],
+        "api": []
+      },
+      "computation_type": null,
+      "dimension": null
+    },
+    {
+      "key": "ulb_id",
+      "label": "ULB Id",
+      "datatype": "string",
+      "default": null,
+      "uom": null,
+      "target_key": "",
+      "mandatory": false,
+      "display_labels": [
+        0
+      ],
+      "validations": {
+        "expr": [],
+        "api": []
+      },
+      "computation_type": null,
+      "dimension": null
+    },
+    {
+      "key": "academic_year",
+      "label": "Academic year",
+      "datatype": "string",
+      "default": null,
+      "uom": null,
+      "target_key": "",
+      "mandatory": false,
+      "display_labels": [
+        0
+      ],
+      "validations": {
+        "expr": [],
+        "api": []
+      },
+      "computation_type": null,
+      "dimension": null
+    },
+    {
+      "key": "last_sync_ts",
+      "label": "Last update",
+      "datatype": "string",
+      "default": null,
+      "uom": null,
+      "target_key": "",
+      "mandatory": false,
+      "display_labels": [
+        0
+      ],
+      "validations": {
+        "expr": [],
+        "api": []
+      },
+      "computation_type": null,
+      "dimension": null
+    }
+  ],
+  "app": [
+    {
+      "key": "geotagpic_1",
+      "label": "Geotag Picture 1",
+      "datatype": "image",
+      "default": null,
+      "uom": null,
+      "target_key": "",
+      "mandatory": false,
+      "display_labels": [
+        0
+      ],
+      "validations": {
+        "expr": [
+          {
+            "expr": "#geotagpic_1.size() <= 1",
+            "error_msg": "Maximum 1 geotagged- images are allowed"
+          }
+        ],
+        "api": []
+      },
+      "computation_type": null,
+      "dimension": null
+    },
+    {
+      "key": "geotagpic_2",
+      "label": "Geotag Picture 2",
+      "datatype": "image",
+      "default": null,
+      "uom": null,
+      "target_key": "",
+      "mandatory": false,
+      "display_labels": [
+        0
+      ],
+      "validations": {
+        "expr": [
+          {
+            "expr": "#geotagpic_2.size() <= 1",
+            "error_msg": "Maximum 1 geotagged- images are allowed"
+          }
+        ],
+        "api": []
+      },
+      "computation_type": null,
+      "dimension": null
+    },
+    {
+      "key": "geotagpic_3",
+      "label": "Geotag Picture 3",
+      "datatype": "image",
+      "default": null,
+      "uom": null,
+      "target_key": "",
+      "mandatory": false,
+      "display_labels": [
+        0
+      ],
+      "validations": {
+        "expr": [
+          {
+            "expr": "#geotagpic_3.size() <= 1",
+            "error_msg": "Maximum 1 geotagged- images are allowed"
+          }
+        ],
+        "api": []
+      },
+      "computation_type": null,
+      "dimension": null
+    }
+  ]
+}

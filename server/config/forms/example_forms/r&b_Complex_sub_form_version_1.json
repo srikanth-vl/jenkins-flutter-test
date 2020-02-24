@@ -1,0 +1,449 @@
+{
+  "forms": {
+    "update": {
+      "initial_form_id": "rb_000",
+      "form": [
+        {
+          "formid": "rb_000",
+          "name": "R&B",
+          "title": "Roads & Building Department",
+          "subtitle": "Daily Progress Reporting",
+          "header": [
+            {
+              "key": "name_of_work",
+              "label": "Name of the Work"
+            },
+            {
+              "key": "nature_of_work",
+              "label": "Nature of Work"
+            },
+            {
+              "key": "sub_division",
+              "label": "Sub Division"
+            },
+            {
+              "key": "division",
+              "label": "Division"
+            },
+            {
+              "key": "district",
+              "label": "District"
+            }
+          ],
+          "fields": [
+            {
+              "key": "rb_sd",
+              "label": "Select Date",
+              "uitype": "date",
+              "datatype": "date",
+              "selectablewindow": {
+                "past": "5",
+                "future": "0",
+                "select": "-1"
+              },
+              "validations": {
+                "mandatory": false,
+                "expr": [
+                  {
+                    "expr": "#rb_sd > #current.minusDays(5)",
+                    "erro_msg": "Only previous five days date expected"
+                  },
+                  {
+                    "expr": "#rb_sd < #current.plusDays(1)",
+                    "error_msg": "Future date selected"
+                  }
+                ],
+                "api": ""
+              },
+              "uom": "",
+              "display": [
+                "P"
+              ]
+            },
+            {
+              "key": "roads_gsb",
+              "label": "GSB",
+              "uitype": "edittext",
+              "datatype": "double",
+              "default": "",
+              "validations": {
+                "mandatory": true,
+                "min": "0.0",
+                "max": "",
+                "expr": [
+                  {
+                    "expr": "#roads_gsb < #roads_gsb_m",
+                    "error_msg": "Invalid GSB : Should be less than target"
+                  },
+                  {
+                    "expr": "#roads_gsb > 0",
+                    "error_msg": "Invalid GSB : Should be greater than 0"
+                  }
+                ],
+                "api": ""
+              },
+              "uom": ""
+            },
+            {
+              "key": "roads_wmm",
+              "label": "WMM",
+              "uitype": "edittext",
+              "datatype": "double",
+              "default": "",
+              "validations": {
+                "mandatory": true,
+                "min": "0.0",
+                "max": "",
+                "expr": [
+                  {
+                    "expr": "#roads_wmm < #roads_wmm_m",
+                    "error_msg": "Invalid WMM : Should be less than target"
+                  },
+                  {
+                    "expr": "#roads_wmm > 0",
+                    "error_msg": "Invalid WMM : Should be greater than 0"
+                  }
+                ],
+                "api": ""
+              },
+              "uom": ""
+            },
+            {
+              "key": "roads_bm_dbm",
+              "label": "BM/DBM",
+              "uitype": "edittext",
+              "datatype": "double",
+              "default": "",
+              "validations": {
+                "mandatory": true,
+                "min": "0.0",
+                "max": "",
+                "expr": [
+                  {
+                    "expr": "#roads_bm_dbm < #roads_bm_dbm_m",
+                    "error_msg": "Invalid BM/DBM : Should be less than target"
+                  },
+                  {
+                    "expr": "#roads_bm_dbm > 0",
+                    "error_msg": "Invalid BM/DBM : Should be greater than 0"
+                  }
+                ],
+                "api": ""
+              },
+              "uom": ""
+            },
+            {
+              "key": "roads_bc_mss",
+              "label": "BC/MSS",
+              "uitype": "edittext",
+              "datatype": "double",
+              "default": "",
+              "validations": {
+                "mandatory": true,
+                "min": "0.0",
+                "max": "",
+                "expr": [
+                  {
+                    "expr": "#roads_bc_mss < #roads_bc_mss_m",
+                    "error_msg": "Invalid BM/MSS : Should be less than target"
+                  },
+                  {
+                    "expr": "#roads_bc_mss > 0",
+                    "error_msg": "Invalid BM/MSS : Should be greater than 0"
+                  }
+                ],
+                "api": ""
+              },
+              "uom": ""
+            },
+            {
+              "key": "roads_cd_works",
+              "label": "CD Works",
+              "uitype": "edittext",
+              "datatype": "int",
+              "default": "",
+              "validations": {
+                "mandatory": true,
+                "min": "0.0",
+                "max": "",
+                "expr": [
+                  {
+                    "expr": "#roads_cd_works < #roads_cd_works_m",
+                    "error_msg": "Invalid CD Works : Should be less than target"
+                  },
+                  {
+                    "expr": "#roads_cd_works > 0",
+                    "error_msg": "Invalid CD Works : Should be greater than 0"
+                  }
+                ],
+                "api": ""
+              },
+              "uom": ""
+            },
+            {
+              "key": "roads_cc_pavement",
+              "label": "CC Pavement",
+              "uitype": "edittext",
+              "datatype": "double",
+              "default": "",
+              "validations": {
+                "mandatory": true,
+                "min": "0.0",
+                "max": "",
+                "expr": [
+                  {
+                    "expr": "#roads_cc_pavement < #roads_cc_pavement_m",
+                    "error_msg": "Invalid CC Pavement : Should be less than target"
+                  },
+                  {
+                    "expr": "#roads_cc_pavement > 0",
+                    "error_msg": "Invalid CC Pavement : Should be greater than 0"
+                  }
+                ],
+                "api": ""
+              },
+              "uom": ""
+            },
+            {
+              "key": "bridges_foundations",
+              "label": "Foundations",
+              "uitype": "edittext",
+              "datatype": "int",
+              "default": "",
+              "validations": {
+                "mandatory": true,
+                "min": "0.0",
+                "max": "",
+                "expr": [
+                  {
+                    "expr": "#bridges_foundations < #bridges_foundations_m",
+                    "error_msg": "Invalid Foundations : Should be less than target"
+                  },
+                  {
+                    "expr": "#bridges_foundations > 0",
+                    "error_msg": "Invalid Foundations : Should be greater than 0"
+                  }
+                ],
+                "api": ""
+              },
+              "uom": ""
+            },
+            {
+              "key": "bridges_sub_structure",
+              "label": "Sub Structure",
+              "uitype": "edittext",
+              "datatype": "int",
+              "default": "",
+              "validations": {
+                "mandatory": true,
+                "min": "0.0",
+                "max": "",
+                "expr": [
+                  {
+                    "expr": "#bridges_sub_structure < #bridges_sub_structure_m",
+                    "error_msg": "Invalid Sub Structure : Should be less than target"
+                  },
+                  {
+                    "expr": "#bridges_sub_structure > 0",
+                    "error_msg": "Invalid Sub Structure : Should be greater than 0"
+                  }
+                ],
+                "api": ""
+              },
+              "uom": ""
+            },
+            {
+              "key": "bridges_super_structure",
+              "label": "Super Structure",
+              "uitype": "edittext",
+              "datatype": "int",
+              "default": "",
+              "validations": {
+                "mandatory": true,
+                "min": "0.0",
+                "max": "",
+                "expr": [
+                  {
+                    "expr": "#bridges_super_structure < #bridges_super_structure_m",
+                    "error_msg": "Invalid Super Structure : Should be less than target"
+                  },
+                  {
+                    "expr": "#bridges_super_structure > 0",
+                    "error_msg": "Invalid Super Structure : Should be greater than 0"
+                  }
+                ],
+                "api": ""
+              },
+              "uom": ""
+            },
+            {
+              "key": "bridges_approaches",
+              "label": "Approaches",
+              "uitype": "edittext",
+              "datatype": "int",
+              "default": "",
+              "validations": {
+                "mandatory": true,
+                "min": "0.0",
+                "max": "",
+                "expr": [
+                  {
+                    "expr": "#bridges_approaches < #bridges_approaches_m",
+                    "error_msg": "Invalid Approaches : Should be less than target"
+                  },
+                  {
+                    "expr": "#bridges_approaches > 0",
+                    "error_msg": "Invalid Approaches : Should be greater than 0"
+                  }
+                ],
+                "api": ""
+              },
+              "uom": ""
+            },
+            {
+              "key": "rb_exp",
+              "label": "Current month Expenditure",
+              "uitype": "edittext",
+              "datatype": "int",
+              "default": "",
+              "validations": {
+                "mandatory": true,
+                "min": "0.0",
+                "max": "",
+                "expr": [
+                  {
+                    "expr": "#rb_exp < #rb_exp_m",
+                    "error_msg": "Invalid Current month exp : Should be less than target"
+                  },
+                  {
+                    "expr": "#rb_exp > 0",
+                    "error_msg": "Invalid Current month exp : Should be greater than 0"
+                  }
+                ],
+                "api": ""
+              },
+              "uom": ""
+            },
+            {
+              "key": "rb_tp",
+              "label": "Take_Picture",
+              "uitype": "image",
+              "datatype": "image",
+              "validations": {
+                "mandatory": true,
+                "max": "3",
+                "expr": [
+                  {
+                    "expr": "#rb_tp.size() < 3",
+                    "error_msg": "Maximum 3 geotagged- images are allowed"
+                  }
+                ],
+                "api": ""
+              },
+              "uom": ""
+            },
+            {
+              "key": "rb_geotag",
+              "label": "Geo-Tag",
+              "uitype": "sub-form",
+              "datatype": "sub-form",
+              "form_id": "rb_001"
+            }
+          ]
+        },
+        {
+          "form_id": "rb_001",
+          "name": "rb_Sub-form",
+          "title": "Roads & Building Department",
+          "subtitle": "Daily Progress Reporting",
+          "fields": [
+            {
+              "key": "rb_cb",
+              "label": "Sample Check Box",
+              "uitype": "checkbox",
+              "datatype": "list",
+              "multiplevalues": [
+                {
+                  "value": "Option 1"
+                },
+                {
+                  "value": "Option 2"
+                },
+                {
+                  "value": "Option 3"
+                }
+              ],
+              "default": "Option 2",
+              "validations": {
+                "mandatory": false,
+                "expr": [
+                  {
+                    "expr": "",
+                    "error_msg": ""
+                  }
+                ],
+                "api": ""
+              },
+              "uom": ""
+            },
+            {
+              "key": "rb_dropdown",
+              "label": "sample Dropdown",
+              "uitype": "dropdown",
+              "datatype": "list",
+              "multiplevalues": [
+                {
+                  "value": "Option 1"
+                },
+                {
+                  "value": "Option 2"
+                },
+                {
+                  "value": "Option 3"
+                }
+              ],
+              "default": "Option 2",
+              "validations": {
+                "mandatory": false,
+                "expr": [
+                  {
+                    "expr": "",
+                    "error_msg": ""
+                  }
+                ],
+                "api": ""
+              },
+              "uom": ""
+            },
+            {
+              "key": "rb_radios",
+              "label": "sample radios",
+              "uitype": "radios",
+              "datatype": "list",
+              "multiplevalues": [
+                {
+                  "value": "Option 1"
+                },
+                {
+                  "value": "Option 2"
+                }
+              ],
+              "default": "Option 1",
+              "validations": {
+                "mandatory": false,
+                "expr": [
+                  {
+                    "expr": "",
+                    "error_msg": ""
+                  }
+                ],
+                "api": ""
+              },
+              "uom": ""
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

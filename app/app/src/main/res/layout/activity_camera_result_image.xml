@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.vassar.unifiedapp.newcamera.CameraResultImage">
+
+    <ImageView
+        android:id="@+id/camera_result_imageview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:weightSum="2">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/cancel_button"
+            android:layout_gravity="end"
+            android:layout_weight="1"
+            android:textColor="@color/white"
+            android:background="@drawable/shape_rectangular_orange_buttons"
+            android:text="@string/cancel"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/accept_button"
+            android:layout_weight="1"
+            android:textColor="@color/white"
+            android:layout_gravity="end"
+            android:background="@drawable/shape_rectangular_orange_buttons"
+            android:text="@string/accept"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

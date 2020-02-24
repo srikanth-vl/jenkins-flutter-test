@@ -1,0 +1,128 @@
+<form name="vm.form" ng-submit="vm.formSubmit('submit')">
+  <h2>
+    {{vm.formjsondata.name}}
+  </h2>
+  <br/><br/>
+
+    &ensp; <button type="button" class="btn btn-primary" name="button" ng-click = "shutdown()" >Logout</button>
+    <br/><br/>
+            &ensp;<span>StartDate</span>
+            &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+            &emsp;&emsp;&emsp;&ensp;<span>EndDate</span>
+          <div class="row" ng-repeat="event in vm.events track by $index">
+            <div>&nbsp;</div>
+            <div>&nbsp;</div>
+            <div>&nbsp;</div>
+
+            <div style="padding-left:10px" class="column">
+              <p  class="input-group" style="max-width: 200px">
+                  <input
+                    style="height: 36px;"
+                    type="text"
+                    class="form-control"
+                    readonly
+                    uib-datepicker-popup="dd MMMM yyyy"
+                    ng-model="event.startsAt"
+                    is-open="event.startOpen"
+                    ng-change = "DateChanged()"
+                    close-text="Close" >
+              <span>
+                <button
+                  type="button"
+                  style="height: 36px"
+                  ng-disabled = "vm.startdisable"
+                  ng-click="vm.toggle($event, 'startOpen', event)">
+                  <i class="far fa-calendar-alt fa-2x"></i>
+                </button>
+              </span>
+            </div>
+            <div>&nbsp;</div>
+            <div>&nbsp;</div>
+            <div>&nbsp;</div>
+            <div class="column">
+              <p class="input-group" style="max-width: 200px">
+                 <input
+                   style="height: 36px;"
+                   type="text"
+                   class="form-control"
+                   readonly
+                   uib-datepicker-popup="dd MMMM yyyy"
+                   ng-model="event.endsAt"
+                   is-open="event.endOpen"
+                   datepicker-options="endDateOptions"
+                   close-text="Close">
+                 <span class="input-group-btn">
+                   <button
+                     type="button"
+                     ng-disabled= "vm.datedisable"
+                     ng-click="vm.toggle($event, 'endOpen', event)">
+                     <i class="far fa-calendar-alt fa-2x"></i>
+                   </button>
+                 </span>
+               </p>
+            </div>
+        </div>
+
+  <div ng-repeat="formfield in vm.formjsondata.fields">
+    <div class="form-group col-4" ng-if="formfield.type !== 'file' && formfield.type !== 'dropdown' && formfield.type !== 'radio'  && formfield.type !== 'checkbox'">
+      <label for=""> {{formfield.label}}  <span class="text-danger" ng-if="formfield.mandatory">*</span></label>
+      <!--  If the field is mandatory is should be necessarily filled hence the required attribute and the * -->
+      <input type="{{formfield.type}}" class="form-control" placeholder="{{formfield.placeholder}}" minlength="{{formfield.minlength}}"
+      maxlength="{{formfield.maxlength}}" ng-model="vm.formdata[formfield.key]" ng-change="" ng-required="formfield.mandatory">
+    </div>
+    <div class="form-group col-4" ng-if="formfield.type === 'file'">
+      <label for=""> {{formfield.label}} <span class="text-danger" ng-if="formfield.mandatory">*</span></label>
+      <input type="file" class="form-control" placeholder="{{formfield.label}}" file-model="vm.formdata[formfield.key]" ng-model="vm.formdata[formfield.key]" ng-required="formfield.mandatory">
+    </div>
+
+    <div class="form-group col-4" ng-if="formfield.type === 'dropdown'" ng-required="formfield.mandatory">
+      <label for="">{{formfield.label}} <span class="text-danger" ng-if="formfield.mandatory">*</span></label>
+      <select name="" id="{{formfield.key}}" class="form-control" ng-model="vm.formdata[formfield.key]"
+              ng-required="!vm.formdata[formfield.key] && formfield.mandatory"
+              ng-change="vm.changeOnDropdownSelect(formfield)">
+        <option value="" disabled>----Select----</option>
+        <option ng-repeat="(key,value) in vm.dropdownlists[formfield.key]" ng-if="formfield.sendvalue === 'key'" value="{{key}}">{{value}}</option>
+        <option ng-repeat="(key,value) in vm.dropdownlists[formfield.key]" ng-if="formfield.sendvalue === 'value'" value="{{value}}">{{value}}</option>
+      </select>
+    </div>
+    <div class="form-group col-4" ng-if="formfield.type === 'radio'">
+      <label class="custom-radio" for="">{{formfield.label}} <span class="text-danger" ng-if="formfield.mandatory">*</span>
+        <div ng-repeat="(key,value) in formfield.dropdownlist" ng-if="formfield.sendvalue === 'key'">
+          <input type="radio" name="{{formfield.label}}" class="form-check-input" value="{{key}}" ng-model="vm.formdata[formfield.key]" ng-required="!vm.formdata[formfield.key] && formfield.mandatory">
+          <div class="radio-content">
+            {{value}}
+          </div>
+        </div>
+        <div ng-repeat="(key,value) in formfield.dropdownlist" ng-if="formfield.sendvalue === 'value'">
+          <input type="radio" name="{{formfield.label}}" class="form-check-input" value="{{value}}" ng-model="vm.formdata[formfield.key]" ng-required="!vm.formdata[formfield.key] && formfield.mandatory">
+          <div class="radio-content">
+            {{value}}
+          </div>
+        </div>
+      </label>
+    </div>
+    <div class="form-group col-4" ng-if="formfield.type === 'checkbox'">
+      <label class="custom-radio" for="">{{formfield.label}}<span class="text-danger" ng-if="formfield.mandatory">*</span>
+        <div ng-repeat="(key,value) in formfield.dropdownlist track by $index" ng-if="formfield.sendvalue === 'key'">
+          <input type="checkbox" name="" class="form-check-input" value="{{key}}"  ng-model="vm.formdata[formfield.key][$index]" ng-required="!vm.formdata[formfield.key] && formfield.mandatory">
+          <div>
+            {{value}}
+          </div>
+        </div>
+        <div ng-repeat="(key,value) in formfield.dropdownlist track by $index" ng-if="formfield.sendvalue === 'value'">
+          <input type="checkbox" name="" class="form-check-input" value="{{value}}" ng-model="vm.formdata[formfield.key][$index]" ng-required="!vm.formdata[formfield.key] && formfield.mandatory">
+          <div>
+            {{value}}
+          </div>
+        </div>
+      </label>
+    </div>
+  </div>
+
+  <!-- <input type="file" accept=".pdf" class="form-control" ng-model="vm.teachertransfer.preferentialCategoryDataFile" file-model="vm.teachertransfer.preferentialCategoryDataFile" ng-change="vm.checkTypeOfFile(vm.teachertransfer.preferentialCategoryDataFile,'filepreferential')" ng-disabled="vm.teachertransfer.preferentialCategoryDataValue !== '1'" id="filepreferential" valid-file> -->
+  <div ng-repeat="button in vm.formjsondata.buttons">
+    <button class="btn btn-primary" type="{{button.label}}" ng-if="button.label === 'submit'">{{button.label}}</button>
+    <button style="margin-left:15px"  class="btn btn-primary" type="{{button.label}}" ng-if="button.label !== 'submit'" ng-click="vm.formSubmit(button.label)">{{button.label}}</button>
+    <br/><br/>
+  </div>
+</form>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent"
+    tools:context=".ui.ProjectListActivity">
+
+    <ProgressBar
+        android:id="@+id/project_list_progress_bar"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="invisible"/>
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/project_list_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimaryDark"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        android:layout_alignParentTop="true" />
+
+    <RelativeLayout
+        android:id="@+id/project_list_root_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/transparent"
+        android:layout_below="@id/project_list_toolbar"/>
+
+    <org.osmdroid.views.MapView
+        android:id="@+id/project_list_map_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/project_list_toolbar"
+        android:visibility="invisible"/>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/project_list_fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/legend_icon"
+        android:layout_margin="16dp"
+        android:background="@color/white"
+        app:fabSize="auto"
+        android:visibility="invisible"/>
+
+    <ScrollView
+        android:id="@+id/legend_scroll_view"
+        android:layout_width="wrap_content"
+        android:layout_gravity="end|top"
+        android:background="@drawable/shape_rectangular_color_primary_dark_transparent_edges"
+        android:layout_height="wrap_content"
+        android:elevation="@dimen/dimen_2dp"
+        android:layout_alignRight="@id/project_list_fab"
+        android:layout_above="@id/project_list_fab"
+        android:alpha="0.75">
+
+        <LinearLayout
+            android:id="@+id/legend_scroll_view_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:paddingBottom="@dimen/half_margin" />
+
+    </ScrollView>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/create_new_project_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/add_icon"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="16dp"
+        app:backgroundTint="@color/colorButton"
+        app:fabSize="auto"
+        />
+
+</RelativeLayout>

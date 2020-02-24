@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.vassarlabs.proj.uniapp</groupId>
+		<artifactId>com-vassarlabs-proj-uniapp</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+
+	<groupId>com.vassarlabs.proj.uniapp.utils</groupId>
+	<artifactId>com-vassarlabs-proj-uniapp-utils</artifactId>
+
+	<properties>
+	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+</properties>
+	<dependencies>
+		<dependency>
+			<groupId>com.vassarlabs.prod.common.logging</groupId>
+			<artifactId>com-vassarlabs-prod-common-logging</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>org.mindrot</groupId>
+			<artifactId>jbcrypt</artifactId>
+			<version>0.4</version>
+		</dependency>
+		<dependency>
+			<groupId>com.vassarlabs.prod.spel</groupId>
+			<artifactId>com-vassarlabs-prod-spel</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+
+		</dependency>
+		<dependency>
+			<groupId>com.vassarlabs.prod.restcall</groupId>
+			<artifactId>com-vassarlabs-prod-restcall</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+	</dependencies>
+</project>

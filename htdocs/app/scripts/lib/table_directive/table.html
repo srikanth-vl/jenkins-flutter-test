@@ -1,0 +1,384 @@
+<div ng-show="throb "  >
+  <svg class="jbi-spinner" width="34px" height="34px"
+    viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
+     <circle class="jbi-path" fill="none" stroke-width="7" stroke-linecap="round" cx="33" cy="33" r="30"></circle>
+  </svg>
+</div>
+<div class="row">
+<div class="col-md-12" ng-if="breadCum"  >
+  <ol ol class="breadcrumb">
+    <li class="breadcrumb-item" ng-repeat ="row in breadCum track by $index" ng-class="{'active':!$last}">
+      <span ng-if ="!$last"><a href="" ng-click="send(row.child,row.parent,row.location)" > {{row.value |removeDoubleQuotes}} </a></span>
+      <span ng-if ="$last"> {{row.value |removeDoubleQuotes}} </span>
+    </li>
+  </ol>
+</div>
+<div class="col-md-12 no-p"  >
+  <div class="dashboard-maincontent mb20"
+     ng-init="tableIndex =$index;" id="{{tableId}}div">
+     <div class="download text-right clearfix" ng-if="data.downloadType  &&  data.downloadType !== 'none'">
+       <a href="" class="btn btn-download" filename={{downloadfilename}} downloadtype={{data.downloadType}} title="Download as excel" export-Div-Id ="{{tableId}}div" export-Excel class="excel-button" print-remove ng-if="tableId">
+         <i class="fa fa-download" aria-hidden="true"></i> Download
+       </a>
+     </div>
+    <!-- <h4 class = "text-center mb10 title"><strong>{{record.title}}</strong></h4> -->
+    <div class="table-responsive">
+    <table class="table table-striped table-bordered responsive no-m" id={{tableId}}table>
+      <thead >
+        <tr ng-repeat = "headerdata in data.headers track by $index" >
+          <th width="4%" style="vertical-align:middle"  rowspan="{{data.headers.length}}" ng-if="$index == 0 && !serialNumberSuppress" ng-class = "thColor == true ? 'thc5' : ''" >S.No</th>
+          <th style="text-align:center; vertical-align:middle" ng-repeat="header in headerdata track by $index"   ng-click="setSortOrder(header.sortIndex)" rowspan = "{{header.rows}}" colspan="{{header.cols}}" class = "{{data.headerColorClass}}"  ng-if= "header.name" >
+
+            <span >{{header.name}}</span>
+
+            <span  ng-if="header.sortIndex " >
+              <i style="width: 24px;" class="fas fa-sort"></i>
+              <!-- <img style="width: 24px;color:#FFF" src="data:image/gif;base64,R0lGODlhFQAJAIAAACMtMP///yH5BAEAAAEALAAAAAAVAAkAAAIXjI+AywnaYnhUMoqt3gZXPmVg94yJVQAAOw=="> -->
+            </span>
+          </th>
+      </tr>
+
+    </thead>
+    <tbody>
+      <div ng-show="throb">
+            <svg class="jbi-spinner" ng-show="throb"  width="34px" id="table{{tableIndex}}" height="34px" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
+               <circle class="jbi-path" fill="none" stroke-width="7" stroke-linecap="round" cx="33" cy="33" r="30"></circle>
+            </svg>
+     </div>
+      <tr   ng-class="$even?'ws_odd':'ws_even'" ng-repeat="(rowIndex,tableData) in data.recordData |vassarTableSorting:data.sortIndex :data.sortOrder track by $index" >
+        <td ng-if="start && !serialNumberSuppress">{{$index + 1 +start}}</td>
+        <td ng-if="!start && !serialNumberSuppress" class="thc1">{{$index + 1}}</td>
+        <td ng-repeat="dat in tableData track by $index" ng-class='{textleft:$first}' class="{{dat.colorClass || dat[0].colorClass }}" ng-if="!dat.suppress">
+          <span ng-if="data.dataTypes[$index] === 'LOCATION'">
+             <a href="" ng-click="submit(dat.child,dat.parent,dat.location)">{{dat.value | removeDoubleQuotes}}</a>
+          </span>
+          <span ng-if="data.dataTypes[$index] === 'FINALLOCATION'" style="text-align:left; display:block">
+            {{dat.value | removeDoubleQuotes}}
+          </span>
+          <span ng-if="data.dataTypes[$index] == 'IMAGEARRAY'" style='display:block'>
+            <div ng-repeat = "val  in dat.value">
+              <!-- <img data-ng-src="data:image/png;base64,{{val}}" width="42" height="42" data-err-src="images/png/avatar.png"/> -->
+            <a href="#" ng-click="submitImage(val)">{{val}}</a>
+
+            </div>
+          </span>
+
+          <span ng-if="data.dataTypes[$index] === 'TIMESTAMP'" style="text-align:left; display:block">
+            {{dat.value | date: "MM/dd/yyyy HH:mm:ss"}}
+          </span>
+          <span ng-if="data.dataTypes[$index] === 'DATAFORMATTER'" style="text-align:left; display:block">
+
+            <ul ng-repeat="(value,key) in dat.value track by $index">
+              <li>
+                {{key.label}} = {{key.value | dataFormatter}}
+              </li>
+            </ul>
+        </span>
+
+        <span ng-if="data.dataTypes[$index] ==='FORMDATA'">
+          <ul ng-repeat = "(val,key)  in dat.value track by $index">
+            <!-- <p>{{dat}}</p> -->
+              <li>
+              {{val}} = {{key}}
+              </li>
+          </ul>
+          <!-- {{showJsonFormat(dat.value)}} -->
+          <!-- <p>{{ dat.value | json: 4}}</p> -->
+
+        </span>
+
+
+          <span ng-if="data.dataTypes[$index] === 'GOTOREPORTCARD'">
+            <a href="" ng-click="submitStudent(dat.child,dat.parent,dat.location)">{{dat.value}} </a>
+          </span>
+
+          <span ng-if="data.dataTypes[$index] === 'LOCATIONWITHID'">
+            <a href="" ng-click="submit(dat[0].child,dat[0].parent,dat[0].location)">  {{dat[0].value}} ({{dat[1].value}}) </a>
+          </span>
+          <span ng-if="data.dataTypes[$index] === 'FIANLLOCATIONWITHID'">
+             {{dat.value}}
+          </span>
+
+          <span ng-if="data.dataTypes[$index] === 'NUMBERS'&& isNumber(dat.value)" style="text-align:right; display:block">
+             {{FormatNumber(dat.value)}}
+          </span>
+          <span ng-if="data.dataTypes[$index] === 'NUMBERS'&& !isNumber(dat.value)" style="text-align:right; display:block">
+             {{dat.value}}
+          </span>
+
+          <span ng-if="data.dataTypes[$index] === 'PERCENTAGE'" style="text-align:right; display:block">
+            <span ng-if="dat.value !== -999">
+             {{dat.value | number:2}}&nbsp;%
+            </span>
+            <span style="color:red;" ng-if="dat.value === -999">
+              A
+            </span>
+          </span>
+
+          <span ng-if="data.dataTypes[$index] === 'FLOATNUMBER'" style="text-align:right; display:block">
+            <span ng-if="isNumber(dat.value)">
+            {{dat.value | number:2}}
+            </span>
+            <span ng-if="!isNumber(dat.value)">
+              -
+            </span>
+          </span>
+
+          <span ng-if="data.dataTypes[$index] === 'PERCENTAGEWITHDASH' && isNumber(dat.value) && dat.value !== -1" style="text-align:right; display:block">
+             {{dat.value | number:2}}&nbsp;%
+          </span>
+
+          <span ng-if="data.dataTypes[$index] === 'PERCENTAGEWITHDASH' && (!isNumber(dat.value) || dat.value === -1)" style="text-align:right; display:block">
+             -
+          </span>
+
+           <span ng-if="data.dataTypes[$index] === 'CLICKNUMBER'" style="text-align:right; display:block">
+             <span ng-if="isNumber(dat[0].value)">
+              <a href="" ng-click="submitData(rowIndex,dat[0], dat[1].value)"> {{FormatNumber(dat[0].value)}} </a>
+             </span>
+             <span ng-if="!isNumber(dat[0].value)">
+                <!-- {{dat[0].value}} -->
+                <!-- urlparam  -->
+                <a href="" ng-click="submitData(rowIndex,dat[0], dat[1].value)"> {{dat.value}} </a>
+
+             </span>
+           </span>
+
+          <span ng-if="data.dataTypes[$index]=== 'CURRENCY'" style="text-align:right; display:block">
+            {{dat.value/100000 |currency}}
+          </span>
+            <!-- <span ng-if="record.dataTypes[$index] === 'PERCENTAGE'">
+              {{dat.value*100 |number:2}} %
+            </span> -->
+          <span ng-if="data.dataTypes[$index] === 'ACHIEVEMENT'">
+            {{dat.value |number:2}}&nbsp;%
+          </span>
+          <!-- for rating -->
+          <!-- <span ng-if="record.dataTypes[$index] === 'RATING'">
+            <div class="starrating">
+              <span  class="novisbile">{{dat.value}}</span>
+              <span class="rating rating{{dat.value}}">
+                <span  style="width:{{dat.value}};background-position:0 0"></span>
+              </span>
+            </div>
+          </span> -->
+
+          <span ng-if="data.dataTypes[$index] === 'CUMMNUM' && isNumber(dat[0].value)" style="text-align:right; display:block">
+
+            <span ng-if= "dat[0].value !=='-' && dat[1].value !=='-' ">{{FormatNumber(dat[0].value)}} &nbsp;({{dat[1].value | number:2}}&nbsp;%) </span>
+              <span ng-if= "dat[0].value ==='-' || dat[1].value ==='-' ">  - </span>
+          </span>
+          <span ng-if="data.dataTypes[$index] === 'CUMMNUM' && !isNumber(dat[0].value)" style="text-align:right; display:block">
+            <span ng-if= "dat[0].value !=='-' && dat[1].value !=='-' ">  {{dat[0].value}}&nbsp;({{dat[1].value | number:2}})</span>
+            <span ng-if= "dat[0].value ==='-' || dat[1].value ==='-' ">  - </span>
+          </span>
+
+          <span ng-if="data.dataTypes[$index] === 'CONCAT'" >
+            <span ng-if= "dat[0].value !=='-' && dat[1].value !=='-' ">  {{dat[0].value}}&nbsp;{{dat[1].value}}</span>
+            <span ng-if= "dat[0].value ==='-' || dat[1].value ==='-' ">  - </span>
+          </span>
+
+          <span ng-if="data.dataTypes[$index] === 'CUMMNUMWITHPERCENTAGE'" style="text-align:right; display:block">
+            <span ng-if= "dat[0].value !=='-' && dat[1].value !=='-' ">
+              <span ng-if= "dat[0].value !== -999 && dat[1].value !== -999">
+                  {{dat[0].value | number:2}}%&nbsp;({{dat[1].value}})
+              </span>
+              <span style="color:red;" ng-if= "dat[0].value == -999 && dat[1].value == -999">
+                A
+              </span>
+             </span>
+            <span ng-if= "dat[0].value ==='-' || dat[1].value ==='-' ">  A </span>
+
+          </span>
+
+          <span ng-if="data.dataTypes[$index] === 'CUMMNUMWITHOUTPERCENTAGE'" style="text-align:right; display:block">
+            <span ng-if= "dat[0].value !=='-' && dat[1].value !=='-' ">
+              <span ng-if= "dat[0].value !== -999 && dat[1].value !== -999">
+                  {{dat[0].value | number:2}}&nbsp;({{dat[1].value}})
+              </span>
+              <span style="color:red;" ng-if= "dat[0].value == -999 && dat[1].value == -999">
+                A
+              </span>
+             </span>
+            <span ng-if= "dat[0].value ==='-' || dat[1].value ==='-' ">  - </span>
+
+          </span>
+
+
+          <span ng-if="data.dataTypes[$index] === 'CLICKCUMMNUM'" style="text-align:right; display:block" >
+            <span ng-if= "dat[0].value !=='-' && dat[1].value !=='-' && isNumber(dat[0].value)">
+              <a href="" ng-click="callColleages(rowIndex,dat[0].status,dat[2].value)" ng-if="FormatNumber(dat[0].value) != 0">
+                {{FormatNumber(dat[0].value)}}</a>
+              <a ng-if="FormatNumber(dat[0].value) == 0">
+                {{FormatNumber(dat[0].value)}}
+              </a>
+               ({{dat[1].value}}&nbsp;%)
+            </span>
+            <span ng-if= "dat[0].value !=='-' && dat[1].value !=='-'&& !isNumber(dat[0].value)">
+              <a href="" ng-click="callColleages(rowIndex,dat[0].status,dat[2].value)"> {{dat[0].value}}</a>
+              ({{dat[1].value | number:2}})
+            </span>
+            <span ng-if= "dat[0].value ==='-' || dat[1].value ==='-'" >  - </span>
+          </span>
+          <span ng-if="data.dataTypes[$index]=== 'THICKMARK'">
+            <span ng-if= "dat.value === false || dat.value === '-'">
+              &nbsp;&nbsp;&#x2717;
+            </span>
+            <span ng-if= "dat.value === true">
+              &nbsp;&nbsp;&#10004;
+              <!-- <img src="images/icon-avl.svg" width="16" height="16" alt=""> -->
+            </span>
+          </span>
+
+          <span ng-if="data.dataTypes[$index] === ''" style="text-align:right; display:block">
+
+            <span ng-if= "dat.value !=='-'"> {{dat.value |positive | number:0}}&nbsp;%
+
+              <span ng-if="parseFloat(dat.value) > 0 ">
+                <!-- <img src="images/up-arrow.svg" alt="" height="14"> -->
+              </span>
+              <span ng-if="parseFloat(dat.value) < 0">
+                <!-- <img src="images/down-arrow.svg" alt="" height="14"> -->
+              </span>
+              <span ng-if="parseFloat(dat.value) === 0">
+                <!-- <img src="images/up-arrow.svg" alt="" height="14"> -->
+              </span>
+              <span ng-if= "dat.value ==='-'">{{dat[1].value}}</span>
+            </span>
+          </span>
+          <span ng-if="data.dataTypes[$index] === 'RATING'">
+            <div style="margin:0 auto;width:120px">
+              <span>
+                <span class="stars alignright">
+                  <span ng-style="{'width':'{{dat.value}}' ,'background-position': '0  0' }"></span>
+                  <span ng-repeat="n in range(dat.value)">
+                    <i class="fa fa-star text-primary"></i>
+                  </span>
+                  <span style="visibility :hidden" add-to-excel="true">{{dat.value}}</span>
+                </span>
+              </span>
+            </div>
+          </span>
+        </td>
+
+
+      </tr>
+      <tr ng-if = "data.recordData.length ==  0">
+        <td colspan="{{data.dataTypes.length+1}}" style="text-align:center">No data to display</td>
+      </tr>
+      <tr  ng-if="data.totalData.length>0 && data.recordData.length !=  0" class="last_table_row">
+        <!-- <td ></td> -->
+
+        <td ng-repeat="dat in data.totalData track by $index" style="font-weight:bold" ng-class="thColor == true && $index < 4 ? 'thc1': ''" colspan="{{$first ? '2' : '1'}}" >
+          <span ng-if="data.dataTypes[$index] === 'LOCATION'" >
+
+            {{dat.value | removeDoubleQuotes}}
+          </span>
+          <span ng-if="data.dataTypes[$index] === 'FINALLOCATION'" style="display:block">
+              {{dat.value | removeDoubleQuotes}}
+          </span>
+          <span ng-if="data.dataTypes[$index] === 'TIMESTAMP'" style="display:block">
+              {{dat.value |date: "MM/dd/yyyy HH:mm:ss"}}
+            </span>
+            <span ng-if="data.dataTypes[$index] === 'DATAFORMATTER'" style="text-align:left; display:block">
+            {{dat.value | dataFormatter}}
+            </span>
+          <span ng-if="data.dataTypes[$index] === 'GOTOREPORTCARD'">
+          {{dat.value}}
+          </span>
+          <span ng-if="data.dataTypes[$index] === 'LOCATIONWITHID'">
+            {{dat.value || "Total"}}
+          </span>
+
+          <span ng-if="data.dataTypes[$index] === 'FIANLLOCATIONWITHID'">
+             {{dat[0].value}}
+          </span>
+          <span ng-if="data.dataTypes[$index] === 'NUMBERS'&& isNumber(dat.value)" style="text-align:right; display:block">
+             {{FormatNumber(dat.value)}}
+          </span>
+          <span ng-if="data.dataTypes[$index] === 'NUMBERS'&& !isNumber(dat.value)" style="text-align:right; display:block">
+             {{dat.value}}
+          </span>
+          <span ng-if="data.dataTypes[$index] === 'PERCENTAGE'" style="text-align:right; display:block">
+            <span ng-if="dat.value !== -999">
+             {{dat.value | number:2}}&nbsp;%
+            </span>
+            <span style="color:red;" ng-if="dat.value === -999">
+              A
+            </span>
+          </span>
+
+          <span ng-if="data.dataTypes[$index] === 'FLOATNUMBER'" style="text-align:right; display:block">
+            <span ng-if="isNumber(dat.value)">
+            {{dat.value | number:2}}
+            </span>
+            <span ng-if="!isNumber(dat.value)">
+              -
+            </span>
+          </span>
+
+          <span ng-if="data.dataTypes[$index] === 'PERCENTAGEWITHDASH' && (isNumber(dat.value) && dat.value !== -1)" style="text-align:right; display:block">
+             {{dat.value | number:2}}&nbsp;%
+          </span>
+
+          <span ng-if="data.dataTypes[$index] === 'PERCENTAGEWITHDASH' && (!isNumber(dat.value) || dat.value === -1)" style="text-align:right; display:block">
+             -
+          </span>
+
+          <span ng-if="data.dataTypes[$index] === 'CUMMNUMWITHPERCENTAGE'" style="text-align:right; display:block">
+            <span ng-if= "dat[0].value !=='-' && dat[1].value !=='-' ">
+              <span ng-if= "dat[0].value !== -999 && dat[1].value !== -999">
+                  {{dat[0].value | number:2}}%&nbsp;({{dat[1].value}})
+              </span>
+              <span style="color:red;" ng-if= "dat[0].value == -999 && dat[1].value == -999">
+                A
+              </span>
+            <span ng-if= "dat[0].value ==='-' || dat[1].value ==='-' "> A </span>
+          </span>
+          </span>
+          <span ng-if="data.dataTypes[$index] === 'CUMMNUMWITHOUTPERCENTAGE'" style="text-align:right; display:block">
+            <span ng-if= "dat[0].value !=='-' || dat[1].value !=='-' ">
+              <span ng-if= "dat[0].value !== -999 && dat[1].value !== -999">
+                  {{dat[0].value | number:2}}&nbsp;({{dat[1].value}})
+              </span>
+              <span style="color:red;" ng-if= "dat[0].value == -999 && dat[1].value == -999">
+                A
+              </span>
+            <span ng-if= "dat[0].value ==='-' && dat[1].value ==='-' ">  - </span>
+          </span>
+          </span>
+          <span ng-if="data.dataTypes[$index] === 'CURRENCY'" style="text-align:right; display:block">
+            {{dat.value/100000 |currency}}
+          </span>
+          <span ng-if="data.dataTypes[$index] === 'TIMESTAMP'">
+            {{dat.value |date: "MM/dd/yyyy HH:mm:ss"}}
+          </span>
+
+
+          <!-- <span ng-if="record.dataTypes[$index] === 'PERCENTAGE'">
+            {{dat.value*100 |number :2}}%
+          </span> -->
+          <span ng-if="(data.dataTypes[$index] === 'CUMMNUM'|| data.dataTypes[$index] === 'CLICKCUMMNUM') && isNumber(dat[0].value)" style="text-align:right; display:block">
+            <span ng-if= "dat[0].value !=='-' && dat[1].value !=='-' ">{{FormatNumber(dat[0].value)}}&nbsp;({{dat[1].value | number:2}}&nbsp;%) </span>
+              <span ng-if= "dat[0].value ==='-' || dat[1].value ==='-' ">  - </span>
+          </span>
+          <span ng-if="(data.dataTypes[$index] === 'CUMMNUM' || data.dataTypes[$index] === 'CLICKCUMMNUM') && !isNumber(dat[0].value)" style="text-align:right; display:block">
+            <span ng-if= "dat[0].value !=='-' && dat[1].value !=='-' ">  {{dat[0].value}}&nbsp;({{dat[1].value | number:2}}&nbsp;%)</span>
+            <span ng-if= "dat[0].value ==='-' || dat[1].value ==='-' ">  - </span>
+          </span>
+        </td>
+
+
+      </tr>
+
+    </tbody>
+
+  </table>
+  </div>
+
+
+  <div class="clearfix"></div>
+
+
+</div>
+</div>

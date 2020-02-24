@@ -1,0 +1,665 @@
+{
+  "forms": {
+    "update": {
+      "initial_form_id": "cs_000",
+      "form": [
+        {
+          "formid": "cs_000",
+          "name": "Crop Stress",
+          "title": "Agriculture Department",
+          "subtitle": "Crop Stress",
+          "header": [
+            {
+              "key": "project",
+              "label": "Project"
+            },
+            {
+              "key": "offtake_point",
+              "label": "Offtake Point"
+            },
+            {
+              "key": "design_ayacut",
+              "label": "Design Ayacut"
+            }
+          ],
+          "fields": [
+            {
+              "key": "cs_sd",
+              "label": "Select Date",
+              "uitype": "date",
+              "datatype": "date",
+              "uom": "",
+              "selectablewindow": {
+                "past": "5",
+                "future": "0",
+                "select": "-1"
+              },
+              "validations": {
+                "mandatory": false,
+                "expr": [
+                  {
+                    "expr": "#cs_sd > #current.minusDays(5)",
+                    "erro_msg": "Only previous five days date expected"
+                  },
+                  {
+                    "expr": "#cs_sd < #current.plusDays(1)",
+                    "error_msg": "Future date selected"
+                  }
+                ],
+                "api": ""
+              },
+              "display": [
+                "P"
+              ]
+            },
+            {
+              "key": "cs_crop1",
+              "label": "Crop 1 - Paddy",
+              "uitype": "group",
+              "datatype": "group",
+              "uom": "",
+              "expandable": "0",
+              "formid": "cs_001"
+            },
+            {
+              "key": "cs_crop2",
+              "label": "Crop 2 - Ground Nut",
+              "uitype": "group",
+              "datatype": "group",
+              "uom": "",
+              "expandable": "0",
+              "formid": "cs_002"
+            },
+            {
+              "key": "cs_crop3",
+              "label": "Crop 3 - Sugar Cane",
+              "uitype": "group",
+              "datatype": "group",
+              "uom": "",
+              "expandable": "0",
+              "formid": "cs_003"
+            },
+            {
+              "key": "cs_crop4",
+              "label": "Crop 4 - Cotton",
+              "uitype": "group",
+              "datatype": "group",
+              "uom": "",
+              "expandable": "0",
+              "formid": "cs_004"
+            },
+            {
+              "key": "cs_crop5",
+              "label": "Crop 5 - Maze",
+              "uitype": "group",
+              "datatype": "group",
+              "uom": "",
+              "expandable": "0",
+              "formid": "cs_005"
+            },
+            {
+              "key": "cs_crop6",
+              "label": "Crop 6 - Others",
+              "uitype": "group",
+              "datatype": "group",
+              "uom": "",
+              "expandable": "0",
+              "formid": "cs_006"
+            },
+            {
+              "label": "Take Picture",
+              "key": "cs_tp",
+              "uitype": "image",
+              "datatype": "image",
+              "uom": "",
+              "validations": {
+                "mandatory": true,
+                "max": "3"
+              }
+            }
+          ]
+        },
+        {
+          "formid": "cs_001",
+          "name": "Crop1",
+          "title": "Crop 1",
+          "subtitle": "Paddy",
+          "fields": [
+            {
+              "key": "cs_ta_crop1",
+              "label": "Transplanted area (acres)",
+              "uitype": "edittext",
+              "datatype": "double",
+              "uom": "",
+              "default": "",
+              "validations": {
+                "mandatory": true,
+                "min": "0.0",
+                "max": "",
+                "expr": [
+                  {
+                    "expr": "#cs_ta_crop1 < #cs_ta_crop1_m",
+                    "error_msg": "Invalid Area : Should be less than target"
+                  },
+                  {
+                    "expr": "#cs_ta_crop1 > 0",
+                    "error_msg": "Invalid Area : Should be greater than 0"
+                  }
+                ],
+                "api": ""
+              }
+            },
+            {
+              "key": "cs_wetting_crop1",
+              "label": "Current Wetting",
+              "uitype": "dropdown",
+              "datatype": "list",
+              "uom": "",
+              "multiplevalues": [
+                {
+                  "value": "Option 1"
+                },
+                {
+                  "value": "Option 2"
+                },
+                {
+                  "value": "Option 3"
+                }
+              ],
+              "default": "Option 1",
+              "validations": {
+                "mandatory": false,
+                "expr": [
+                  {
+                    "expr": "",
+                    "error_msg": ""
+                  }
+                ],
+                "api": ""
+              }
+            },
+            {
+              "key": "cs_transdate_crop1",
+              "label": "Select Avg. Transplantation Date",
+              "uitype": "date",
+              "datatype": "date",
+              "uom": "",
+              "selectablewindow": {
+                "past": "5",
+                "future": "0",
+                "select": "-1"
+              },
+              "validations": {
+                "mandatory": false,
+                "expr": [
+                  {
+                    "expr": "#cs_transdate_crop1 > #current.minusDays(5)",
+                    "erro_msg": "Only previous five days date expected"
+                  },
+                  {
+                    "expr": "#cs_transdate_crop1 < #current.plusDays(1)",
+                    "error_msg": "Future date selected"
+                  }
+                ],
+                "api": ""
+              },
+              "display": [
+                "P"
+              ]
+            }
+          ]
+        },
+        {
+          "formid": "cs_002",
+          "name": "Crop2",
+          "title": "Crop 2",
+          "subtitle": "Ground Nut",
+          "fields": [
+            {
+              "key": "cs_ta_crop2",
+              "label": "Transplanted area (acres)",
+              "uitype": "edittext",
+              "datatype": "double",
+              "uom": "",
+              "default": "",
+              "validations": {
+                "mandatory": true,
+                "min": "0.0",
+                "max": "",
+                "expr": [
+                  {
+                    "expr": "#cs_ta_crop2 < #cs_ta_crop2_m",
+                    "error_msg": "Invalid Area : Should be less than target"
+                  },
+                  {
+                    "expr": "#cs_ta_crop2 > 0",
+                    "error_msg": "Invalid Area : Should be greater than 0"
+                  }
+                ],
+                "api": ""
+              }
+            },
+            {
+              "key": "cs_wetting_crop2",
+              "label": "Current Wetting",
+              "uitype": "dropdown",
+              "datatype": "list",
+              "uom": "",
+              "multiplevalues": [
+                {
+                  "value": "Option 1"
+                },
+                {
+                  "value": "Option 2"
+                },
+                {
+                  "value": "Option 3"
+                }
+              ],
+              "default": "Option 1",
+              "validations": {
+                "mandatory": false,
+                "expr": [
+                  {
+                    "expr": "",
+                    "error_msg": ""
+                  }
+                ],
+                "api": ""
+              }
+            },
+            {
+              "key": "cs_transdate_crop2",
+              "label": "Select Avg. Transplantation Date",
+              "uitype": "date",
+              "datatype": "date",
+              "uom": "",
+              "selectablewindow": {
+                "past": "5",
+                "future": "0",
+                "select": "-1"
+              },
+              "validations": {
+                "mandatory": false,
+                "expr": [
+                  {
+                    "expr": "#cs_transdate_crop2 > #current.minusDays(5)",
+                    "erro_msg": "Only previous five days date expected"
+                  },
+                  {
+                    "expr": "#cs_transdate_crop2 < #current.plusDays(1)",
+                    "error_msg": "Future date selected"
+                  }
+                ],
+                "api": ""
+              },
+              "display": [
+                "P"
+              ]
+            }
+          ]
+        },
+        {
+          "formid": "cs_003",
+          "name": "Crop3",
+          "title": "Crop 3",
+          "subtitle": "Sugar Cane",
+          "fields": [
+            {
+              "key": "cs_ta_crop3",
+              "label": "Transplanted area (acres)",
+              "uitype": "edittext",
+              "datatype": "double",
+              "default": "",
+              "uom": "",
+              "validations": {
+                "mandatory": true,
+                "min": "0.0",
+                "max": "",
+                "expr": [
+                  {
+                    "expr": "#cs_ta_crop3 < #cs_ta_crop3_m",
+                    "error_msg": "Invalid Area : Should be less than target"
+                  },
+                  {
+                    "expr": "#cs_ta_crop3 > 0",
+                    "error_msg": "Invalid Area : Should be greater than 0"
+                  }
+                ],
+                "api": ""
+              }
+            },
+            {
+              "key": "cs_wetting_crop3",
+              "label": "Current Wetting",
+              "uitype": "dropdown",
+              "datatype": "list",
+              "uom": "",
+              "multiplevalues": [
+                {
+                  "value": "Option 1"
+                },
+                {
+                  "value": "Option 2"
+                },
+                {
+                  "value": "Option 3"
+                }
+              ],
+              "default": "Option 1",
+              "validations": {
+                "mandatory": false,
+                "expr": [
+                  {
+                    "expr": "",
+                    "error_msg": ""
+                  }
+                ],
+                "api": ""
+              }
+            },
+            {
+              "key": "cs_transdate_crop3",
+              "label": "Select Avg. Transplantation Date",
+              "uitype": "date",
+              "datatype": "date",
+              "uom": "",
+              "selectablewindow": {
+                "past": "5",
+                "future": "0",
+                "select": "-1"
+              },
+              "validations": {
+                "mandatory": false,
+                "expr": [
+                  {
+                    "expr": "#cs_transdate_crop3 > #current.minusDays(5)",
+                    "erro_msg": "Only previous five days date expected"
+                  },
+                  {
+                    "expr": "#cs_transdate_crop3 < #current.plusDays(1)",
+                    "error_msg": "Future date selected"
+                  }
+                ],
+                "api": ""
+              },
+              "display": [
+                "P"
+              ]
+            }
+          ]
+        },
+        {
+          "formid": "cs_004",
+          "name": "Crop4",
+          "title": "Crop 4",
+          "subtitle": "Cotton",
+          "fields": [
+            {
+              "key": "cs_ta_crop4",
+              "label": "Transplanted area (acres)",
+              "uitype": "edittext",
+              "datatype": "double",
+              "uom": "",
+              "default": "",
+              "validations": {
+                "mandatory": true,
+                "min": "0.0",
+                "max": "",
+                "expr": [
+                  {
+                    "expr": "#cs_ta_crop4 < #cs_ta_crop4_m",
+                    "error_msg": "Invalid Area : Should be less than target"
+                  },
+                  {
+                    "expr": "#cs_ta_crop4 > 0",
+                    "error_msg": "Invalid Area : Should be greater than 0"
+                  }
+                ],
+                "api": ""
+              }
+            },
+            {
+              "key": "cs_wetting_crop4",
+              "label": "Current Wetting",
+              "uitype": "dropdown",
+              "datatype": "list",
+              "uom": "",
+              "multiplevalues": [
+                {
+                  "value": "Option 1"
+                },
+                {
+                  "value": "Option 2"
+                },
+                {
+                  "value": "Option 3"
+                }
+              ],
+              "default": "Option 1",
+              "validations": {
+                "mandatory": false,
+                "expr": [
+                  {
+                    "expr": "",
+                    "error_msg": ""
+                  }
+                ],
+                "api": ""
+              }
+            },
+            {
+              "key": "cs_transdate_crop4",
+              "label": "Select Avg. Transplantation Date",
+              "uitype": "date",
+              "datatype": "date",
+              "uom": "",
+              "selectablewindow": {
+                "past": "5",
+                "future": "0",
+                "select": "-1"
+              },
+              "validations": {
+                "mandatory": false,
+                "expr": [
+                  {
+                    "expr": "#cs_transdate_crop4 > #current.minusDays(5)",
+                    "erro_msg": "Only previous five days date expected"
+                  },
+                  {
+                    "expr": "#cs_transdate_crop4 < #current.plusDays(1)",
+                    "error_msg": "Future date selected"
+                  }
+                ],
+                "api": ""
+              },
+              "display": [
+                "P"
+              ]
+            }
+          ]
+        },
+        {
+          "formid": "cs_005",
+          "name": "Crop5",
+          "title": "Crop 5",
+          "subtitle": "Maze",
+          "fields": [
+            {
+              "key": "cs_ta_crop5",
+              "label": "Transplanted area (acres)",
+              "uitype": "edittext",
+              "datatype": "double",
+              "default": "",
+              "uom": "",
+              "validations": {
+                "mandatory": true,
+                "min": "0.0",
+                "max": "",
+                "expr": [
+                  {
+                    "expr": "#cs_ta_crop5 < #cs_ta_crop5_m",
+                    "error_msg": "Invalid Area : Should be less than target"
+                  },
+                  {
+                    "expr": "#cs_ta_crop5 > 0",
+                    "error_msg": "Invalid Area : Should be greater than 0"
+                  }
+                ],
+                "api": ""
+              }
+            },
+            {
+              "key": "cs_wetting_crop5",
+              "label": "Current Wetting",
+              "uitype": "dropdown",
+              "datatype": "list",
+              "uom": "",
+              "multiplevalues": [
+                {
+                  "value": "Option 1"
+                },
+                {
+                  "value": "Option 2"
+                },
+                {
+                  "value": "Option 3"
+                }
+              ],
+              "default": "Option 1",
+              "validations": {
+                "mandatory": false,
+                "expr": [
+                  {
+                    "expr": "",
+                    "error_msg": ""
+                  }
+                ],
+                "api": ""
+              }
+            },
+            {
+              "key": "cs_transdate_crop5",
+              "label": "Select Avg. Transplantation Date",
+              "uitype": "date",
+              "datatype": "date",
+              "uom": "",
+              "selectablewindow": {
+                "past": "5",
+                "future": "0",
+                "select": "-1"
+              },
+              "validations": {
+                "mandatory": false,
+                "expr": [
+                  {
+                    "expr": "#cs_transdate_crop5 > #current.minusDays(5)",
+                    "erro_msg": "Only previous five days date expected"
+                  },
+                  {
+                    "expr": "#cs_transdate_crop5 < #current.plusDays(1)",
+                    "error_msg": "Future date selected"
+                  }
+                ],
+                "api": ""
+              },
+              "display": [
+                "P"
+              ]
+            }
+          ]
+        },
+        {
+          "formid": "cs_006",
+          "name": "Crop6",
+          "title": "Crop 6",
+          "subtitle": "Others",
+          "fields": [
+            {
+              "key": "cs_ta_crop6",
+              "label": "Transplanted area (acres)",
+              "uitype": "edittext",
+              "datatype": "double",
+              "default": "",
+              "uom": "",
+              "validations": {
+                "mandatory": true,
+                "min": "0.0",
+                "max": "",
+                "expr": [
+                  {
+                    "expr": "#cs_ta_crop6 < #cs_ta_crop6_m",
+                    "error_msg": "Invalid Area : Should be less than target"
+                  },
+                  {
+                    "expr": "#cs_ta_crop6 > 0",
+                    "error_msg": "Invalid Area : Should be greater than 0"
+                  }
+                ],
+                "api": ""
+              }
+            },
+            {
+              "key": "cs_wetting_crop6",
+              "label": "Current Wetting",
+              "uitype": "dropdown",
+              "datatype": "list",
+              "uom": "",
+              "multiplevalues": [
+                {
+                  "value": "Option 1"
+                },
+                {
+                  "value": "Option 2"
+                },
+                {
+                  "value": "Option 3"
+                }
+              ],
+              "default": "Option 1",
+              "validations": {
+                "mandatory": false,
+                "expr": [
+                  {
+                    "expr": "",
+                    "error_msg": ""
+                  }
+                ],
+                "api": ""
+              }
+            },
+            {
+              "key": "cs_transdate_crop6",
+              "label": "Select Avg. Transplantation Date",
+              "uitype": "date",
+              "datatype": "date",
+              "uom": "",
+              "selectablewindow": {
+                "past": "5",
+                "future": "0",
+                "select": "-1"
+              },
+              "validations": {
+                "mandatory": false,
+                "expr": [
+                  {
+                    "expr": "#cs_transdate_crop6 > #current.minusDays(5)",
+                    "erro_msg": "Only previous five days date expected"
+                  },
+                  {
+                    "expr": "#cs_transdate_crop6 < #current.plusDays(1)",
+                    "error_msg": "Future date selected"
+                  }
+                ],
+                "api": ""
+              },
+              "display": [
+                "P"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

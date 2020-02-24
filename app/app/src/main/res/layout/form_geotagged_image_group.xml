@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/margin"
+    android:layout_marginBottom="@dimen/margin"
+    android:background="@android:color/transparent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_form_element_view"
+        android:layout_marginLeft="@dimen/double_margin"
+        android:layout_marginRight="@dimen/double_margin"
+        android:paddingLeft="@dimen/margin"
+        android:paddingRight="@dimen/margin">
+
+        <TextView
+            android:id="@+id/form_geotagged_image_group_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/form_field_label_textsize"
+            android:background="@android:color/transparent"
+            android:layout_marginBottom="@dimen/margin"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"/>
+
+        <RelativeLayout
+            android:id="@+id/form_add_geotagged_image_icon_layout"
+            android:layout_width="@dimen/dimen_60dp"
+            android:layout_height="@dimen/app_list_item_height"
+            android:background="@android:color/transparent"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_below="@id/form_geotagged_image_group_label"
+            android:layout_marginLeft="@dimen/double_margin">
+
+            <ImageView
+                android:id="@+id/form_add_geotagged_image_icon"
+                android:layout_width="@dimen/dimen_60dp"
+                android:layout_height="@dimen/dimen_60dp"
+                android:src="@drawable/geotagged_picture"
+                android:adjustViewBounds="true"
+                android:layout_centerInParent="true" />
+
+        </RelativeLayout>
+
+        <HorizontalScrollView
+            android:id="@+id/form_geotagged_image_group_scroll_view"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/app_list_item_height"
+            android:background="@android:color/transparent"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@id/form_image_group_label"
+            android:layout_toLeftOf="@id/form_add_geotagged_image_icon_layout"
+            android:layout_alignParentBottom="true">
+
+            <LinearLayout
+                android:id="@+id/form_geotagged_image_group"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dimen_60dp"
+                android:background="@android:color/transparent"
+                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/dimen_20dp"
+                android:layout_marginBottom="@dimen/dimen_20dp" />
+
+        </HorizontalScrollView>
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/elevation"
+        android:background="@android:color/transparent" />
+
+</LinearLayout>

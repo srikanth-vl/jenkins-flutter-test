@@ -1,0 +1,16 @@
+{
+  "superappname": "No Bag Day",
+  "title": "Department Of Muncipal Administration",
+  "subtitle": "Foundation Course",
+  "usernametype": "text",
+  "syncvisible": true,
+  "syncInterval": "3000",
+  "gridcolumns": "1",
+  "coloraccent": "#FFFFFF",
+  "colorprimary": "#000000",
+  "colorprimarydark": "#FFFFFF",
+  "splashicon": "http://192.168.0.31:8000/home/ubuntu/appImages/edu_app_splash_logo.png",
+  "splashduration": "3000",
+  "splashbackground": "http://192.168.0.31:8000/home/ubuntu/appImages/splash_background.jpg",
+  "loginicon": "http://192.168.0.31:8000/home/ubuntu/appImages/edu_app_no_bag_day_logo.png"
+}

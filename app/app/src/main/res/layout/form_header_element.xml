@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/form_edit_text_root"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/transparent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:layout_marginTop="@dimen/margin"
+        android:layout_marginLeft="@dimen/double_margin"
+        android:layout_marginRight="@dimen/double_margin">
+
+        <RelativeLayout
+            android:id="@+id/form_header_static_icon_layout"
+            android:layout_width="@dimen/icon_layout_dimension"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            android:layout_marginLeft="@dimen/double_margin"
+            android:layout_alignParentRight="true"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/form_header_static_icon"
+                android:layout_width="@dimen/icon_dimension"
+                android:layout_height="@dimen/icon_dimension"
+                android:adjustViewBounds="true"
+                android:layout_centerInParent="true" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:orientation="horizontal"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/form_header_static_icon_layout"
+            android:paddingTop="@dimen/half_margin"
+            android:paddingBottom="@dimen/half_margin">
+
+            <RelativeLayout
+                android:id="@+id/form_header_label_layout"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@android:color/transparent">
+
+                <TextView
+                    android:id="@+id/form_header_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/form_field_textsize"
+                    android:background="@android:color/transparent"
+                    android:gravity="center_vertical"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/half_margin"
+                    android:textStyle="bold"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/form_header_value_layout"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@android:color/transparent">
+
+                <TextView
+                    android:id="@+id/form_header_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/form_field_textsize"
+                    android:layout_centerInParent="true"
+                    android:background="@android:color/transparent"
+                    android:gravity="center_vertical"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/half_margin"
+                    android:textStyle="bold"/>
+
+            </RelativeLayout>
+
+            <HorizontalScrollView
+                android:id="@+id/form_header_image_group_scroll_view"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/app_list_icon_dimension"
+                android:background="@drawable/shape_rectangular_transperant_edges"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:id="@+id/form_header_image_group"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/dimen_60dp"
+                    android:background="@android:color/transparent"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="@dimen/dimen_20dp"
+                    android:layout_marginBottom="@dimen/dimen_20dp" />
+
+            </HorizontalScrollView>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>

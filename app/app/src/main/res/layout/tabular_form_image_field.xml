@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/transparent"
+    android:layout_margin="@dimen/margin">
+
+    <RelativeLayout
+        android:id="@+id/tabular_form_image_field_click_button_layout"
+        android:layout_width="@dimen/dimen_64dp"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:layout_centerInParent="true"
+        android:layout_alignParentEnd="true">
+
+        <ImageView
+            android:id="@+id/tabular_form_image_field_click_button"
+            android:layout_width="@dimen/icon_dimension"
+            android:layout_height="@dimen/icon_dimension"
+            android:adjustViewBounds="true"
+            android:background="@drawable/shape_form_background"
+            android:layout_centerInParent="true"
+            android:src="@drawable/geotagged_picture"
+            android:paddingRight="@dimen/margin"
+            android:paddingLeft="@dimen/margin"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:layout_alignParentLeft="true"
+        android:layout_toLeftOf="@id/tabular_form_image_field_click_button_layout"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        android:paddingTop="@dimen/margin"
+        android:paddingBottom="@dimen/margin"
+        android:paddingLeft="@dimen/margin"
+        android:paddingRight="@dimen/margin">
+
+        <TextView
+            android:id="@+id/tabular_form_image_field_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true" />
+
+        <HorizontalScrollView
+            android:id="@+id/tabular_form_image_scroll_view"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:background="@drawable/tabular_edittext_background"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@id/tabular_form_image_field_label"
+            android:layout_alignParentBottom="true">
+
+            <LinearLayout
+                android:id="@+id/tabular_form_image_group"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@android:color/transparent"
+                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/dimen_5dp"
+                android:layout_marginBottom="@dimen/dimen_5dp"
+                android:layout_marginLeft="@dimen/dimen_5dp"
+                android:layout_marginRight="@dimen/dimen_5dp"/>
+
+        </HorizontalScrollView>
+
+        <TextView
+            android:id="@+id/tabular_form_image_uuids"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:visibility="gone"/>
+
+    </RelativeLayout>
+
+
+</RelativeLayout>
