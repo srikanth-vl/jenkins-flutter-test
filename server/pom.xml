@@ -24,7 +24,7 @@
 		<spring-framework.version>5.0.2.RELEASE</spring-framework.version>
 		<logback.version>1.0.13</logback.version>
 		<slf4j.version>1.7.5</slf4j.version>
-		<junit.version> 4.12 </junit.version>
+		<junit.version>4.13.1</junit.version>
 		<testng.version> 6.10 </testng.version>
 		<java.version> 1.8 </java.version>
 		<maven.compiler.plugin.version> 3.3 </maven.compiler.plugin.version>
