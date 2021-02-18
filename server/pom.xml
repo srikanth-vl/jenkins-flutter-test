@@ -33,7 +33,7 @@
 		<vassar.version>1.0-SNAPSHOT</vassar.version>
 		<common.lang.version>2.4</common.lang.version>
 		<lombok.version>1.16.18</lombok.version>
-		<jackson.version>2.10.2</jackson.version>
+		<jackson.version>2.12.1</jackson.version>
 	</properties>
 
 	<dependencies>
